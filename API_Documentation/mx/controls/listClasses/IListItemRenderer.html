@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="IListItemRenderer,mx.controls.listClasses.IListItemRenderer" name="keywords">
+<title>mx.controls.listClasses.IListItemRenderer</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IListItemRenderer - Whohoo API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?mx/controls/listClasses/IListItemRenderer.html&amp;mx/controls/listClasses/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IListItemRenderer</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IListItemRenderer"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.controls.listClasses</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IListItemRenderer extends <a href="../../core/IDataRenderer.html">IDataRenderer</a>, <a href="none">flash.events.IEventDispatcher</a>, <a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a>, <a href="none">flash.display.IBitmapDrawable</a>, <a href="none">flash.events.IEventDispatcher</a>, <a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a>, <a href="none">flash.events.IEventDispatcher</a>, <a href="../../styles/ISimpleStyleClient.html">ISimpleStyleClient</a>, <a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../../controls/Button.html">Button</a>, <a href="../../core/Container.html">Container</a></td>
+</tr>
+</table>
+<p></p>
+  Item renderers and item editors for list components must implement 
+  the IListItemRenderer interface.
+  The IListItemRenderer interface is a set of several other interfaces. 
+  It does not define any new class methods or properties. 
+   <p>The set of interfaces includes the following:
+  IDataRenderer, IFlexDisplayObject, ILayoutManagerClient,
+  ISimpleStyleClient, IUIComponent.
+  The UIComponent class implements all of these interfaces,
+  except the IDataRenderer interface. 
+  Therefore, if you create a custom item renderer or item editor
+  as a subclass  of the UIComponent class, you only have to implement
+  the IDataRenderer interface and then you can add to the class
+  definition that the class implements IDataRenderer and IListItemRenderer.</p>
+  <p>IListItemRenderers are generally dedicated to displaying a particular
+  field from the data provider item and cannot be re-used in other
+  DataGrid columns or in other lists with different fields.  If you want
+  to create a renderer that can be re-used you can also implement
+  IDropInListItemRenderer, and the list will pass more data to
+  the renderer that allows the renderer to be re-used with different
+  data fields.</p>
+   <p>Item renderers and item editors are passed data from a list class'
+  data provider using the IDataRenderer interface.
+  Renderers and editors that implement the IDropInListItemRenderer
+  interface get other information from the list class.
+  The item renderer or item editor uses one or both pieces of information
+  to display the data.</p>
+   <p>The renderers and editors are often recycled.
+  Once they are created, they may be used again simply by being given
+  a new data and optional <code>listData</code> property.
+  Therefore in your implementation you must make sure that component
+  properties are not assumed to contain their initial, or default values.</p>
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable hideInheritedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#alpha">alpha</a> : Number<div class="summaryTableDescription">
+   The transparency of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#baselinePosition">baselinePosition</a> : Number<div class="summaryTableDescription">
+   Determines the baseline y-coordinate
+   of the first line of text of the component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#cacheAsBitmap">cacheAsBitmap</a> : Boolean<div class="summaryTableDescription">
+   If set to <code>true</code>, Flash Player caches an internal
+   bitmap representation of the object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IDataRenderer.html#data">data</a> : Object<div class="summaryTableDescription">
+   The data to render or edit.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IDataRenderer.html">IDataRenderer</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#document">document</a> : Object<div class="summaryTableDescription">
+   A reference to the document object associated with this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+   Whether the component can accept user interaction.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitHeight">explicitHeight</a> : Number<div class="summaryTableDescription">
+   The explicitly specified height for the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitMaxHeight">explicitMaxHeight</a> : Number<div class="summaryTableDescription">
+   Number that specifies the maximum height of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitMaxWidth">explicitMaxWidth</a> : Number<div class="summaryTableDescription">
+   Number that specifies the maximum width of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitMinHeight">explicitMinHeight</a> : Number<div class="summaryTableDescription">
+   Number that specifies the minimum height of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitMinWidth">explicitMinWidth</a> : Number<div class="summaryTableDescription">
+   Number that specifies the minimum width of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#explicitWidth">explicitWidth</a> : Number<div class="summaryTableDescription">
+   The explicitly specified width for the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#focusPane">focusPane</a> : Sprite<div class="summaryTableDescription">
+   A single Sprite object that is shared among components
+   and used as an overlay for drawing focus.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#height">height</a> : Number<div class="summaryTableDescription">
+   The height of this object, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#includeInLayout">includeInLayout</a> : Boolean<div class="summaryTableDescription">
+      Specifies whether this component is included in the layout of the
+      parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../managers/ILayoutManagerClient.html#initialized">initialized</a> : Boolean<div class="summaryTableDescription">
+   A flag that determines if an object has been through all three phases
+   of layout validation (provided that any were required)
+   This flag should only be modified by the LayoutManager.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#isPopUp">isPopUp</a> : Boolean<div class="summaryTableDescription">
+      Set to <code>true</code> by the PopUpManager to indicate
+      that component has been popped up.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#mask">mask</a> : DisplayObject<div class="summaryTableDescription">
+   The DisplayObject used to mask this object
+   so that only part of it is actually drawn.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#maxHeight">maxHeight</a> : Number<div class="summaryTableDescription">
+   Number that specifies the maximum height of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#maxWidth">maxWidth</a> : Number<div class="summaryTableDescription">
+   Number that specifies the maximum width of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#measuredHeight">measuredHeight</a> : Number<div class="summaryTableDescription">
+   The measured height of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#measuredMinHeight">measuredMinHeight</a> : Number<div class="summaryTableDescription">
+      The default minimum height of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#measuredMinWidth">measuredMinWidth</a> : Number<div class="summaryTableDescription">
+      The default minimum width of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#measuredWidth">measuredWidth</a> : Number<div class="summaryTableDescription">
+   The measured width of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#minHeight">minHeight</a> : Number<div class="summaryTableDescription">
+   Number that specifies the minimum height of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#minWidth">minWidth</a> : Number<div class="summaryTableDescription">
+   Number that specifies the minimum width of the component, 
+   in pixels, as the component's coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#name">name</a> : String<div class="summaryTableDescription">
+   The instance name of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../managers/ILayoutManagerClient.html#nestLevel">nestLevel</a> : int<div class="summaryTableDescription">
+   The top-level SystemManager has a nestLevel of 1.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#opaqueBackground">opaqueBackground</a> : Object<div class="summaryTableDescription">
+   Specifies whether the display object is opaque with a certain
+   background color.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#owner">owner</a> : DisplayObjectContainer<div class="summaryTableDescription">
+   Your owner is usually your parent, however
+   If you are a popup subcomponent, your owner will be
+   the component that popped you up.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#parent">parent</a> : DisplayObjectContainer<div class="summaryTableDescription">
+   The parent of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#percentHeight">percentHeight</a> : Number<div class="summaryTableDescription">
+   Number that specifies the height of a component as a 
+   percentage of its parent's size.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#percentWidth">percentWidth</a> : Number<div class="summaryTableDescription">
+   Number that specifies the width of a component as a 
+   percentage of its parent's size.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../managers/ILayoutManagerClient.html#processedDescriptors">processedDescriptors</a> : Boolean<div class="summaryTableDescription">
+      Set to <code>true</code> after immediate or deferred child creation, 
+      depending on which one happens.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#scaleX">scaleX</a> : Number<div class="summaryTableDescription">
+   The horizontal scaling factor for this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#scaleY">scaleY</a> : Number<div class="summaryTableDescription">
+   The vertical scaling factor for this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#scrollRect">scrollRect</a> : Rectangle<div class="summaryTableDescription">
+   The scroll rectangle bounds of the surface of the component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../styles/ISimpleStyleClient.html#styleName">styleName</a> : Object<div class="summaryTableDescription">
+   The source of this object's style values.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../styles/ISimpleStyleClient.html">ISimpleStyleClient</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#systemManager">systemManager</a> : <a href="../../managers/ISystemManager.html">ISystemManager</a>
+<div class="summaryTableDescription">
+   A reference to the SystemManager object for this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IUIComponent.html#tweeningProperties">tweeningProperties</a> : Array<div class="summaryTableDescription">
+   Used by EffectManager.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../managers/ILayoutManagerClient.html#updateCompletePendingFlag">updateCompletePendingFlag</a> : Boolean<div class="summaryTableDescription">
+   A flag that determines if an object is waiting to have its
+   <code>updateComplete</code> event dispatched.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#visible">visible</a> : Boolean<div class="summaryTableDescription">
+   A flag that indicates whether this object is visible.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#width">width</a> : Number<div class="summaryTableDescription">
+   The width of this object, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#x">x</a> : Number<div class="summaryTableDescription">
+   The horizontal position of this object relative to its parent,
+   in pixel coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../core/IFlexDisplayObject.html#y">y</a> : Number<div class="summaryTableDescription">
+   The vertical position of this object relative to its parent,
+   in pixel coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable hideInheritedMethod" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#getExplicitOrMeasuredHeight()">getExplicitOrMeasuredHeight</a>():Number</div>
+<div class="summaryTableDescription">
+      A convenience method for determining whether to use the
+      explicit or measured height
+           </div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#getExplicitOrMeasuredWidth()">getExplicitOrMeasuredWidth</a>():Number</div>
+<div class="summaryTableDescription">
+      A convenience method for determining whether to use the
+      explicit or measured width
+           </div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#initialize()">initialize</a>():void</div>
+<div class="summaryTableDescription">
+   Initialize the object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IFlexDisplayObject.html#move()">move</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+   Moves this object to the specified x and y coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#owns()">owns</a>(child:DisplayObject):Boolean</div>
+<div class="summaryTableDescription">
+      Returns <code>true</code> if the chain of <code>owner</code> properties 
+      points from <code>child</code> to this UIComponent.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#parentChanged()">parentChanged</a>(p:DisplayObjectContainer):void</div>
+<div class="summaryTableDescription">
+      Called by Flex when a UIComponent object is added to or removed from a parent.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IFlexDisplayObject.html#setActualSize()">setActualSize</a>(newWidth:Number, newHeight:Number):void</div>
+<div class="summaryTableDescription">
+   Sets the actual size of this object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IFlexDisplayObject.html">IFlexDisplayObject</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../core/IUIComponent.html#setVisible()">setVisible</a>(value:Boolean, noEvent:Boolean = false):void</div>
+<div class="summaryTableDescription">
+      Called when the <code>visible</code> property changes.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../styles/ISimpleStyleClient.html#styleChanged()">styleChanged</a>(styleProp:String):void</div>
+<div class="summaryTableDescription">
+   Called when the value of a style property is changed.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../styles/ISimpleStyleClient.html">ISimpleStyleClient</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../managers/ILayoutManagerClient.html#validateDisplayList()">validateDisplayList</a>():void</div>
+<div class="summaryTableDescription">
+   Validates the position and size of children and draws other
+   visuals.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../managers/ILayoutManagerClient.html#validateProperties()">validateProperties</a>():void</div>
+<div class="summaryTableDescription">
+   Validates the properties of a component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../managers/ILayoutManagerClient.html#validateSize()">validateSize</a>(recursive:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Validates the measured size of the component
+   If the <code>LayoutManager.invalidateSize()</code> method is called with
+   this ILayoutManagerClient, then the <code>validateSize()</code> method
+   is called when it's time to do measurements.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../managers/ILayoutManagerClient.html">ILayoutManagerClient</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

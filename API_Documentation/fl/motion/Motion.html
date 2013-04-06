@@ -1,0 +1,683 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Motion,fl.motion.Motion,source,keyframes,keyframes,keyframesCompact,duration,getCurrentKeyframe,getNextKeyframe,setValue,getColorTransform,getFilters,getValue,addKeyframe,fromXMLString,interpolateFilters,interpolateFilter" name="keywords">
+<title>fl.motion.Motion</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Motion - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/Motion.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Motion</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Motion"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Motion</td>
+</tr>
+</table>
+<p></p>
+ The Motion class stores a keyframe animation sequence that can be applied to a visual object.
+ The animation data includes position, scale, rotation, skew, color, filters, and easing.
+ The Motion class has methods for retrieving data at specific points in time, and
+ interpolating values between keyframes automatically. 
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">Default MXML Property</span><code>keyframesCompact</code>
+</p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#duration">duration</a> : int<div class="summaryTableDescription">
+     Controls the Motion instance's length of time, measured in frames.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keyframes">keyframes</a> : Array<div class="summaryTableDescription">
+     An array of keyframes that define the motion's behavior over time.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keyframes">keyframes</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keyframesCompact">keyframesCompact</a> : Array<div class="summaryTableDescription">
+     A compact array of keyframes, where each index is occupied by a keyframe.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#source">source</a> : <a href="../motion/Source.html">Source</a>
+<div class="summaryTableDescription">
+     An object that stores information about the context in which the motion was created,
+     such as framerate, dimensions, transformation point, and initial position, scale, rotation and skew.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Motion()">Motion</a>(xml:XML = null)</div>
+<div class="summaryTableDescription">
+     Constructor for Motion instances.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addKeyframe()">addKeyframe</a>(newKeyframe:<a href="Keyframe.html">Keyframe</a>):void</div>
+<div class="summaryTableDescription">
+     Adds a keyframe object to the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fromXMLString()">fromXMLString</a>(xmlString:String):<a href="../motion/Motion.html">Motion</a>
+</div>
+<div class="summaryTableDescription">[static]
+     A method needed to create a Motion instance from a string of XML.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getColorTransform()">getColorTransform</a>(index:int):ColorTransform</div>
+<div class="summaryTableDescription">
+     Retrieves an interpolated ColorTransform object at a specific time index in the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getCurrentKeyframe()">getCurrentKeyframe</a>(index:int, tweenableName:String = ""):<a href="../motion/Keyframe.html">Keyframe</a>
+</div>
+<div class="summaryTableDescription">
+  Retrieves the keyframe that is currently active at a specific frame in the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getFilters()">getFilters</a>(index:Number):Array</div>
+<div class="summaryTableDescription">
+     Retrieves an interpolated array of filters at a specific time index in the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getNextKeyframe()">getNextKeyframe</a>(index:int, tweenableName:String = ""):<a href="../motion/Keyframe.html">Keyframe</a>
+</div>
+<div class="summaryTableDescription">
+  Retrieves the next keyframe after a specific frame in the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getValue()">getValue</a>(index:Number, tweenableName:String):Number</div>
+<div class="summaryTableDescription">
+     Retrieves the value for an animation property at a point in time.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#interpolateFilter()">interpolateFilter</a>(fromFilter:BitmapFilter, toFilter:BitmapFilter, progress:Number):BitmapFilter</div>
+<div class="summaryTableDescription">[static]
+     Blends filters smoothly from one filter object to another.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#interpolateFilters()">interpolateFilters</a>(fromFilters:Array, toFilters:Array, progress:Number):Array</div>
+<div class="summaryTableDescription">[static]
+     Blends filters smoothly from one array of filter objects to another.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setValue()">setValue</a>(index:int, tweenableName:String, value:Number):void</div>
+<div class="summaryTableDescription">
+     Sets the value of a specific tweenables property at a given time index in the Motion instance.</div>
+</td><td class="summaryTableOwnerCol">Motion</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="duration"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">duration</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>duration:int</code>&nbsp;&nbsp;[read-write]<p>
+     Controls the Motion instance's length of time, measured in frames.
+     The duration cannot be less than the time occupied by the Motion instance's keyframes.
+     </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get duration():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set duration(value:int):void</code>
+<br>
+</div>
+<a name="keyframes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keyframes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var keyframes:Array</code><p>
+     An array of keyframes that define the motion's behavior over time.
+     This property is a sparse array, where a keyframe is placed at an index in the array
+     that matches its own index. A motion object with keyframes at 0 and 5 has 
+     a keyframes array with a length of 6.  
+     Indices 0 and 5 in the array each contain a keyframe, 
+     and indices 1 through 4 have null values.
+     </p></div>
+<a name="keyframes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keyframes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var keyframes:Array</code>
+</div>
+<a name="keyframesCompact"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keyframesCompact</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var keyframesCompact:Array</code><p>
+     A compact array of keyframes, where each index is occupied by a keyframe. 
+     By contrast, a sparse array has empty indices (as in the <code>keyframes</code> property). 
+     In the compact array, no <code>null</code> values are used to fill indices between keyframes.
+     However, the index of a keyframe in <code>keyframesCompact</code> likely does not match its index in the <code>keyframes</code> array.
+     </p><p>This property is primarily used for compatibility with the Flex MXML compiler,
+     which generates a compact array from the motion XML.</p>
+     <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Motion.html#keyframes" target="">keyframes</a>
+</div>
+</div>
+<a name="source"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">source</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var source:<a href="../motion/Source.html">Source</a></code><p>
+     An object that stores information about the context in which the motion was created,
+     such as framerate, dimensions, transformation point, and initial position, scale, rotation and skew.
+     </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Motion()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Motion</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Motion(xml:XML = null)</code><p>
+     Constructor for Motion instances.
+     By default, one initial keyframe is created automatically, with default transform properties.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> (default = <code>null</code>)<code></code> &mdash; Optional E4X XML object defining a Motion instance.
+     </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addKeyframe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addKeyframe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addKeyframe(newKeyframe:<a href="Keyframe.html">Keyframe</a>):void</code><p>
+     Adds a keyframe object to the Motion instance. 
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newKeyframe</span>:<a href="Keyframe.html">Keyframe</a></code> &mdash; A keyframe object with an index property already set.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Keyframe.html" target="">fl.motion.Keyframe</a>
+</div>
+</div>
+<a name="fromXMLString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fromXMLString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fromXMLString(xmlString:String):<a href="../motion/Motion.html">Motion</a></code><p>
+     A method needed to create a Motion instance from a string of XML.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xmlString</span>:String</code> &mdash; A string of motion XML.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../motion/Motion.html">Motion</a></code> &mdash; 
+                        A new Motion instance.
+     
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getColorTransform()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getColorTransform</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getColorTransform(index:int):ColorTransform</code><p>
+     Retrieves an interpolated ColorTransform object at a specific time index in the Motion instance.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; The time index of a frame in the Motion instance, as an integer greater than or equal to zero.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ColorTransform</code> &mdash; The interpolated ColorTransform object.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.ColorTransform</div>
+</div>
+<a name="getCurrentKeyframe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getCurrentKeyframe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getCurrentKeyframe(index:int, tweenableName:String = ""):<a href="../motion/Keyframe.html">Keyframe</a></code><p>
+  Retrieves the keyframe that is currently active at a specific frame in the Motion instance.
+  A frame that is not a keyframe derives its values from the keyframe that preceded it.  
+  
+  </p><p>This method can also filter values by the name of a specific tweenables property.
+  You can find the currently active keyframe for <code>x</code>, which may not be
+  the same as the currently active keyframe in general.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; The index of a frame in the Motion instance, as an integer greater than or equal to zero.
+  
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tweenableName</span>:String</code> (default = "<code></code>")<code></code> &mdash; Optional name of a tweenable's property (like <code>"x"</code> or <code>"rotation"</code>).
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../motion/Keyframe.html">Keyframe</a></code> &mdash; 
+                        The closest matching keyframe at or before the supplied frame index.
+     
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Tweenables.html" target="">fl.motion.Tweenables</a>
+</div>
+</div>
+<a name="getFilters()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getFilters</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getFilters(index:Number):Array</code><p>
+     Retrieves an interpolated array of filters at a specific time index in the Motion instance.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:Number</code> &mdash; The time index of a frame in the Motion, as an integer greater than or equal to zero.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash; The interpolated array of filters. 
+     If there are no applicable filters, returns an empty array.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.filters</div>
+</div>
+<a name="getNextKeyframe()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getNextKeyframe</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getNextKeyframe(index:int, tweenableName:String = ""):<a href="../motion/Keyframe.html">Keyframe</a></code><p>
+  Retrieves the next keyframe after a specific frame in the Motion instance.
+  If a frame is not a keyframe, and is in the middle of a tween, 
+  this method derives its values from both the preceding keyframe and the following keyframe.
+  
+  </p><p>This method can also filter by the name of a specific tweenables property.
+     This allows you to find the next keyframe for <code>x</code>, which may not be
+  the same as the next keyframe in general.</p>
+  
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; The index of a frame in the Motion instance, as an integer greater than or equal to zero.
+  
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tweenableName</span>:String</code> (default = "<code></code>")<code></code> &mdash; Optional name of a tweenable's property (like <code>"x"</code> or <code>"rotation"</code>).
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../motion/Keyframe.html">Keyframe</a></code> &mdash; 
+                        The closest matching keyframe after the supplied frame index.
+     
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Tweenables.html" target="">fl.motion.Tweenables</a>
+</div>
+</div>
+<a name="getValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getValue(index:Number, tweenableName:String):Number</code><p>
+     Retrieves the value for an animation property at a point in time.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:Number</code> &mdash; The time index of a frame in the Motion instance, as an integer greater than or equal to zero.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tweenableName</span>:String</code> &mdash; The name of a tweenable's property (like <code>"x"</code> or <code>"rotation"</code>).
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Tweenables.html" target="">fl.motion.Tweenables</a>
+</div>
+</div>
+<a name="interpolateFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interpolateFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function interpolateFilter(fromFilter:BitmapFilter, toFilter:BitmapFilter, progress:Number):BitmapFilter</code><p>
+     Blends filters smoothly from one filter object to another.
+     
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fromFilter</span>:BitmapFilter</code> &mdash; The starting filter object.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">toFilter</span>:BitmapFilter</code> &mdash; The ending filter object.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">progress</span>:Number</code> &mdash; The percent of the transition as a decimal, where <code>0</code> is the start and <code>1</code> is the end.
+     
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>BitmapFilter</code> &mdash; The interpolated filter object.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.filters</div>
+</div>
+<a name="interpolateFilters()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interpolateFilters</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function interpolateFilters(fromFilters:Array, toFilters:Array, progress:Number):Array</code><p>
+     Blends filters smoothly from one array of filter objects to another.
+     
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fromFilters</span>:Array</code> &mdash; The starting array of filter objects.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">toFilters</span>:Array</code> &mdash; The ending array of filter objects.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">progress</span>:Number</code> &mdash; The percent of the transition as a decimal, where <code>0</code> is the start and <code>1</code> is the end.
+     
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash; The interpolated array of filter objects.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.filters</div>
+</div>
+<a name="setValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setValue(index:int, tweenableName:String, value:Number):void</code><p>
+     Sets the value of a specific tweenables property at a given time index in the Motion instance.
+     If a keyframe doesn't exist at the index, one is created automatically.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; The time index of a frame in the Motion instance, as an integer greater than zero.
+  If the index is zero, no change is made. 
+  Because the transform properties are relative to the starting transform of the target object,
+  the first frame's values are always default values and should not be changed.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tweenableName</span>:String</code> &mdash; The name of a tweenable's property (like <code>"x"</code> or <code>"rotation"</code>).
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Number</code> &mdash; The new value of the tweenable property.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/Tweenables.html" target="">fl.motion.Tweenables</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

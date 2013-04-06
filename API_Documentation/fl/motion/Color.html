@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Color,fl.motion.Color,brightness,tintColor,tintMultiplier,setTint,fromXML,interpolateTransform,interpolateColor" name="keywords">
+<title>fl.motion.Color</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Color - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/Color.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Color</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Color"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Color</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Color <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.geom.ColorTransform</td>
+</tr>
+</table>
+<p></p>
+ The Color class extends the Flash Player ColorTransform class,
+ adding the ability to control brightness and tint.
+ It also contains static methods for interpolating between two ColorTransform objects
+ or between two color numbers. 
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">ColorTransform class<br>
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#brightness">brightness</a> : Number<div class="summaryTableDescription">
+     The percentage of brightness, as a decimal between <code>-1</code> and <code>1</code>.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tintColor">tintColor</a> : uint<div class="summaryTableDescription">
+     The tinting color value in the 0xRRGGBB format.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tintMultiplier">tintMultiplier</a> : Number<div class="summaryTableDescription">
+     The percentage to apply the tint color, as a decimal value between <code>0</code> and <code>1</code>.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Color()">Color</a>(redMultiplier:Number = 1.0, greenMultiplier:Number = 1.0, blueMultiplier:Number = 1.0, alphaMultiplier:Number = 1.0, redOffset:Number = 0, greenOffset:Number = 0, blueOffset:Number = 0, alphaOffset:Number = 0)</div>
+<div class="summaryTableDescription">
+     Constructor for Color instances.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fromXML()">fromXML</a>(xml:XML):<a href="../motion/Color.html">Color</a>
+</div>
+<div class="summaryTableDescription">[static]
+     Creates a Color instance from XML.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#interpolateColor()">interpolateColor</a>(fromColor:uint, toColor:uint, progress:Number):uint</div>
+<div class="summaryTableDescription">[static]
+     Blends smoothly from one color value to another.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#interpolateTransform()">interpolateTransform</a>(fromColor:ColorTransform, toColor:ColorTransform, progress:Number):ColorTransform</div>
+<div class="summaryTableDescription">[static]
+     Blends smoothly from one ColorTransform object to another.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setTint()">setTint</a>(tintColor:uint, tintMultiplier:Number):void</div>
+<div class="summaryTableDescription">
+     Sets the tint color and amount at the same time.</div>
+</td><td class="summaryTableOwnerCol">Color</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="brightness"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">brightness</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>brightness:Number</code>&nbsp;&nbsp;[read-write]<p>
+     The percentage of brightness, as a decimal between <code>-1</code> and <code>1</code>. 
+     Positive values lighten the object, and a value of <code>1</code> turns the object completely white.
+     Negative values darken the object, and a value of <code>-1</code> turns the object completely black. 
+     
+     </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get brightness():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set brightness(value:Number):void</code>
+<br>
+</div>
+<a name="tintColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tintColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tintColor:uint</code>&nbsp;&nbsp;[read-write]<p>
+     The tinting color value in the 0xRRGGBB format.
+     
+     
+     </p><p>The default value is <code>0x000000 (black)</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tintColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tintColor(value:uint):void</code>
+<br>
+</div>
+<a name="tintMultiplier"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tintMultiplier</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tintMultiplier:Number</code>&nbsp;&nbsp;[read-write]<p>
+     The percentage to apply the tint color, as a decimal value between <code>0</code> and <code>1</code>.
+     When <code>tintMultiplier = 0</code>, the target object is its original color and no tint color is visible.
+     When <code>tintMultiplier = 1</code>, the target object is completely tinted and none of its original color is visible.
+     </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tintMultiplier():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tintMultiplier(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Color()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Color</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Color(redMultiplier:Number = 1.0, greenMultiplier:Number = 1.0, blueMultiplier:Number = 1.0, alphaMultiplier:Number = 1.0, redOffset:Number = 0, greenOffset:Number = 0, blueOffset:Number = 0, alphaOffset:Number = 0)</code><p>
+     Constructor for Color instances.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">redMultiplier</span>:Number</code> (default = <code>1.0</code>)<code></code> &mdash; The percentage to apply the color, as a decimal value between 0 and 1.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">greenMultiplier</span>:Number</code> (default = <code>1.0</code>)<code></code> &mdash; The percentage to apply the color, as a decimal value between 0 and 1.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blueMultiplier</span>:Number</code> (default = <code>1.0</code>)<code></code> &mdash; The percentage to apply the color, as a decimal value between 0 and 1.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">alphaMultiplier</span>:Number</code> (default = <code>1.0</code>)<code></code> &mdash; A decimal value that is multiplied with the alpha transparency channel value, as a decimal value between 0 and 1.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">redOffset</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; A number from -255 to 255 that is added to the red channel value after it has been multiplied by the <code>redMultiplier</code> value. 
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">greenOffset</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; A number from -255 to 255 that is added to the green channel value after it has been multiplied by the <code>greenMultiplier</code> value. 
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blueOffset</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; A number from -255 to 255 that is added to the blue channel value after it has been multiplied by the <code>blueMultiplier</code> value. 
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">alphaOffset</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; A number from -255 to 255 that is added to the alpha channel value after it has been multiplied by the <code>alphaMultiplier</code> value.
+          </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="fromXML()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fromXML</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fromXML(xml:XML):<a href="../motion/Color.html">Color</a></code><p>
+     Creates a Color instance from XML.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> &mdash; An E4X XML object containing a <code>&lt;color&gt;</code> node from Motion XML.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../motion/Color.html">Color</a></code> &mdash; 
+                        A Color instance that matches the XML description. 
+     
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="interpolateColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interpolateColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function interpolateColor(fromColor:uint, toColor:uint, progress:Number):uint</code><p>
+     Blends smoothly from one color value to another.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fromColor</span>:uint</code> &mdash; The starting color value, in the 0xRRGGBB or 0xAARRGGBB format.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">toColor</span>:uint</code> &mdash; The ending color value, in the 0xRRGGBB or 0xAARRGGBB format.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">progress</span>:Number</code> &mdash; The percent of the transition as a decimal, where <code>0</code> is the start and <code>1</code> is the end.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code> &mdash; The interpolated color value, in the 0xRRGGBB or 0xAARRGGBB format.
+     </td>
+</tr>
+</table>
+</div>
+<a name="interpolateTransform()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interpolateTransform</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function interpolateTransform(fromColor:ColorTransform, toColor:ColorTransform, progress:Number):ColorTransform</code><p>
+     Blends smoothly from one ColorTransform object to another.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fromColor</span>:ColorTransform</code> &mdash; The starting ColorTransform object.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">toColor</span>:ColorTransform</code> &mdash; The ending ColorTransform object.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">progress</span>:Number</code> &mdash; The percent of the transition as a decimal, where <code>0</code> is the start and <code>1</code> is the end.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ColorTransform</code> &mdash; The interpolated ColorTransform object.
+     </td>
+</tr>
+</table>
+</div>
+<a name="setTint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setTint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setTint(tintColor:uint, tintMultiplier:Number):void</code><p>
+     Sets the tint color and amount at the same time.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tintColor</span>:uint</code> &mdash; The tinting color value in the 0xRRGGBB format.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tintMultiplier</span>:Number</code> &mdash; The percentage to apply the tint color, as a decimal value between <code>0</code> and <code>1</code>.
+     When <code>tintMultiplier = 0</code>, the target object is its original color and no tint color is visible.
+     When <code>tintMultiplier = 1</code>, the target object is completely tinted and none of its original color is visible.
+     </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

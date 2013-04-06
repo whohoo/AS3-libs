@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="BezierEase,fl.motion.BezierEase,points,points,target,getValue" name="keywords">
+<title>fl.motion.BezierEase</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BezierEase - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/BezierEase.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BezierEase</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BezierEase"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BezierEase</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="ITween.html">ITween</a></td>
+</tr>
+</table>
+<p></p>
+ The BezierEase class provides precise easing control for a motion tween between two keyframes. 
+ You can apply an instance of this class to all properties of a keyframe at once, 
+ or you can define different curves for different properties.
+ <p>Both this class and the CustomEase class use one or more cubic Bezier curves to define the interpolation.
+ However, the BezierEase class defines its coordinates slightly differently than the CustomEase class.</p>
+  <p>The BezierEase class uses literal values for the y coordinates of the curve, rather than 
+ normalized values between <code>0</code> and <code>1</code>.
+ This allows you to create curves that cannot be created with custom easing. For example, 
+ you can create a curve where the start and end values are identical, but the curve rises and falls 
+ in between those values. Also, depending on the context, you may want to define the easing 
+ curve with literal values instead of percentages.</p>
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">Default MXML Property</span><code>points</code>
+</p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+<br>
+<a href="CustomEase.html" target="">CustomEase class</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#points">points</a> : Array<div class="summaryTableDescription">
+      An ordered collection of points in the custom easing curve.</div>
+</td><td class="summaryTableOwnerCol">BezierEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#points">points</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">BezierEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#target">target</a> : String<div class="summaryTableDescription">
+     The name of the animation property to target.</div>
+</td><td class="summaryTableOwnerCol">BezierEase</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#BezierEase()">BezierEase</a>(xml:XML = null)</div>
+<div class="summaryTableDescription">
+     Constructor for BezierEase instances.</div>
+</td><td class="summaryTableOwnerCol">BezierEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getValue()">getValue</a>(time:Number, begin:Number, change:Number, duration:Number):Number</div>
+<div class="summaryTableDescription">
+     Calculates an interpolated value for a numerical property of animation,
+     using a Bezier easing curve.</div>
+</td><td class="summaryTableOwnerCol">BezierEase</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="points"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">points</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var points:Array</code><p>
+      An ordered collection of points in the custom easing curve.
+      Each item in the array is a <code>flash.geom.Point</code> instance, with <code>x</code> and <code>y</code> properties.
+      </p><p>The x coordinate of each point represents the time coordinate of the ease, as a percentage.
+      The x value is normalized to fall between <code>0</code> and <code>1</code>,
+      where <code>0</code> is the beginning of the tween and <code>1</code> is the end of the tween.
+      The y coordinate of each point contains the literal value of the animation property at that point
+      in the ease. The y value is <i>not</i> normalized to fall between <code>0</code> and <code>1</code>.</p> 
+      <p>The first and last points of the curve are not included in the array,
+      because the first point is locked to the starting value, defined by the current keyframe,
+      and the last point is locked to the ending value, defined by the next keyframe.</p> 
+      <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Point</div>
+</div>
+<a name="points"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">points</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var points:Array</code>
+</div>
+<a name="target"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">target</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>target:String</code>&nbsp;&nbsp;[read-write]<p>
+     The name of the animation property to target.
+     </p><p>The default value is <code>""</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get target():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set target(value:String):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/ITween.html#target" target="">fl.motion.ITween.target</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="BezierEase()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BezierEase</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function BezierEase(xml:XML = null)</code><p>
+     Constructor for BezierEase instances.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> (default = <code>null</code>)<code></code> &mdash; Optional E4X XML object defining a BezierEase in Motion XML format.
+     </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getValue(time:Number, begin:Number, change:Number, duration:Number):Number</code><p>
+     Calculates an interpolated value for a numerical property of animation,
+     using a Bezier easing curve. 
+     The percent value is read from the BezierEase instance's <code>points</code> property,
+     rather than being passed into the method.
+     Using the <code>points</code> property value allows the function signature to match the ITween interface.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">time</span>:Number</code> &mdash; The time value, which must be between <code>0</code> and <code>duration</code>, inclusive.
+     The unit can be freely chosen (for example, frames, seconds, milliseconds), 
+     but must match the <code>duration</code> unit.
+       </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">begin</span>:Number</code> &mdash; The value of the animation property at the start of the tween, when time is <code>0</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">change</span>:Number</code> &mdash; The change in the value of the animation property over the course of the tween. 
+     This value can be positive or negative. For example, if an object rotates from 90 to 60 degrees, the <code>change</code> is <code>-30</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The length of time for the tween. This value must be greater than zero.
+     The unit can be freely chosen (for example, frames, seconds, milliseconds), 
+     but must match the <code>time</code> unit.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The interpolated value at the specified time.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/BezierEase.html#points" target="">points</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

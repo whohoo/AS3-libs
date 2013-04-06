@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="IDataRenderer,mx.core.IDataRenderer,data" name="keywords">
+<title>mx.core.IDataRenderer</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IDataRenderer - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/core/IDataRenderer.html&amp;mx/core/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IDataRenderer</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IDataRenderer"); titleBar_setSubNav(false,true,false,false,false,false,false,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.core</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IDataRenderer</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subinterfaces</td><td><a href="../controls/listClasses/IListItemRenderer.html">IListItemRenderer</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../controls/Button.html">Button</a>, <a href="../core/Container.html">Container</a></td>
+</tr>
+</table>
+<p></p>
+  The IDataRenderer interface defines the interface for components that have a <code>data</code> property.
+   <p>Components that are used in an item renderer or item editor
+  in a list control (such as the List, HorizontalList, TileList, DataGrid,
+  and Tree controls), or as renderers in a chart are passed the data
+  to render or edit by using the <code>data</code> property.
+  The component must implement IDataRenderer so that the host components
+  can pass this information.
+  All Flex containers and many Flex components implement IDataRenderer and 
+  the <code>data</code> property.</p>
+   <p>In a list control, Flex sets the <code>data</code> property
+  of an item renderer or item editor to the element in the data provider
+  that corresponds to the item being rendered or edited. 
+  For a DataGrid control, the <code>data</code> property 
+  contains the data provider element for the entire row of the DataGrid
+  control, not just for the item.</p>
+   <p>To implement this interface, you define a setter and getter method
+  to implement the <code>data</code> property.
+  Typically, the setter method writes the value of the <code>data</code>
+  property to an internal variable and dispatches a <code>dataChange</code>
+  event, and the getter method returns the current value of the internal
+  variable, as the following example shows:</p>
+  
+  <pre>
+    // Internal variable for the property value.
+    private var _data:Object;
+    
+    // Make the data property bindable.
+    [Bindable("dataChange")]
+    
+    // Define the getter method.
+    public function get data():Object {
+        return _data;
+    }
+    
+    // Define the setter method, and dispatch an event when the property
+    // changes to support data binding.
+    public function set data(value:Object):void {
+        _data = value;
+    
+        dispatchEvent(new FlexEvent(FlexEvent.DATA_CHANGE));
+    }
+  </pre>
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#data">data</a> : Object<div class="summaryTableDescription">
+   The data to render or edit.</div>
+</td><td class="summaryTableOwnerCol">IDataRenderer</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="data"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">data</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>data:Object</code>&nbsp;&nbsp;[read-write]<p>
+   The data to render or edit.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get data():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set data(value:Object):void</code>
+<br>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

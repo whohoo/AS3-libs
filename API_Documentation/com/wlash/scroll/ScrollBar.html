@@ -1,0 +1,941 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="ScrollBar,com.wlash.scroll.ScrollBar,_scrollValue,minSize,mouseWheelEnabled,offsetPercent,scaleThumb,active,curValue,downBtn,maxValue,minValue,pageScrollSize,pageSize,percent,scrollBar,scrollDelay,thumb,track,upBtn,eval,moveThumbByClickDownBtn,moveThumbByClickUpBtn,onThumbDown,onThumbMove,onThumbUp,onTrackDown,onTrackUp,renderScrollTarget,setMouseWheel,setScrollProperties,updateThumb" name="keywords">
+<title>com.wlash.scroll.ScrollBar</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ScrollBar - Whohoo AS3 API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/wlash/scroll/ScrollBar.html&amp;com/wlash/scroll/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ScrollBar</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ScrollBar"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.wlash.scroll</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ScrollBar</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ScrollBar <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+ ScrollBar 简单滚动条组件.
+ 
+ <p>把组件拖到定义好的滚动条对象上,滚动条对象要求是DisplayObjectContainer的子类,
+ 并且只有两个可显示对象(DisplayObject)或四个可显示对象（一个向上滚动按键，一是向下按键）。</p>
+ <li>track对象（DisplayObject）：也就是滚动条对象的背景,如果track对象为InteractiveObject类或其子类，
+ 则track可监听点击滑动thumb事件。（必须存在滚动条的最底层，且顶点需对齐滚动条的０点位置y=0，）</li>
+ <li>thumb对象（InteractiveObject）：thumb必须是InteractiveObject的子类，否则不能监听鼠标事件。
+ 上下位置不能超过track显示范围。</li>
+ <li>upBtn对象（InteractiveObject）：(滚动条内不一定要有此按键)在参数面版中指定Up Button Name参数的值，此值为向上按键的按键名(eg:up_btn.name)</li>
+ <li>downBtn对象（InteractiveObject）：(滚动条内不一定要有此按键)在参数面版中指定Down Button Name参数的值，此值为向下按键的按键名(eg:down_btn.name)</li>
+ 
+ <p><b>参数面版：</b><br/>
+ <li>enabledWheel*：是否能用mouse wheel</li>
+ <li>minSize*：thumb最小的大小</li>
+ <li>offsetPercent*：当点击track时，移动的百分比。</li>
+ <li>pageScrollSize*：当点击track时，移动的距离，如果为０，表示与pageSize定义的一样。</li>
+ <li>pageSize决定thumb大小。</li>
+ <li>scaleThumb：是因为pageSize，minValue，maxValue值的改变而改变thumb的值</li>
+ <li>scrollBar：滚动条对象名，直接把组件拖到滚动条上时，组件会吸附在上边，并自动赋值于此。</li>
+ <li>scrollDelay*：滚动时重复间隔的时间。如按着向上键时，隔多少毫秒再重复一次。也就是相当于连续点击按键。</li>
+ <li>Down Button Name*：向下按键的名称，如果有向下按键存在的话。</li>
+ <li>Up button Name*：向上按键的名称，如果有向上按键存在的话。</li>
+ <li>maxValue*：最大值。</li>
+ <li>minValue*：最小值。</li>
+ <li>active：是否激活对象。</li>
+ </p>
+ 注：(*)表示只在Component Inspector面版中出现。Shift+F7
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#active">active</a> : Boolean<div class="summaryTableDescription">滚动条是否可用</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#curValue">curValue</a> : Number<div class="summaryTableDescription">根据当前thumb的位置,及最小值与最大值来决定当前值是多少</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#downBtn">downBtn</a> : InteractiveObject<div class="summaryTableDescription">向下按键</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#maxValue">maxValue</a> : Number<div class="summaryTableDescription">最大值</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#minSize">minSize</a> : Number = 13<div class="summaryTableDescription">
+   thumb最小值
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#minValue">minValue</a> : Number<div class="summaryTableDescription">最小值</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mouseWheelEnabled">mouseWheelEnabled</a> : Boolean = true<div class="summaryTableDescription">
+   是否能使用mouse wheel
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#offsetPercent">offsetPercent</a> : Number = 0.1<div class="summaryTableDescription">
+   按下向上或向下键时,应移动多少百分比
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pageScrollSize">pageScrollSize</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pageSize">pageSize</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#percent">percent</a> : Number<div class="summaryTableDescription">thumb在track的位置,百分比表示0<=percent<=1</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scaleThumb">scaleThumb</a> : Boolean = false<div class="summaryTableDescription">
+   thumb是否因为scrollTarget多少而改变大小
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scrollBar">scrollBar</a> : DisplayObjectContainer<div class="summaryTableDescription">
+   定义滚动条对象，必须为DisplayObjectContainer<br/>
+   track为最底层，且顶点对齐原点<br/>
+   thumb不能超过trakc的高度.</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scrollDelay">scrollDelay</a> : uint<div class="summaryTableDescription">自动滚动thumb时移动的值,如每scrollDelay时刷一移动单位,在点击track与up_btn,down_btn时</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#thumb">thumb</a> : InteractiveObject<div class="summaryTableDescription">scroll滚动的bar</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#track">track</a> : DisplayObject<div class="summaryTableDescription">scroll背景的track</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#upBtn">upBtn</a> : InteractiveObject<div class="summaryTableDescription">向上按键</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_scrollValue">_scrollValue</a> : Number<div class="summaryTableDescription">
+   maxValue-minValue, 两者之间的差值
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ScrollBar()">ScrollBar</a>()</div>
+<div class="summaryTableDescription">
+   构建函数.</div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setMouseWheel()">setMouseWheel</a>(enabled:Boolean):void</div>
+<div class="summaryTableDescription">
+   定义mouse wheel是否可用。
+   <p>当mouse移到滚动条上方时，或监听的对象上方时，滚动wheel会激活监听的滚动事件。</p>
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScrollProperties()">setScrollProperties</a>(pSize:Number, minPos:Number, maxPos:Number, pScrollSize:Number = 0):void</div>
+<div class="summaryTableDescription">
+   定义滚动条属性，这些定义会更改滚动打thumb的大小。
+   
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#eval()">eval</a>(value:String):DisplayObject</div>
+<div class="summaryTableDescription">
+   
+   因为AS3不再支持eval事件，此函数为代替品。
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveThumbByClickDownBtn()">moveThumbByClickDownBtn</a>(num:int = 1):Boolean</div>
+<div class="summaryTableDescription">
+   当按下向下按键时，根据num的倍数来移动thumb。
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#moveThumbByClickUpBtn()">moveThumbByClickUpBtn</a>(num:int = 1):Boolean</div>
+<div class="summaryTableDescription">
+   当按下向上按键时，根据num的倍数来移动thumb。
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onThumbDown()">onThumbDown</a>(evt:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   当按下thumb时
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onThumbMove()">onThumbMove</a>(evt:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   当移动thumb时
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onThumbUp()">onThumbUp</a>(evt:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   当放开thumb时
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onTrackDown()">onTrackDown</a>(evt:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   当按下track时
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onTrackUp()">onTrackUp</a>(evt:MouseEvent):void</div>
+<div class="summaryTableDescription">
+   当放开track时
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#renderScrollTarget()">renderScrollTarget</a>():void</div>
+<div class="summaryTableDescription">
+   当通过改变percent属性值时，将会触发此函数。
+   <p>在此类中为空的函数。</p>
+   <p>在子类ScrollTextField与ScrollDisplayObject中会被覆盖掉。</p>
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateThumb()">updateThumb</a>(percentNum:Number, minPos:Number, maxPos:Number):Boolean</div>
+<div class="summaryTableDescription">
+   更新thumb条
+   </div>
+</td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:pressThumb">pressThumb</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  当thumb被按下时广播的事件
+    </td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:releaseThumb">releaseThumb</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  当thumb被放开时广播的事件
+    </td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:scroll">scroll</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  当滑动thumb地，广播的事件。
+    </td><td class="summaryTableOwnerCol">ScrollBar</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="active"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">active</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>active:Boolean</code>&nbsp;&nbsp;[read-write]<p>滚动条是否可用</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get active():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set active(value:Boolean):void</code>
+<br>
+</div>
+<a name="curValue"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">curValue</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>curValue:Number</code>&nbsp;&nbsp;[read-write]<p>根据当前thumb的位置,及最小值与最大值来决定当前值是多少</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get curValue():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set curValue(value:Number):void</code>
+<br>
+</div>
+<a name="downBtn"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">downBtn</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>downBtn:InteractiveObject</code>&nbsp;&nbsp;[read-write]<p>向下按键</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get downBtn():InteractiveObject</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set downBtn(value:InteractiveObject):void</code>
+<br>
+</div>
+<a name="maxValue"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">maxValue</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>maxValue:Number</code>&nbsp;&nbsp;[read-write]<p>最大值</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get maxValue():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set maxValue(value:Number):void</code>
+<br>
+</div>
+<a name="minSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">minSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var minSize:Number = 13</code><p>
+   thumb最小值
+   </p><p>The default value is <code>0.1</code>.</p>
+</div>
+<a name="minValue"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">minValue</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>minValue:Number</code>&nbsp;&nbsp;[read-write]<p>最小值</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get minValue():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set minValue(value:Number):void</code>
+<br>
+</div>
+<a name="mouseWheelEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mouseWheelEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var mouseWheelEnabled:Boolean = true</code><p>
+   是否能使用mouse wheel
+   </p><p>The default value is <code>&lt;code&gt;true&lt;/code&gt;</code>.</p>
+</div>
+<a name="offsetPercent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">offsetPercent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var offsetPercent:Number = 0.1</code><p>
+   按下向上或向下键时,应移动多少百分比
+   </p><p>The default value is <code>0.1</code>.</p>
+</div>
+<a name="pageScrollSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pageScrollSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>pageScrollSize:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pageScrollSize():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pageScrollSize(value:Number):void</code>
+<br>
+</div>
+<a name="pageSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pageSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>pageSize:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pageSize():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pageSize(value:Number):void</code>
+<br>
+</div>
+<a name="percent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">percent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>percent:Number</code>&nbsp;&nbsp;[read-write]<p>thumb在track的位置,百分比表示0<=percent<=1</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get percent():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set percent(value:Number):void</code>
+<br>
+</div>
+<a name="scaleThumb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scaleThumb</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var scaleThumb:Boolean = false</code><p>
+   thumb是否因为scrollTarget多少而改变大小
+   </p><p>The default value is <code>&lt;code&gt;true&lt;/code&gt;</code>.</p>
+</div>
+<a name="scrollBar"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scrollBar</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scrollBar:DisplayObjectContainer</code>&nbsp;&nbsp;[read-write]<p>
+   定义滚动条对象，必须为DisplayObjectContainer<br/>
+   track为最底层，且顶点对齐原点<br/>
+   thumb不能超过trakc的高度.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scrollBar():DisplayObjectContainer</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scrollBar(value:DisplayObjectContainer):void</code>
+<br>
+<br>
+<span class="label">Throws</span>
+<br>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; 当scrollBar不符合所要求的时候。
+   </td>
+</tr>
+</table>
+</div>
+<a name="scrollDelay"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scrollDelay</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scrollDelay:uint</code>&nbsp;&nbsp;[read-write]<p>自动滚动thumb时移动的值,如每scrollDelay时刷一移动单位,在点击track与up_btn,down_btn时</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scrollDelay():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scrollDelay(value:uint):void</code>
+<br>
+</div>
+<a name="_scrollValue"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_scrollValue</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _scrollValue:Number</code><p>
+   maxValue-minValue, 两者之间的差值
+   </p></div>
+<a name="thumb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">thumb</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>thumb:InteractiveObject</code>&nbsp;&nbsp;[read-write]<p>scroll滚动的bar</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get thumb():InteractiveObject</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set thumb(value:InteractiveObject):void</code>
+<br>
+</div>
+<a name="track"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">track</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>track:DisplayObject</code>&nbsp;&nbsp;[read-write]<p>scroll背景的track</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get track():DisplayObject</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set track(value:DisplayObject):void</code>
+<br>
+</div>
+<a name="upBtn"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">upBtn</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>upBtn:InteractiveObject</code>&nbsp;&nbsp;[read-write]<p>向上按键</p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get upBtn():InteractiveObject</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set upBtn(value:InteractiveObject):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ScrollBar()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ScrollBar</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ScrollBar()</code><p>
+   构建函数.
+   并不需要<code>new ScrollDisplayObject()</code>来构造对象，
+   只需要从库中拖到滚动条上既可。
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="eval()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">eval</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function eval(value:String):DisplayObject</code><p>
+   
+   因为AS3不再支持eval事件，此函数为代替品。
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; 如果对象存在，返回对象，否则返回<code>null</code>
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br><div class='listing'><pre></pre></div><p></p>
+</div>
+<a name="moveThumbByClickDownBtn()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveThumbByClickDownBtn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function moveThumbByClickDownBtn(num:int = 1):Boolean</code><p>
+   当按下向下按键时，根据num的倍数来移动thumb。
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">num</span>:int</code> (default = <code>1</code>)<code></code> &mdash; num 移动offsetPercent的倍数
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; 如果还可以移动，返回<code>true</code>,否则返回<code>false</code>
+   </td>
+</tr>
+</table>
+</div>
+<a name="moveThumbByClickUpBtn()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">moveThumbByClickUpBtn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function moveThumbByClickUpBtn(num:int = 1):Boolean</code><p>
+   当按下向上按键时，根据num的倍数来移动thumb。
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">num</span>:int</code> (default = <code>1</code>)<code></code> &mdash; num 移动offsetPercent的倍数
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; 如果还可以移动，返回<code>true</code>,否则返回<code>false</code>
+   </td>
+</tr>
+</table>
+</div>
+<a name="onThumbDown()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onThumbDown</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onThumbDown(evt:MouseEvent):void</code><p>
+   当按下thumb时
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onThumbMove()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onThumbMove</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onThumbMove(evt:MouseEvent):void</code><p>
+   当移动thumb时
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onThumbUp()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onThumbUp</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onThumbUp(evt:MouseEvent):void</code><p>
+   当放开thumb时
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onTrackDown()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onTrackDown</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onTrackDown(evt:MouseEvent):void</code><p>
+   当按下track时
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="onTrackUp()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onTrackUp</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onTrackUp(evt:MouseEvent):void</code><p>
+   当放开track时
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:MouseEvent</code></td>
+</tr>
+</table>
+</div>
+<a name="renderScrollTarget()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">renderScrollTarget</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function renderScrollTarget():void</code><p>
+   当通过改变percent属性值时，将会触发此函数。
+   </p><p>在此类中为空的函数。</p>
+   <p>在子类ScrollTextField与ScrollDisplayObject中会被覆盖掉。</p>
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../scroll/ScrollBar.html#percent" target="">percent</a>
+</div>
+</div>
+<a name="setMouseWheel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setMouseWheel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setMouseWheel(enabled:Boolean):void</code><p>
+   定义mouse wheel是否可用。
+   </p><p>当mouse移到滚动条上方时，或监听的对象上方时，滚动wheel会激活监听的滚动事件。</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">enabled</span>:Boolean</code> &mdash; enabled如果是<code>true</code>,则mouse wheel可用。否则不可用。
+   </td>
+</tr>
+</table>
+</div>
+<a name="setScrollProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScrollProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setScrollProperties(pSize:Number, minPos:Number, maxPos:Number, pScrollSize:Number = 0):void</code><p>
+   定义滚动条属性，这些定义会更改滚动打thumb的大小。
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pSize</span>:Number</code> &mdash; pSize  page size
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">minPos</span>:Number</code> &mdash; minPos  min position
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxPos</span>:Number</code> &mdash; maxPos  max position
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">pScrollSize</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; pScrollSize  scroll size when click track
+   </td>
+</tr>
+</table>
+</div>
+<a name="updateThumb()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateThumb</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateThumb(percentNum:Number, minPos:Number, maxPos:Number):Boolean</code><p>
+   更新thumb条
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">percentNum</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">minPos</span>:Number</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxPos</span>:Number</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; 暂时无用
+   </td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:pressThumb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pressThumb</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.MouseEvent</code></a>
+<br>
+<p></p><p>
+  当thumb被按下时广播的事件
+    </p></div>
+<a name="event:releaseThumb"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">releaseThumb</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.MouseEvent</code></a>
+<br>
+<p></p><p>
+  当thumb被放开时广播的事件
+    </p></div>
+<a name="event:scroll"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scroll</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../scroll/ScrollEvent.html"><code>com.wlash.scroll.ScrollEvent</code></a>
+<br>
+<p></p><p>
+  当滑动thumb地，广播的事件。
+    </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0-->

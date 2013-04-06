@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="TransitionManager,fl.transitions.TransitionManager,content,contentAppearance,start,startTransition" name="keywords">
+<title>fl.transitions.TransitionManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'TransitionManager - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/transitions/TransitionManager.html&amp;fl/transitions/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;TransitionManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class TransitionManager"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.transitions</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class TransitionManager</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">TransitionManager <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+ The TransitionManager class defines animation effects. It allows you to apply one of ten 
+ animation effects to movie clips. When creating custom components, you can use the 
+ TransitionManager class to apply animation effects to movie clips in your component's 
+ visual interface. The transition effects in fl.transitions.easing are defined as a set of
+ transition classes that all extend the base class fl.transitions.Transition. You apply 
+ transitions through an instance of a TransitionManager only; you do not instantiate them 
+ directly. The TransitionManager class implements animation events. 
+ <p>You can create a TransitionManager instance in two ways:</p>
+ <ul><li>Call the <code>TransitionManager.start()</code> method. This is the simplest and recommended way to create a TransitionManager instance.</li>
+ <li>Use the <code>new</code> operator. You then designate the transition properties 
+ and start the transition effect in a second step by calling the 
+ <code>TransitionManager.startTransition()</code> method.</li></ul>
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../transitions/TransitionManager.html#start()" target="">TransitionManager.start()</a>
+<br>
+<a href="../transitions/TransitionManager.html#TransitionManager()" target="">TransitionManager constructor function</a>
+<br>
+<a href="../transitions/TransitionManager.html#startTransition()" target="">TransitionManager.startTransition()</a>
+<br>
+<a href="../transitions/Tween.html" target="">fl.transitions.Tween</a>
+<br>
+<a href="easing/package-detail.html" target="">fl.transitions.easing</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#content">content</a> : MovieClip<div class="summaryTableDescription">
+ The movie clip instance to which TransitionManager is to apply a transition.</div>
+</td><td class="summaryTableOwnerCol">TransitionManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#contentAppearance">contentAppearance</a> : Object<div class="summaryTableDescription">[read-only]
+ An object that contains the saved visual properties of the content (target movie clip) 
+ to which the transitions will be applied.</div>
+</td><td class="summaryTableOwnerCol">TransitionManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#TransitionManager()">TransitionManager</a>(content:MovieClip)</div>
+<div class="summaryTableDescription">
+  Constructor function for creating a new TransitionManager instance.</div>
+</td><td class="summaryTableOwnerCol">TransitionManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>(content:MovieClip, transParams:Object):<a href="../transitions/Transition.html">Transition</a>
+</div>
+<div class="summaryTableDescription">[static]
+  Creates a new TransitionManager instance, designates the target object, applies a transition, and starts the transition.</div>
+</td><td class="summaryTableOwnerCol">TransitionManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#startTransition()">startTransition</a>(transParams:Object):<a href="../transitions/Transition.html">Transition</a>
+</div>
+<div class="summaryTableDescription">
+  Creates a transition instance and starts it.</div>
+</td><td class="summaryTableOwnerCol">TransitionManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="content"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">content</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>content:MovieClip</code>&nbsp;&nbsp;[read-write]<p>
+ The movie clip instance to which TransitionManager is to apply a transition.
+ </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get content():MovieClip</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set content(value:MovieClip):void</code>
+<br>
+</div>
+<a name="contentAppearance"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">contentAppearance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>contentAppearance:Object</code>&nbsp;&nbsp;[read-only]<p>
+ An object that contains the saved visual properties of the content (target movie clip) 
+ to which the transitions will be applied. 
+ </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get contentAppearance():Object</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="TransitionManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TransitionManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function TransitionManager(content:MovieClip)</code><p>
+  Constructor function for creating a new TransitionManager instance. However, the <code>TransitionManager.start()</code> method is a more efficient way of creating and implementing a TransitionManager instance. If you do use the TransitionManager constructor function to create an instance, use the <code>new</code> operator then designate the transition properties and start the transition effect in a second step by calling the <code>TransitionManager.startTransition()</code> method.
+  </p><p>For example:</p>
+  <div class='listing'><pre>
+  import fl.transitions.*;
+  import fl.transitions.easing.*;
+      
+  var myTransitionManager:TransitionManager = new TransitionManager(myMovieClip);
+  myTransitionManager.startTransition({type:Zoom, direction:Transition.IN, duration:1, easing:Bounce.easeOut});
+  </pre></div>
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">content</span>:MovieClip</code> &mdash; The MovieClip object to which to apply the transition effect.
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../transitions/TransitionManager.html#start()" target="">TransitionManager.start()</a>
+<br>
+<a href="../transitions/TransitionManager.html#startTransition()" target="">TransitionManager.startTransition()</a>
+</div>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function start(content:MovieClip, transParams:Object):<a href="../transitions/Transition.html">Transition</a></code><p>
+  Creates a new TransitionManager instance, designates the target object, applies a transition, and starts the transition. Specifically, calling this method creates an instance of the TransitionManager class if one does not already exist, creates an instance of the specified transition class designated in the <code>transParams</code> parameter, and then starts the transition. The transition is applied to the movie clip that is designated in the <code>content</code> parameter.
+  </p><p>For example:</p>
+  <div class='listing'><pre>
+  import fl.transitions.*;
+  import fl.transitions.easing.*;
+    
+  TransitionManager.start(myMovieClip, {type:Zoom, direction:Transition.IN, duration:1, easing:Bounce.easeOut});
+  </pre></div>
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">content</span>:MovieClip</code> &mdash; The MovieClip object to which to apply the transition effect.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">transParams</span>:Object</code> &mdash; A collection of parameters that are passed within an object. The 
+  <code>transParams</code> object should contain a <code>type</code> parameter that indicates
+  the transition effect class to be applied, followed by <code>direction</code>, <code>duration</code>,
+  and <code>easing</code> parameters. In addition, you must include any parameters required by that 
+  transition effect class. For example, the fl.transitions.Iris transition effect class requires additional
+  <code>startPoint</code> and <code>shape</code> parameters. So, in addition to the
+  <code>type</code>, <code>duration</code>, and <code>easing</code> parameters that every
+  transition requires, you would also add (to the <code>transParams</code> object) the 
+  <code>startPoint</code> and <code>shape</code> parameters that the fl.transitions.Iris 
+  effect requires. 
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../transitions/Transition.html">Transition</a></code> &mdash; 
+                        The Transition instance.
+  
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="startTransition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">startTransition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function startTransition(transParams:Object):<a href="../transitions/Transition.html">Transition</a></code><p>
+  Creates a transition instance and starts it. If a matching transition already exists,
+  the existing transition is removed and a new transition is created and started. This method
+  is used in conjunction with the constructor function.
+  </p><p>For example:</p>
+  <div class='listing'><pre>
+  import fl.transitions.*;
+  import fl.transitions.easing.*;
+        
+  var myTransitionManager:TransitionManager = new TransitionManager(myMovieClip);
+  myTransitionManager.startTransition({type:Zoom, direction:Transition.IN, duration:1, easing:Bounce.easeOut});
+  </pre></div>
+  <p>Alternatively, you can use the <code>TransitionManager.start()</code> method, which is
+  a more efficient way of implementing a transition effect. </p>
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">transParams</span>:Object</code> &mdash; A collection of parameters that are passed within an object. The 
+  <code>transParams</code> object should contain a <code>type</code> parameter that indicates
+  the transition effect class to be applied, followed by direction, duration, and easing 
+  parameters. In addition, you must include any parameters required by that transition effect 
+  class. For example, the fl.transitions.Iris transition effect class requires additional
+  <code>startPoint</code> and <code>shape</code> parameters. So, in addition to the
+  <code>type</code>, <code>duration</code>, and <code>easing</code> parameters that every
+  transition requires, you would also add (to the <code>transParams</code> object) the 
+  <code>startPoint</code> and <code>shape</code> parameters that the fl.transitions.Iris 
+  effect requires. 
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../transitions/Transition.html">Transition</a></code> &mdash; 
+                        The Transition instance.
+  
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../transitions/TransitionManager.html#start()" target="">TransitionManager.start()</a>
+<br>
+<a href="../transitions/TransitionManager.html#TransitionManager()" target="">TransitionManager constructor function</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

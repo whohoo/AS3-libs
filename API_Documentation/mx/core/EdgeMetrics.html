@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="EdgeMetrics,mx.core.EdgeMetrics,EMPTY,bottom,left,right,top,clone" name="keywords">
+<title>mx.core.EdgeMetrics</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'EdgeMetrics - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/core/EdgeMetrics.html&amp;mx/core/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;EdgeMetrics</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class EdgeMetrics"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.core</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class EdgeMetrics</td>
+</tr>
+</table>
+<p></p>
+  The EdgeMetrics class specifies the thickness, in pixels,
+  of the four edge regions around a visual component.
+   <p>The following Flex properties have values that are EdgeMetrics
+  objects:</p>
+   <ul>
+  <li>The <code>borderMetrics</code> property of the mx.core.Container and
+  mx.skins.Border classes includes only the border in the calculations 
+  of the property values of the EdgeMetrics object.</li>
+   <li>The <code>viewMetrics</code> property of the mx.core.Container
+  class, and of subclasses of the Container class, includes possible 
+  scrollbars and non-content elements -- such as a Panel container's
+  header area and the area for a ControlBar component -- in the calculations
+  of the  property values of the EdgeMetrics object.</li>
+   <li>The <code>viewMetricsAndPadding</code> property of the
+  mx.core.Container class includes the items listed for the
+  <code>viewMetrics</code> property, plus the any areas defined by 
+  the margins of the container in the calculations of the 
+  property values of the EdgeMetrics object.</li>
+  </ul>
+   <p>These three properites all return a reference to the same
+  EdgeMetrics object that the Container is using for its measurement
+  and layout; they do not return a copy of this object.
+  If you need a copy, call the <code>clone()</code> method.</p>
+   <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/Container.html" target="">mx.core.Container</a>
+<br>
+<a href="../skins/Border.html" target="">mx.skins.Border</a>
+<br>mx.containers.Panel</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bottom">bottom</a> : Number<div class="summaryTableDescription">
+   The height, in pixels, of the bottom edge region.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#EMPTY">EMPTY</a> : <a href="../core/EdgeMetrics.html">EdgeMetrics</a>
+<div class="summaryTableDescription">[static]
+   An EdgeMetrics object with a value of zero for its
+   <code>left</code>, <code>top</code>, <code>right</code>,
+   and <code>bottom</code> properties.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#left">left</a> : Number<div class="summaryTableDescription">
+   The width, in pixels, of the left edge region.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#right">right</a> : Number<div class="summaryTableDescription">
+   The width, in pixels, of the right edge region.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#top">top</a> : Number<div class="summaryTableDescription">
+   The height, in pixels, of the top edge region.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#EdgeMetrics()">EdgeMetrics</a>(left:Number = 0, top:Number = 0, right:Number = 0, bottom:Number = 0)</div>
+<div class="summaryTableDescription">
+   Constructor.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():<a href="../core/EdgeMetrics.html">EdgeMetrics</a>
+</div>
+<div class="summaryTableDescription">
+   Returns a copy of this EdgeMetrics object.</div>
+</td><td class="summaryTableOwnerCol">EdgeMetrics</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="bottom"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bottom</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var bottom:Number</code><p>
+   The height, in pixels, of the bottom edge region.
+  </p></div>
+<a name="EMPTY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EMPTY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var EMPTY:<a href="../core/EdgeMetrics.html">EdgeMetrics</a></code><p>
+   An EdgeMetrics object with a value of zero for its
+   <code>left</code>, <code>top</code>, <code>right</code>,
+   and <code>bottom</code> properties.
+  </p></div>
+<a name="left"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">left</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var left:Number</code><p>
+   The width, in pixels, of the left edge region.
+  </p></div>
+<a name="right"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">right</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var right:Number</code><p>
+   The width, in pixels, of the right edge region.
+  </p></div>
+<a name="top"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">top</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var top:Number</code><p>
+   The height, in pixels, of the top edge region.
+  </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="EdgeMetrics()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EdgeMetrics</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function EdgeMetrics(left:Number = 0, top:Number = 0, right:Number = 0, bottom:Number = 0)</code><p>
+   Constructor.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">left</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The width, in pixels, of the left edge region.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">top</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The height, in pixels, of the top edge region.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">right</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The width, in pixels, of the right edge region.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bottom</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; The height, in pixels, of the bottom edge region.
+  </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clone():<a href="../core/EdgeMetrics.html">EdgeMetrics</a></code><p>
+   Returns a copy of this EdgeMetrics object.
+  </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../core/EdgeMetrics.html">EdgeMetrics</a></code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

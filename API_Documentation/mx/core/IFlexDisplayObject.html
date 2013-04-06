@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="IFlexDisplayObject,mx.core.IFlexDisplayObject,alpha,height,mask,measuredHeight,measuredWidth,name,parent,scaleX,scaleY,x,y,visible,width,move,setActualSize" name="keywords">
+<title>mx.core.IFlexDisplayObject</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IFlexDisplayObject - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/core/IFlexDisplayObject.html&amp;mx/core/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IFlexDisplayObject</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IFlexDisplayObject"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.core</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IFlexDisplayObject extends <a href="none">flash.display.IBitmapDrawable</a>, <a href="none">flash.events.IEventDispatcher</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subinterfaces</td><td><a href="../controls/listClasses/IListItemRenderer.html">IListItemRenderer</a>, <a href="../managers/IToolTipManagerClient.html">IToolTipManagerClient</a>, <a href="../core/IUIComponent.html">IUIComponent</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../skins/ProgrammaticSkin.html">ProgrammaticSkin</a>, <a href="../managers/SystemManager.html">SystemManager</a>, <a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+<p></p>
+  The IFlexDisplayObject interface defines the interface for skin elements.
+  At a minimum, a skin must be a DisplayObject and implement this interface.
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alpha">alpha</a> : Number<div class="summaryTableDescription">
+   The transparency of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : Number<div class="summaryTableDescription">
+   The height of this object, in pixels.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mask">mask</a> : DisplayObject<div class="summaryTableDescription">
+   The DisplayObject used to mask this object
+   so that only part of it is actually drawn.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#measuredHeight">measuredHeight</a> : Number<div class="summaryTableDescription">[read-only]
+   The measured height of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#measuredWidth">measuredWidth</a> : Number<div class="summaryTableDescription">[read-only]
+   The measured width of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">
+   The instance name of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parent">parent</a> : DisplayObjectContainer<div class="summaryTableDescription">[read-only]
+   The parent of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scaleX">scaleX</a> : Number<div class="summaryTableDescription">
+   The horizontal scaling factor for this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scaleY">scaleY</a> : Number<div class="summaryTableDescription">
+   The vertical scaling factor for this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#visible">visible</a> : Boolean<div class="summaryTableDescription">
+   A flag that indicates whether this object is visible.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : Number<div class="summaryTableDescription">
+   The width of this object, in pixels.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x">x</a> : Number<div class="summaryTableDescription">
+   The horizontal position of this object relative to its parent,
+   in pixel coordinates.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y">y</a> : Number<div class="summaryTableDescription">
+   The vertical position of this object relative to its parent,
+   in pixel coordinates.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#move()">move</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+   Moves this object to the specified x and y coordinates.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setActualSize()">setActualSize</a>(newWidth:Number, newHeight:Number):void</div>
+<div class="summaryTableDescription">
+   Sets the actual size of this object.</div>
+</td><td class="summaryTableOwnerCol">IFlexDisplayObject</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="alpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alpha</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alpha:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The transparency of this object.
+   The value is a Number from 0.0 to 1.0, 
+   where 0.0 means transparent and 1.0 means fully opaque.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alpha():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alpha(value:Number):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.display.DisplayObject.alpha</div>
+</div>
+<a name="height"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">height</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>height:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The height of this object, in pixels.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get height():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set height(value:Number):void</code>
+<br>
+</div>
+<a name="mask"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mask</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>mask:DisplayObject</code>&nbsp;&nbsp;[read-write]<p>
+   The DisplayObject used to mask this object
+   so that only part of it is actually drawn.
+   The <code>mask</code> object itself is not drawn.
+     </p><p>Set <code>mask</code> to <code>null</code> to remove the mask.</p>
+     <p>To ensure that masking works when the stage is scaled, 
+   the <code>mask</code> display object must be in an active
+   part of the display list.</p>
+     <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get mask():DisplayObject</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set mask(value:DisplayObject):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.display.DisplayObject.mask</div>
+</div>
+<a name="measuredHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">measuredHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>measuredHeight:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The measured height of this object.
+     </p><p>This is typically hard-coded for graphical skins
+   because this number is simply the number of pixels in the graphic.
+   For code skins, it can also be hard-coded
+   if you expect to be drawn at a certain size.
+   If your size can change based on properties, you may want
+   to also be an ILayoutManagerClient so a <code>measure()</code>
+   method will be called at an appropriate time,
+   giving you an opportunity to compute a <code>measuredHeight</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get measuredHeight():Number</code>
+<br>
+</div>
+<a name="measuredWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">measuredWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>measuredWidth:Number</code>&nbsp;&nbsp;[read-only]<p>
+   The measured width of this object.
+     </p><p>This is typically hard-coded for graphical skins
+   because this number is simply the number of pixels in the graphic.
+   For code skins, it can also be hard-coded
+   if you expect to be drawn at a certain size.
+   If your size can change based on properties, you may want
+   to also be an ILayoutManagerClient so a <code>measure()</code>
+   method will be called at an appropriate time,
+   giving you an opportunity to compute a <code>measuredHeight</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get measuredWidth():Number</code>
+<br>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>name:String</code>&nbsp;&nbsp;[read-write]<p>
+   The instance name of this object.
+     </p><p>Flash classes such as Sprite, TextField, etc.
+   initialize the instance name to <code>"instanceN"</code>,
+   where N is a unique integer.
+   Flex classes such as FlexSprite, FlexTextField, etc.
+   initialize it to a string that combines the class name
+   with a unique integer, such as <code>"Button5"</code>.
+   (This name is produced by the
+   <code>NameUtil.createUniqueName()</code> method.)
+   The Flex framework assigns instance names to some objects
+   that it creates, such as <code>"upSkin"</code> for the
+   "up"-state skin of a Button.
+   If you have assigned an MXML id to this object,
+   then the instance name is set to that id.</p>
+     <p>You can use the DisplayObjectContainer method
+   <code>getChildByName()</code> to get an object by name
+   from its parent container.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get name():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set name(value:String):void</code>
+<br>
+</div>
+<a name="parent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parent:DisplayObjectContainer</code>&nbsp;&nbsp;[read-only]<p>
+   The parent of this object.
+     </p><p>This property can be <code>null</code> if the object has not yet
+   ben added to a DisplayObjectContainer with <code>addChild()</code>
+   or <code>addChildAt()</code>, or if it has been removed from a
+   DisplayObjectContainer with <code>removeChild()</code>
+   or <code>removeChildAt()</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parent():DisplayObjectContainer</code>
+<br>
+</div>
+<a name="scaleX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scaleX</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scaleX:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The horizontal scaling factor for this object.
+   The value is a Number where 1.0 means the object isn't scaled
+   horziontally, 2.0 means that it is stretched to twice its
+   normal width, and 0.5 means that it is compressed to half
+   its normal width.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scaleX():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scaleX(value:Number):void</code>
+<br>
+</div>
+<a name="scaleY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scaleY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scaleY:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The vertical scaling factor for this object.
+   The value is a Number where 1.0 means the object isn't scaled
+   vertically, 2.0 means that it is stretched to twice its
+   normal height, and 0.5 means that it is compressed to half
+   its normal height.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scaleY():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scaleY(value:Number):void</code>
+<br>
+</div>
+<a name="visible"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">visible</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>visible:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   A flag that indicates whether this object is visible.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get visible():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set visible(value:Boolean):void</code>
+<br>
+</div>
+<a name="width"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">width</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>width:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The width of this object, in pixels.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get width():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set width(value:Number):void</code>
+<br>
+</div>
+<a name="x"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The horizontal position of this object relative to its parent,
+   in pixel coordinates.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set x(value:Number):void</code>
+<br>
+</div>
+<a name="y"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The vertical position of this object relative to its parent,
+   in pixel coordinates.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set y(value:Number):void</code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="move()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">move</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function move(x:Number, y:Number):void</code><p>
+   Moves this object to the specified x and y coordinates.
+  
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The new x-position for this object.
+  
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The new y-position for this object.
+  </td>
+</tr>
+</table>
+</div>
+<a name="setActualSize()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setActualSize</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setActualSize(newWidth:Number, newHeight:Number):void</code><p>
+   Sets the actual size of this object.
+     </p><p>This method is mainly for use in implementing the
+   <code>updateDisplayList()</code> method, which is where
+   you compute this object's actual size based on
+   its explicit size, parent-relative (percent) size,
+   and measured size.
+   You then apply this actual size to the object
+   by calling <code>setActualSize()</code>.</p>
+     <p>In other situations, you should be setting properties
+   such as <code>width</code>, <code>height</code>,
+   <code>percentWidth</code>, or <code>percentHeight</code>
+   rather than calling this method.</p>
+  
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newWidth</span>:Number</code> &mdash; The new width for this object.
+  
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">newHeight</span>:Number</code> &mdash; The new height for this object.
+  </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

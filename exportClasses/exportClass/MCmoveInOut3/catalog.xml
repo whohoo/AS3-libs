@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.0" />
+    <flash version="9.0" build="r494" platform="WIN" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-components />
+    <feature-files />
+  </features>
+  <components>
+    <component className="ExportMCmoveInOutSymbol" name="MCmoveInOut" tooltip="MCmoveInOut 2.0"  />
+    <component className="com.wlash.effects:FlipPagesBox" name="FlipPageBox" icon="FlipPagesBox.png" tooltip="FlipPagesBox"  />
+  </components>
+  <libraries>
+    <library path="library.swf">
+      <script name="com/wlash/effects/PagesObj" mod="1219560686000" >
+        <def id="com.wlash.effects:PagesObj" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.wlash.effects:FlipPage" type="s" /> 
+        <dep id="com.wlash.effects:FlipPage" type="e" /> 
+      </script>
+      <script name="com/wlash/utils/MCmoveInOut" mod="1243172638848" >
+        <def id="com.wlash.utils:MCmoveInOut" /> 
+        <dep id="Object" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="flash.display:MovieClip" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="e" /> 
+        <dep id="flash.display:MovieClip" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
+        <dep id="TypeError" type="e" /> 
+        <dep id="Math" type="e" /> 
+      </script>
+      <script name="com/wlash/effects/FlipPagesEvent" mod="1219560684000" >
+        <def id="com.wlash.effects:FlipPagesEvent" /> 
+        <dep id="flash.events:Event" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.wlash.effects:FlipPage" type="s" /> 
+        <dep id="flash.display:Sprite" type="s" /> 
+      </script>
+      <script name="com/wlash/exception/InitError" mod="1202024056000" >
+        <def id="com.wlash.exception:InitError" /> 
+        <dep id="Error" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="PageShade" mod="1243172805452" >
+        <def id="PageShade" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+      </script>
+      <script name="com/wlash/effects/FlipPagesBox" mod="1243172805478" >
+        <def id="com.wlash.effects:FlipPagesBox" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.wlash.effects:FlipPage" type="s" /> 
+        <dep id="flash.events:MouseEvent" type="s" /> 
+        <dep id="ReferenceError" type="s" /> 
+        <dep id="com.wlash.effects:FlipPagesEvent" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="flash.display:Graphics" type="s" /> 
+        <dep id="com.wlash.effects:PagesObj" type="s" /> 
+        <dep id="com.wlash.effects:FlipPage" type="e" /> 
+        <dep id="flash.events:MouseEvent" type="e" /> 
+        <dep id="ReferenceError" type="e" /> 
+        <dep id="com.wlash.effects:FlipPagesEvent" type="e" /> 
+        <dep id="flash.display:MovieClip" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
+        <dep id="trace" type="e" /> 
+        <dep id="Math" type="e" /> 
+        <dep id="com.wlash.effects:PagesObj" type="e" /> 
+        <dep id="flash.utils:getDefinitionByName" type="e" /> 
+      </script>
+      <script name="com/wlash/effects/FlipPage" mod="1219560682000" >
+        <def id="com.wlash.effects:FlipPage" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.wlash.effects:FlipPagesBox" type="s" /> 
+        <dep id="ArgumentError" type="s" /> 
+        <dep id="com.wlash.effects:PagesObj" type="s" /> 
+        <dep id="flash.geom:ColorTransform" type="s" /> 
+        <dep id="flash.geom:Transform" type="s" /> 
+        <dep id="PageShade" type="e" /> 
+        <dep id="ArgumentError" type="e" /> 
+        <dep id="flash.geom:ColorTransform" type="e" /> 
+      </script>
+      <script name="ExportMCmoveInOutSymbol" mod="1243172805452" >
+        <def id="ExportMCmoveInOutSymbol" /> 
+        <dep id="flash.display:MovieClip" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.wlash.exception:InitError" type="s" /> 
+        <dep id="com.wlash.utils:MCmoveInOut" type="e" /> 
+        <dep id="com.wlash.exception:InitError" type="e" /> 
+        <dep id="trace" type="e" /> 
+      </script>
+      <script name="fl/livepreview/LivePreviewParent" mod="1243172805500" >
+        <def id="fl.livepreview:LivePreviewParent" /> 
+        <dep id="flash.display:MovieClip" type="i" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.display:DisplayObject" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="flash.external:ExternalInterface" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.display:StageScaleMode" type="e" /> 
+        <dep id="flash.display:StageAlign" type="e" /> 
+        <dep id="flash.utils:getDefinitionByName" type="e" /> 
+      </script>
+    </library>
+  </libraries>
+  <files>
+    <file path="FlipPagesBox.png" mod="1131514082000" />
+  </files>
+</swc>

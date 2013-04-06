@@ -1,0 +1,721 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="ISystemManager,mx.managers.ISystemManager,cursorChildren,document,focusPane,loaderInfo,numModalWindows,popUpChildren,rawChildren,screen,stage,toolTipChildren,topLevelSystemManager,addFocusManager,removeFocusManager,activate,deactivate,getDefinitionByName,isTopLevel,isFontFaceEmbedded" name="keywords">
+<title>mx.managers.ISystemManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ISystemManager - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/managers/ISystemManager.html&amp;mx/managers/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;ISystemManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface ISystemManager"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.managers</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface ISystemManager extends <a href="none">flash.events.IEventDispatcher</a>, <a href="../core/IChildList.html">IChildList</a>, <a href="none">mx.core.IFlexModuleFactory</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../managers/SystemManager.html">SystemManager</a></td>
+</tr>
+</table>
+<p></p>
+  An ISystemManager manages an "application window".
+  Every application that runs on the desktop or in a browser
+  has an area where the visuals of the application will be
+  displayed.  It may be a window in the operating system
+  or an area within the browser.  That is an "application window"
+  and different from an instance of <code>mx.core.Application</code>, which
+  is the main "top-level" window within an application.
+   <p>Every application has an ISystemManager.  
+  The ISystemManager  sends an event if
+  the size of the application window changes (you cannot change it from
+  within the application, but only through interaction with the operating
+  system window or browser).  It parents all displayable items within the
+  application, such as the main mx.core.Application instance and all popups, 
+  tooltips, cursors, an so on.  Any object parented by the ISystemManager is
+  considered to be a "top-level" window, even tooltips and cursors.</p>
+   <p>The ISystemManager also switches focus between top-level windows
+  if there  are more than one IFocusManagerContainer displayed and users
+  are interacting with components within the IFocusManagerContainers.</p>
+   <p>All keyboard and mouse activity that is not expressly trapped is seen
+  by the ISystemManager, making it a good place to monitor activity
+  should you need to do so.</p>
+   <p>If an application is loaded into another application, an ISystemManager
+  will still be created, but will not manage an "application window",
+  depending on security and domain rules.
+  Instead, it will be the <code>content</code> of the <code>Loader</code> 
+  that loaded it and simply serve as the parent of the sub-application</p>
+   <p>The ISystemManager maintains multiple lists of children, one each for
+  tooltips, cursors, popup windows.
+  This is how it ensures that popup windows "float" above the main
+  application windows and that tooltips "float" above that
+  and cursors above that.
+  If you examine the <code>numChildren</code> property 
+  or <code>getChildAt()</code> method on the ISystemManager
+  you are accessing the main application window and any other windows
+  that aren't popped up.
+  To get the list of all windows, including popups, tooltips and cursors,
+  use the <code>rawChildren</code> property.</p>
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#cursorChildren">cursorChildren</a> : <a href="../core/IChildList.html">IChildList</a>
+<div class="summaryTableDescription">[read-only]
+   An list of the custom cursors
+   being parented by this ISystemManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#document">document</a> : Object<div class="summaryTableDescription">
+   A reference to the document object.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#focusPane">focusPane</a> : Sprite<div class="summaryTableDescription">
+   A single Sprite shared among components used as an overlay for drawing focus.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaderInfo">loaderInfo</a> : LoaderInfo<div class="summaryTableDescription">[read-only]
+   The LoaderInfo object that represents information about the application.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/IChildList.html#numChildren">numChildren</a> : int<div class="summaryTableDescription">
+   The number of children in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numModalWindows">numModalWindows</a> : int<div class="summaryTableDescription">
+   The number of modal windows.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#popUpChildren">popUpChildren</a> : <a href="../core/IChildList.html">IChildList</a>
+<div class="summaryTableDescription">[read-only]
+   An list of the topMost (popup)
+   windows being parented by this ISystemManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#rawChildren">rawChildren</a> : <a href="../core/IChildList.html">IChildList</a>
+<div class="summaryTableDescription">[read-only]
+   A list of all children
+   being parented by this ISystemManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#screen">screen</a> : Rectangle<div class="summaryTableDescription">[read-only]
+   The size and position of the application window.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#stage">stage</a> : Stage<div class="summaryTableDescription">[read-only]
+   The flash.display.Stage that represents the application window
+   mapped to this SystemManager
+  </div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#toolTipChildren">toolTipChildren</a> : <a href="../core/IChildList.html">IChildList</a>
+<div class="summaryTableDescription">[read-only]
+   A list of the tooltips
+   being parented by this ISystemManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#topLevelSystemManager">topLevelSystemManager</a> : <a href="../managers/ISystemManager.html">ISystemManager</a>
+<div class="summaryTableDescription">[read-only]
+   The ISystemManager responsible for the application window.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#activate()">activate</a>(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</div>
+<div class="summaryTableDescription">
+   Activates the FocusManager in an IFocusManagerContainer.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#addChild()">addChild</a>(child:DisplayObject):DisplayObject</div>
+<div class="summaryTableDescription">
+      Adds a child DisplayObject after the end of this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#addChildAt()">addChildAt</a>(child:DisplayObject, index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+      Adds a child DisplayObject to this child list at the index specified.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addFocusManager()">addFocusManager</a>(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</div>
+<div class="summaryTableDescription">
+   Registers a top-level window containing a FocusManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#contains()">contains</a>(child:DisplayObject):Boolean</div>
+<div class="summaryTableDescription">
+   Determines if a DisplayObject is in this child list,
+   or is a descendant of an child in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#deactivate()">deactivate</a>(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</div>
+<div class="summaryTableDescription">
+   Deactivates the FocusManager in an IFocusManagerContainer, and activate
+   the FocusManager of the next highest window that is an IFocusManagerContainer.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#getChildAt()">getChildAt</a>(index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+   Gets the child DisplayObject at the specified index in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#getChildByName()">getChildByName</a>(name:String):DisplayObject</div>
+<div class="summaryTableDescription">
+      Gets the child DisplayObject with the specified name
+   in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#getChildIndex()">getChildIndex</a>(child:DisplayObject):int</div>
+<div class="summaryTableDescription">
+   Gets the index of a specific child in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getDefinitionByName()">getDefinitionByName</a>(name:String):Object</div>
+<div class="summaryTableDescription">
+   Converts the given String to a Class or package-level Function.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#getObjectsUnderPoint()">getObjectsUnderPoint</a>(point:Point):Array</div>
+<div class="summaryTableDescription">
+      Returns an array of DisplayObjects that lie under the specified point
+   and are in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#isFontFaceEmbedded()">isFontFaceEmbedded</a>(tf:TextFormat):Boolean</div>
+<div class="summaryTableDescription">
+      Returns <code>true</code> if the required font face is embedded
+   in this application, or has been registered globally by using the 
+   <code>Font.registerFont()</code> method.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#isTopLevel()">isTopLevel</a>():Boolean</div>
+<div class="summaryTableDescription">
+   Returns <code>true</code> if this ISystemManager is responsible
+   for an application window, and <code>false</code> if this
+   application has been loaded into another application.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#removeChild()">removeChild</a>(child:DisplayObject):DisplayObject</div>
+<div class="summaryTableDescription">
+      Removes the specified child DisplayObject from this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#removeChildAt()">removeChildAt</a>(index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+      Removes the child DisplayObject at the specified index
+   from this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeFocusManager()">removeFocusManager</a>(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</div>
+<div class="summaryTableDescription">
+   Unregisters a top-level window containing a FocusManager.</div>
+</td><td class="summaryTableOwnerCol">ISystemManager</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/IChildList.html#setChildIndex()">setChildIndex</a>(child:DisplayObject, newIndex:int):void</div>
+<div class="summaryTableDescription">
+   Changes the index of a particular child in this child list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/IChildList.html">IChildList</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="cursorChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cursorChildren</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>cursorChildren:<a href="../core/IChildList.html">IChildList</a></code>&nbsp;&nbsp;[read-only]<p>
+   An list of the custom cursors
+   being parented by this ISystemManager.
+     </p><p>An ISystemManager has various types of children,
+   such as the Application, popups, top-most windows,
+   tooltips, and custom cursors.
+   You can access the custom cursors through
+   the <code>cursorChildren</code> property.</p>
+     <p>The IChildList object has methods like <code>getChildAt()</code>
+   and properties like <code>numChildren</code>.
+   For example, <code>cursorChildren.numChildren</code> gives
+   the number of custom cursors (which will be either 0 or 1)
+   and, if a custom cursor exists, you can access it as
+   <code>cursorChildren.getChildAt(0)</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get cursorChildren():<a href="../core/IChildList.html">IChildList</a></code>
+<br>
+</div>
+<a name="document"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">document</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>document:Object</code>&nbsp;&nbsp;[read-write]<p>
+   A reference to the document object. 
+   A document object is an Object at the top of the hierarchy of a 
+   Flex application, MXML component, or AS component.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get document():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set document(value:Object):void</code>
+<br>
+</div>
+<a name="focusPane"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">focusPane</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>focusPane:Sprite</code>&nbsp;&nbsp;[read-write]<p>
+   A single Sprite shared among components used as an overlay for drawing focus.
+   You share it if you parent a focused component, not if you are IFocusManagerComponent.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get focusPane():Sprite</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set focusPane(value:Sprite):void</code>
+<br>
+</div>
+<a name="loaderInfo"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaderInfo</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaderInfo:LoaderInfo</code>&nbsp;&nbsp;[read-only]<p>
+   The LoaderInfo object that represents information about the application.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaderInfo():LoaderInfo</code>
+<br>
+</div>
+<a name="numModalWindows"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numModalWindows</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numModalWindows:int</code>&nbsp;&nbsp;[read-write]<p>
+   The number of modal windows.  
+     </p><p>Modal windows don't allow
+   clicking in another windows which would normally 
+   activate the FocusManager in that window.  The PopUpManager
+   modifies this count as it creates and destroy modal windows.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numModalWindows():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set numModalWindows(value:int):void</code>
+<br>
+</div>
+<a name="popUpChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">popUpChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>popUpChildren:<a href="../core/IChildList.html">IChildList</a></code>&nbsp;&nbsp;[read-only]<p>
+   An list of the topMost (popup)
+   windows being parented by this ISystemManager.
+     </p><p>An ISystemManager has various types of children,
+   such as the Application, popups,
+   tooltips, and custom cursors.
+   You can access the top-most windows through
+   the <code>popUpChildren</code> property.</p>
+     <p>The IChildList object has methods like <code>getChildAt()</code>
+   and properties like <code>numChildren</code>.
+   For example, <code>popUpChildren.numChildren</code> gives
+   the number of topmost windows and you can access them as
+   <code>popUpChildren.getChildAt(i)</code>.</p>
+    <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get popUpChildren():<a href="../core/IChildList.html">IChildList</a></code>
+<br>
+</div>
+<a name="rawChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">rawChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>rawChildren:<a href="../core/IChildList.html">IChildList</a></code>&nbsp;&nbsp;[read-only]<p>
+   A list of all children
+   being parented by this ISystemManager.
+     </p><p>An ISystemManager has various types of children,
+   such as the Application, popups, 
+   tooltips, and custom cursors.</p>
+  
+   <p>The IChildList object has methods like <code>getChildAt()</code>
+   and properties like <code>numChildren</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get rawChildren():<a href="../core/IChildList.html">IChildList</a></code>
+<br>
+</div>
+<a name="screen"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">screen</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>screen:Rectangle</code>&nbsp;&nbsp;[read-only]<p>
+   The size and position of the application window.
+     The Rectangle object contains <code>x</code>, <code>y</code>,
+   <code>width</code>, and <code>height</code> properties.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get screen():Rectangle</code>
+<br>
+</div>
+<a name="stage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>stage:Stage</code>&nbsp;&nbsp;[read-only]<p>
+   The flash.display.Stage that represents the application window
+   mapped to this SystemManager
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get stage():Stage</code>
+<br>
+</div>
+<a name="toolTipChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toolTipChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>toolTipChildren:<a href="../core/IChildList.html">IChildList</a></code>&nbsp;&nbsp;[read-only]<p>
+   A list of the tooltips
+   being parented by this ISystemManager.
+     </p><p>An ISystemManager has various types of children,
+   such as the Application, popups, topmost windows,
+   tooltips, and custom cursors.</p>
+     <p>The IChildList object has methods like <code>getChildAt()</code>
+   and properties like <code>numChildren</code>.
+   For example, <code>toolTipChildren.numChildren</code> gives
+   the number of tooltips (which will be either 0 or 1)
+   and, if a tooltip exists, you can access it as
+   <code>toolTipChildren.getChildAt(0)</code>.</p>
+  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get toolTipChildren():<a href="../core/IChildList.html">IChildList</a></code>
+<br>
+</div>
+<a name="topLevelSystemManager"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">topLevelSystemManager</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>topLevelSystemManager:<a href="../managers/ISystemManager.html">ISystemManager</a></code>&nbsp;&nbsp;[read-only]<p>
+   The ISystemManager responsible for the application window.
+   This will be the same ISystemManager unless this application
+   has been loaded into another application.
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get topLevelSystemManager():<a href="../managers/ISystemManager.html">ISystemManager</a></code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="activate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">activate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function activate(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</code><p>
+   Activates the FocusManager in an IFocusManagerContainer.
+  
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a></code> &mdash; IFocusManagerContainer the top-level window
+   whose FocusManager should be activated.
+  </td>
+</tr>
+</table>
+</div>
+<a name="addFocusManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addFocusManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addFocusManager(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</code><p>
+   Registers a top-level window containing a FocusManager.
+   Called by the FocusManager, generally not called by application code.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a></code> &mdash; The top-level window in the application.
+  </td>
+</tr>
+</table>
+</div>
+<a name="deactivate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">deactivate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function deactivate(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</code><p>
+   Deactivates the FocusManager in an IFocusManagerContainer, and activate
+   the FocusManager of the next highest window that is an IFocusManagerContainer.
+  
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a></code> &mdash; IFocusManagerContainer the top-level window
+   whose FocusManager should be deactivated.
+  </td>
+</tr>
+</table>
+</div>
+<a name="getDefinitionByName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getDefinitionByName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getDefinitionByName(name:String):Object</code><p>
+   Converts the given String to a Class or package-level Function.
+   Calls the appropriate <code>ApplicationDomain.getDefinition()</code> 
+   method based on
+   whether you are loaded into another application or not.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; Name of class, for example "mx.video.VideoManager".
+  
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; The Class represented by the <code>name</code>, or null.
+  </td>
+</tr>
+</table>
+</div>
+<a name="isFontFaceEmbedded()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isFontFaceEmbedded</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function isFontFaceEmbedded(tf:TextFormat):Boolean</code><p>
+      Returns <code>true</code> if the required font face is embedded
+   in this application, or has been registered globally by using the 
+   <code>Font.registerFont()</code> method.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">tf</span>:TextFormat</code> &mdash; The TextFormat class representing character formatting information.
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if the required font face is embedded
+   in this application, or has been registered globally by using the 
+   <code>Font.registerFont()</code> method.
+     </td>
+</tr>
+</table>
+</div>
+<a name="isTopLevel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isTopLevel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function isTopLevel():Boolean</code><p>
+   Returns <code>true</code> if this ISystemManager is responsible
+   for an application window, and <code>false</code> if this
+   application has been loaded into another application.
+     </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if this ISystemManager is responsible
+   for an application window.
+  </td>
+</tr>
+</table>
+</div>
+<a name="removeFocusManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeFocusManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeFocusManager(f:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a>):void</code><p>
+   Unregisters a top-level window containing a FocusManager.
+   Called by the FocusManager, generally not called by application code.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:<a href="IFocusManagerContainer.html">IFocusManagerContainer</a></code> &mdash; The top-level window in the application.
+  </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

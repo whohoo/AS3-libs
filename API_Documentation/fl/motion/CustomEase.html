@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="CustomEase,fl.motion.CustomEase,points,points,target,getValue" name="keywords">
+<title>fl.motion.CustomEase</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'CustomEase - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/CustomEase.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;CustomEase</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class CustomEase"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class CustomEase</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="ITween.html">ITween</a></td>
+</tr>
+</table>
+<p></p>
+ The CustomEase class is used to modify specific properties of the easing behavior of a motion tween as
+ the tween progresses over time. 
+ A custom easing curve is composed of one or more cubic Bezier curves.
+ You can apply the custom easing curve to all properties at once, 
+ or you can define different curves for different properties.
+ <p>The implementation of this class parallels the Flash CS3 Custom Ease In/Ease Out dialog box. Flash CS3
+ displays a graph in the Custom Ease In/Ease Out dialog box representing the degree of motion over time. 
+ The horizontal axis represents frames, and the vertical axis represents the percent of change of a property
+ through the progression of the tween. The first keyframe is represented as 0%, and the last keyframe is 
+ represented as 100%. The slope of the graph's curve represents the rate of change of the object. When the 
+ curve is <code>horizontal</code> (no slope), the velocity is zero; when the curve is <code>vertical</code>, an instantaneous rate of 
+ change occurs.</p>
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">Default MXML Property</span><code>points</code>
+</p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#points">points</a> : Array<div class="summaryTableDescription">
+      An ordered collection of points in the custom easing curve.</div>
+</td><td class="summaryTableOwnerCol">CustomEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#points">points</a> : Array<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">CustomEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#target">target</a> : String<div class="summaryTableDescription">
+     The name of the animation property to target.</div>
+</td><td class="summaryTableOwnerCol">CustomEase</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#CustomEase()">CustomEase</a>(xml:XML = null)</div>
+<div class="summaryTableDescription">
+     Constructor for CustomEase instances.</div>
+</td><td class="summaryTableOwnerCol">CustomEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getValue()">getValue</a>(time:Number, begin:Number, change:Number, duration:Number):Number</div>
+<div class="summaryTableDescription">
+     Calculates an interpolated value for a numerical property of animation,
+     using a custom easing curve.</div>
+</td><td class="summaryTableOwnerCol">CustomEase</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="points"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">points</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var points:Array</code><p>
+      An ordered collection of points in the custom easing curve.
+      Each item in the array is a <code>flash.geom.Point</code> instance.
+      The x and y properties of each point are normalized to fall between <code>0</code> and <code>1</code>,
+      where <code>0</code> is the value of the animation property at the beginning of the tween,
+      and <code>1</code> is the value at the end of the tween.
+      The first and last points of the curve are not included in the array
+      because the first point is locked to the starting value defined by the current keyframe,
+      and the last point is locked to the ending value defined by the next keyframe. 
+      On the custom easing curve, these points correspond to values of (0, 0) and (1, 1), respectively.
+      </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Point</div>
+</div>
+<a name="points"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">points</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var points:Array</code>
+</div>
+<a name="target"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">target</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>target:String</code>&nbsp;&nbsp;[read-write]<p>
+     The name of the animation property to target.
+     </p><p>The default value is <code>""</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get target():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set target(value:String):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/ITween.html#target" target="">fl.motion.ITween.target</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="CustomEase()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CustomEase</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function CustomEase(xml:XML = null)</code><p>
+     Constructor for CustomEase instances.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> (default = <code>null</code>)<code></code> &mdash; Optional E4X XML object defining a CustomEase in Motion XML format.
+     </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getValue(time:Number, begin:Number, change:Number, duration:Number):Number</code><p>
+     Calculates an interpolated value for a numerical property of animation,
+     using a custom easing curve. 
+     The percent value is read from the CustomEase instance's <code>points</code> property,
+     rather than being passed into the method.
+     Using the property value allows the function signature to match the ITween interface.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">time</span>:Number</code> &mdash; The time value, which must lie between <code>0</code> and <code>duration</code>, inclusive.
+     You can choose any unit (for example. frames, seconds, milliseconds), 
+     but your choice must match the <code>duration</code> unit.
+       </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">begin</span>:Number</code> &mdash; The value of the animation property at the start of the tween, when time is 0.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">change</span>:Number</code> &mdash; The change in the value of the animation property over the course of the tween. 
+     The value can be positive or negative. For example, if an object rotates from 90 to 60 degrees, the <code>change</code> is <code>-30</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The length of time for the tween. This value must be greater than zero.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>time</code> unit.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The interpolated value at the specified time.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/CustomEase.html#points" target="">points</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

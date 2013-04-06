@@ -1,0 +1,610 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="IModuleInfo,mx.modules.IModuleInfo,data,error,factory,loaded,ready,setup,url,load,release,unload,publish" name="keywords">
+<title>mx.modules.IModuleInfo</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IModuleInfo - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/modules/IModuleInfo.html&amp;mx/modules/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IModuleInfo</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IModuleInfo"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.modules</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IModuleInfo extends <a href="none">flash.events.IEventDispatcher</a></td>
+</tr>
+</table>
+<p></p>
+  An interface that acts as a handle for a particular module.
+  From this interface, the module status can be queried,
+  its inner factory can be obtained, and it can be loaded or unloaded.
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#data">data</a> : Object<div class="summaryTableDescription">
+      User data that can be associated with the singleton IModuleInfo
+      for a given URL.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#error">error</a> : Boolean<div class="summaryTableDescription">[read-only]
+      A flag that is <code>true</code> if there was an error
+      during module loading.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#factory">factory</a> : IFlexModuleFactory<div class="summaryTableDescription">[read-only]
+      The IFlexModuleFactory implementation defined in the module.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaded">loaded</a> : Boolean<div class="summaryTableDescription">[read-only]
+      A flag that is <code>true</code> if the <code>load()</code>
+      method has been called on this module.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ready">ready</a> : Boolean<div class="summaryTableDescription">[read-only]
+      A flag that is <code>true</code> if the module is sufficiently loaded
+      to get a handle to its associated IFlexModuleFactory implementation
+      and call its <code>create()</code> method.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#setup">setup</a> : Boolean<div class="summaryTableDescription">[read-only]
+      A flag that is <code>true</code> if the module is sufficiently loaded
+      to get a handle to its associated IFlexModuleFactory implementation
+      and call its <code>info()</code> method.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#url">url</a> : String<div class="summaryTableDescription">[read-only]
+      The URL associated with this module (for example, "MyImageModule.swf" or 
+      "http://somedomain.com/modules/MyImageModule.swf".</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#load()">load</a>(applicationDomain:ApplicationDomain = null, securityDomain:SecurityDomain = null):void</div>
+<div class="summaryTableDescription">
+      Requests that the module be loaded.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#publish()">publish</a>(factory:IFlexModuleFactory):void</div>
+<div class="summaryTableDescription">
+      Publishes an interface to the ModuleManager.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#release()">release</a>():void</div>
+<div class="summaryTableDescription">
+      Releases the current reference to the module.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unload()">unload</a>():void</div>
+<div class="summaryTableDescription">
+      Unloads the module.</div>
+</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:error">error</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched by the backing ModuleInfo if there was an error during
+  module loading.</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:progress">progress</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched by the backing ModuleInfo at regular intervals 
+  while the module is being loaded.</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ready">ready</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched by the backing ModuleInfo once the module is sufficiently
+  loaded to call the <code>IModuleInfo.factory()</code> method and the
+  <code>IFlexModuleFactory.create()</code> method.</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:setup">setup</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched by the backing ModuleInfo once the module is sufficiently
+  loaded to call the <code>IModuleInfo.factory()</code> method and 
+  the <code>IFlexModuleFactory.info()</code> method.</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:unload">unload</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched by the backing ModuleInfo when the module data is unloaded.</td><td class="summaryTableOwnerCol">IModuleInfo</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="data"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">data</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>data:Object</code>&nbsp;&nbsp;[read-write]<p>
+      User data that can be associated with the singleton IModuleInfo
+      for a given URL.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get data():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set data(value:Object):void</code>
+<br>
+</div>
+<a name="error"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">error</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>error:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+      A flag that is <code>true</code> if there was an error
+      during module loading.
+      
+      </p><p>This flag is <code>true</code> when the ModuleManager dispatches the
+      <code>ModuleEvent.ERROR</code> event.</p>
+     <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get error():Boolean</code>
+<br>
+</div>
+<a name="factory"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">factory</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>factory:IFlexModuleFactory</code>&nbsp;&nbsp;[read-only]<p>
+      The IFlexModuleFactory implementation defined in the module.
+      This will only be non-<code>null</code> after the
+      <code>ModuleEvent.SETUP</code> event has been dispatched
+      (or the <code>IModuleInfo.setup()</code> method returns <code>true</code>).
+      At this point, the <code>IFlexModuleFactory.info()</code> method can be called.
+      Once a <code>ModuleEvent.READY</code> event is dispatched
+      (or the <code>IModuleInfo.ready()</code> method returns <code>true</code>),
+      it is possible to call the <code>IFlexModuleFactory.create()</code> method.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get factory():IFlexModuleFactory</code>
+<br>
+</div>
+<a name="loaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaded:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+      A flag that is <code>true</code> if the <code>load()</code>
+      method has been called on this module.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaded():Boolean</code>
+<br>
+</div>
+<a name="ready"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ready</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ready:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+      A flag that is <code>true</code> if the module is sufficiently loaded
+      to get a handle to its associated IFlexModuleFactory implementation
+      and call its <code>create()</code> method.
+      
+      </p><p>This flag is <code>true</code> when the ModuleManager dispatches the
+      <code>ModuleEvent.READY</code> event.</p>
+     <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ready():Boolean</code>
+<br>
+</div>
+<a name="setup"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setup</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>setup:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+      A flag that is <code>true</code> if the module is sufficiently loaded
+      to get a handle to its associated IFlexModuleFactory implementation
+      and call its <code>info()</code> method.
+      
+      </p><p>This flag is <code>true</code> when the ModuleManager dispatches the
+      <code>ModuleEvent.SETUP</code> event.</p>
+     <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get setup():Boolean</code>
+<br>
+</div>
+<a name="url"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">url</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>url:String</code>&nbsp;&nbsp;[read-only]<p>
+      The URL associated with this module (for example, "MyImageModule.swf" or 
+      "http://somedomain.com/modules/MyImageModule.swf". The URL can be local or remote, but 
+      if it is remote, you must establish a trust between the module's domain and the 
+      application that loads it.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get url():String</code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="load()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">load</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function load(applicationDomain:ApplicationDomain = null, securityDomain:SecurityDomain = null):void</code><p>
+      Requests that the module be loaded. If the module is already loaded,
+      the call does nothing. Otherwise, the module begins loading and dispatches 
+      <code>progress</code> events as loading proceeds.
+      
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">applicationDomain</span>:ApplicationDomain</code> (default = <code>null</code>)<code></code> &mdash; The current application domain in which your code is executing.
+      
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">securityDomain</span>:SecurityDomain</code> (default = <code>null</code>)<code></code> &mdash; The current security "sandbox".
+     </td>
+</tr>
+</table>
+</div>
+<a name="publish()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">publish</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function publish(factory:IFlexModuleFactory):void</code><p>
+      Publishes an interface to the ModuleManager. This allows late (or decoupled)
+      subscriptions to factories with a String handle. Use a URL that starts with
+      <code>publish://</code> to reference factories that are published in this manner.
+      
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">factory</span>:IFlexModuleFactory</code> &mdash; The class that implements the module's IFlexModuleFactory interface.
+      
+      </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../modules/ModuleManager.html" target="">mx.modules.ModuleManager</a>
+</div>
+</div>
+<a name="release()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">release</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function release():void</code><p>
+      Releases the current reference to the module.
+      This does not unload the module unless there are no other
+      open references to it and the ModuleManager is set up
+      to have only a limited number of loaded modules.
+      
+      </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../modules/ModuleManager.html" target="">mx.modules.ModuleManager</a>
+</div>
+</div>
+<a name="unload()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unload</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unload():void</code><p>
+      Unloads the module.
+      Flash Player will not fully unload and garbage collect this module if
+      there are any outstanding references to definitions inside the
+      module.
+     </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:error"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">error</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ModuleEvent.html"><code>mx.events.ModuleEvent</code></a>
+<br>
+<span class="label">ModuleEvent.type property = </span><a href="../events/ModuleEvent.html#ERROR"><code>mx.events.ModuleEvent.ERROR</code></a>
+<br><p>
+  Dispatched by the backing ModuleInfo if there was an error during
+  module loading.
+   </p><p>
+      Dispatched when there is an error downloading the module.
+      The <code>ModuleEvent.ERROR</code> constant defines the value of the
+      <code>type</code> property of the event object for an <code>error</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>bytesLoaded</code></td><td>Empty</td></tr>
+         <tr><td><code>bytesTotal</code></td><td>Empty</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the
+           event listener that handles the event. For example, if you use
+           <code>myButton.addEventListener()</code> to register an event listener,
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>errorText</code></td><td>The error message.</td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event;
+           it is not always the Object listening for the event.
+           Use the <code>currentTarget</code> property to always access the
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<a name="event:progress"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">progress</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ModuleEvent.html"><code>mx.events.ModuleEvent</code></a>
+<br>
+<span class="label">ModuleEvent.type property = </span><a href="../events/ModuleEvent.html#PROGRESS"><code>mx.events.ModuleEvent.PROGRESS</code></a>
+<br><p>
+  Dispatched by the backing ModuleInfo at regular intervals 
+  while the module is being loaded.
+   </p><p>
+      Dispatched when the module is in the process of downloading. This module is
+      dispatched at regular intervals during the download process.
+      The <code>ModuleEvent.PROGRESS</code> constant defines the value of the 
+      <code>type</code> property of the event object for a <code>progress</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>bytesLoaded</code></td><td>The number of bytes loaded.</td></tr>
+         <tr><td><code>bytesTotal</code></td><td>The total number of bytes to load.</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the 
+           event listener that handles the event. For example, if you use 
+           <code>myButton.addEventListener()</code> to register an event listener, 
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>errorText</code></td><td>Empty</td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event; 
+           it is not always the Object listening for the event. 
+           Use the <code>currentTarget</code> property to always access the 
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<a name="event:ready"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ready</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ModuleEvent.html"><code>mx.events.ModuleEvent</code></a>
+<br>
+<span class="label">ModuleEvent.type property = </span><a href="../events/ModuleEvent.html#READY"><code>mx.events.ModuleEvent.READY</code></a>
+<br><p>
+  Dispatched by the backing ModuleInfo once the module is sufficiently
+  loaded to call the <code>IModuleInfo.factory()</code> method and the
+  <code>IFlexModuleFactory.create()</code> method.
+   </p><p>
+      Dispatched when the module has finished downloading.     
+      The <code>ModuleEvent.READY</code> constant defines the value of the 
+      <code>type</code> property of the event object for a <code>complete</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>bytesLoaded</code></td><td>The number of bytes loaded.</td></tr>
+         <tr><td><code>bytesTotal</code></td><td>The total number of bytes to load.</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the 
+           event listener that handles the event. For example, if you use 
+           <code>myButton.addEventListener()</code> to register an event listener, 
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>errorText</code></td><td>Empty</td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event; 
+           it is not always the Object listening for the event. 
+           Use the <code>currentTarget</code> property to always access the 
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<a name="event:setup"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setup</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ModuleEvent.html"><code>mx.events.ModuleEvent</code></a>
+<br>
+<span class="label">ModuleEvent.type property = </span><a href="../events/ModuleEvent.html#SETUP"><code>mx.events.ModuleEvent.SETUP</code></a>
+<br><p>
+  Dispatched by the backing ModuleInfo once the module is sufficiently
+  loaded to call the <code>IModuleInfo.factory()</code> method and 
+  the <code>IFlexModuleFactory.info()</code> method.
+   </p><p>
+      Dispatched when enough of a module has been downloaded that you can get information
+      about the module. You do this by calling the <code>IFlexModuleFactory.info()</code>
+      method on the module.
+      The <code>ModuleEvent.SETUP</code> constant defines the value of the
+      <code>type</code> property of the event object for a <code>setup</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>bytesLoaded</code></td><td>Empty</td></tr>
+         <tr><td><code>bytesTotal</code></td><td>Empty</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the
+           event listener that handles the event. For example, if you use
+           <code>myButton.addEventListener()</code> to register an event listener,
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>errorText</code></td><td>An error message.</td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event;
+           it is not always the Object listening for the event.
+           Use the <code>currentTarget</code> property to always access the
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<a name="event:unload"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unload</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ModuleEvent.html"><code>mx.events.ModuleEvent</code></a>
+<br>
+<span class="label">ModuleEvent.type property = </span><a href="../events/ModuleEvent.html#UNLOAD"><code>mx.events.ModuleEvent.UNLOAD</code></a>
+<br><p>
+  Dispatched by the backing ModuleInfo when the module data is unloaded.
+   </p><p>
+      Dispatched when the module is unloaded.
+           The <code>ModuleEvent.UNLOAD</code> constant defines the value of the
+      <code>type</code> property of the event object for an <code>unload</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>bytesLoaded</code></td><td>Empty</td></tr>
+         <tr><td><code>bytesTotal</code></td><td>Empty</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the
+           event listener that handles the event. For example, if you use
+           <code>myButton.addEventListener()</code> to register an event listener,
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>errorText</code></td><td>An error message.</td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event;
+           it is not always the Object listening for the event.
+           Use the <code>currentTarget</code> property to always access the
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

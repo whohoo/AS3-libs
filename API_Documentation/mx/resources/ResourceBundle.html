@@ -1,0 +1,468 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="ResourceBundle,mx.resources.ResourceBundle,getResourceBundle,getContent,getBoolean,getNumber,getString,getStringArray,getObject" name="keywords">
+<title>mx.resources.ResourceBundle</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ResourceBundle - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/resources/ResourceBundle.html&amp;mx/resources/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ResourceBundle</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ResourceBundle"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.resources</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ResourceBundle</td>
+</tr>
+</table>
+<p></p>
+  
+  This class can be used to internationalize 
+  the framework and applications.
+  To localize an application, you can create one 
+  properties file per class or per package or simply 
+  a single properties file. This properties file 
+  is exactly like a Java-based properties file 
+  which has name-value pairs.
+  The properties file name can be the same as 
+  the class name, for example, MyAlert.properties corresponding 
+  to MyAlert.as, or it can have a different name.
+  Exisiting framework properties files can be found in 
+  the frameworks/locale/en_US/ directory. The 
+  frameworks/locale/en_US/SharedResources.properties file
+  contains all shared keys and error strings across
+  the framework.
+ <p>
+  If you want to localize in a particular language, for example French, you would
+  make a copy of frameworks/locale/en_US/ directory and 
+  call it fr_FR/ and make the necessary changes to the
+  framework properties files.
+  You can compile your application kept in MyApp using
+  <code>"..\bin\mxmlc.exe" -locale en_US -library-path=..\frameworks\libs
+  -source-path="..\frameworks\locale\{locale},
+  ..\myLocale\{locale}" main.mxml</code>
+  </p>
+  <p>Note that the source-path mentions the source
+  for both frmaework properties files as well as 
+  myApp's properties files. In this case, you would 
+  place MyAlert.properties in the myLocale/en_US and 
+  myLocale/fr_FR directories. The locale directory should be 
+  part of the compc ActionScript classpath
+  but should not be a part of the ActionScript
+  classpath that is used for mxmlc when building 
+  the main SWF file; for example, placing myLocale in the
+  myApp directory would throw a compiler warning.
+  The locale is settable through the xml config file,
+  mxml compiler argument or through Flex builder.  However,
+  locale is not settable through the Locale class at runtime.
+  </p> 
+  <p>The framework currently supports en_US and ja_JP only. However,
+  you can create properties files for any language and keep
+  them under a locale folder, such as fr_FR for French.
+  </p>
+  <p>While getting localizable text, you must 
+  specify the filename in the ResourceBundle metadata; for example:</p> 
+  <pre>
+ [ResourceBundle('MyAlert')] 
+ private static var rb:ResourceBundle;</pre>
+  <p>
+ and then access it in ActionScript using <code>rb.getString('foo');</code>
+ or in MXML using <code>&#64;Resource(bundle='MyAlert', key='foo')</code>.
+ </p>
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">mx.resources.Locale</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ResourceBundle()">ResourceBundle</a>()</div>
+<div class="summaryTableDescription">
+   Constructor.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getBoolean()">getBoolean</a>(key:String, defaultValue:Boolean = true):Boolean</div>
+<div class="summaryTableDescription">
+     Gets a Boolean from a ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getNumber()">getNumber</a>(key:String):Number</div>
+<div class="summaryTableDescription">
+      Gets a Number from a ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getObject()">getObject</a>(key:String):Object</div>
+<div class="summaryTableDescription">
+   Gets an object from a ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getResourceBundle()">getResourceBundle</a>(baseName:String, currentDomain:ApplicationDomain = null):<a href="../resources/ResourceBundle.html">ResourceBundle</a>
+</div>
+<div class="summaryTableDescription">[static]
+     Gets a ResourceBundle when provided with a className.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getString()">getString</a>(key:String):String</div>
+<div class="summaryTableDescription">
+   Gets a string from a ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStringArray()">getStringArray</a>(key:String):Array</div>
+<div class="summaryTableDescription">
+      Gets an array from a ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getContent()">getContent</a>():Object</div>
+<div class="summaryTableDescription">
+     You can override this method to provide
+     your own keys and values for a ResourceBundle or
+     to add objects to your custom ResourceBundle.</div>
+</td><td class="summaryTableOwnerCol">ResourceBundle</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ResourceBundle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ResourceBundle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ResourceBundle()</code><p>
+   Constructor.
+  </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getBoolean()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getBoolean</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getBoolean(key:String, defaultValue:Boolean = true):Boolean</code><p>
+     Gets a Boolean from a ResourceBundle.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">key</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">defaultValue</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>     <pre>
+     [ResourceBundle("foo")]
+     private static var packageResources:ResourceBundle;
+     packageResources.getString("myBooleanKey");
+     </pre>
+     <p></p>
+</div>
+<a name="getContent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getContent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function getContent():Object</code><p>
+     You can override this method to provide
+     your own keys and values for a ResourceBundle or
+     to add objects to your custom ResourceBundle.
+     The following example adds a jpg image to a
+     custom ResourceBundle.
+     First you create a class called myPic. You then make 
+     a custom ResourceBundle called myBundle.  
+     </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../resources/ResourceBundle.html#getObject()" target="">getObject()</a>
+</div>
+<br>
+<span class="label">Example</span>
+<br>     <pre>
+     package {
+     [Embed(source='picture.jpg')]
+     public class myPic extends mx.core.SpriteAsset {}
+     }
+     package {
+     import mx.resources.ResourceBundle;
+     public class myBundle extends ResourceBundle {
+     public function myBundle() { super(); }
+     override protected static function getContent():Object {
+     var contentObj:Object = new Object(); 
+     content.push("myPic", myPic);
+     return contentObj; }}}
+     </pre>
+     <p></p>
+</div>
+<a name="getNumber()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getNumber</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getNumber(key:String):Number</code><p>
+      Gets a Number from a ResourceBundle.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">key</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>      <pre>
+      [ResourceBundle("foo")]
+      private static var packageResources:ResourceBundle;
+      packageResources.getString("myNumericKey");
+      </pre>
+     <p></p>
+</div>
+<a name="getObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getObject(key:String):Object</code><p>
+   Gets an object from a ResourceBundle.
+   The folowing example  shows how to get a
+   jpg image with the <code>getObject()</code> method.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">key</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../resources/ResourceBundle.html#getContent()" target="">getContent()</a>
+</div>
+<br>
+<span class="label">Example</span>
+<br>          <pre>
+   [ResourceBundle("MyBundle")]
+   private static var rb:ResourceBundle;
+   var sprite:SpriteAsset = SpriteAsset(rb.getObject("myPic"));
+   </pre>
+   <p></p>
+</div>
+<a name="getResourceBundle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getResourceBundle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getResourceBundle(baseName:String, currentDomain:ApplicationDomain = null):<a href="../resources/ResourceBundle.html">ResourceBundle</a></code><p>
+     Gets a ResourceBundle when provided with a className.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">baseName</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">currentDomain</span>:ApplicationDomain</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../resources/ResourceBundle.html">ResourceBundle</a></code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>     <pre>
+     private static var rb:ResourceBundle;
+     rb = getResourceBundle("fooBundle");
+     </pre>
+     <p></p>
+</div>
+<a name="getString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getString(key:String):String</code><p>
+   Gets a string from a ResourceBundle.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">key</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>         <pre>
+         [ResourceBundle("controls")]
+  private static var packageResources:ResourceBundle;
+  packageResources.getString("okLabel");
+  </pre>
+  <p></p>
+</div>
+<a name="getStringArray()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStringArray</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getStringArray(key:String):Array</code><p>
+      Gets an array from a ResourceBundle.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">key</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>     <pre>
+     [ResourceBundle("SharedResources")]
+     private static var sharedResources:ResourceBundle;
+     sharedResources.getStringArray("monthNames");
+     </pre>
+     <p></p>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

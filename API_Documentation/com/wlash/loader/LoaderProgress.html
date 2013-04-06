@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="LoaderProgress,com.wlash.loader.LoaderProgress,BIT_PER_SECOND,NONE,PERCENT_PER_SECOND,simulationMode,loadBitRate,loadPercent,refreshMilliseond,source" name="keywords">
+<title>com.wlash.loader.LoaderProgress</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'LoaderProgress - Whohoo AS3 API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/wlash/loader/LoaderProgress.html&amp;com/wlash/loader/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;LoaderProgress</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class LoaderProgress"); titleBar_setSubNav(true,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.wlash.loader</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class LoaderProgress</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LoaderProgress <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+  下载进度条,可以定义下载速度,模拟下载.
+  
+  <p>可监测当前场景对象的下载速度,可模拟下载,也可以按实际网络状况来决定
+  下载率.<br/>有两种模拟状态:一是按每秒下载的流量来决定下载率,另一是按每秒
+  可以下载多少百分比.模拟下载的使用情况是在网络速度很好,当影片的下载实际速度比
+  模拟下载速度快时,才会使用的模拟下载速度,如果设定的模拟下载速度很快,而实际网络
+  没达到这么快的下载速度,会按实际的网络速度来决定下载速度.<br/>当要显示下载过程
+  页面过场时,模拟下载是挺有用的.</p>
+  <p>把组件拖到场景中,可在参数面版中设置参数(<b>属性:</b>).</p>
+  
+  <li>loaderTarget 要测量下载的对象,一般设为root</li>
+  <li>loadBitRate = 0 模拟下载的字节数/s</li>
+  <li>loadPercent = 0 模拟下载的百分数/s</li>
+  <li>refreshMilliseond = 10 刷新的毫秒数</li>
+  <li>simulationMode 可选模拟下载模式</li>
+  <br/>
+  simulationRate 下载的速率,单位为bit/s 可以选的值有:
+     <li>com.wlash.loaderLoadingBitRate.NONE   //0 bit/s</li>
+     <li>com.wlash.loaderLoadingBitRate.MODEM_BIT_RATE //4800 bit/s</li>
+     <li>com.wlash.loaderLoadingBitRate.DSL_BIT_RATE //33400 bit/s</li>
+     <li>com.wlash.loaderLoadingBitRate.T1_BIT_RATE //134300 bit/s</li>
+  <br/>
+  
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  import com.wlash.loader.LoaderProgress;
+  import com.wlash.loader.LoadingBitRate;
+  var pro:LoaderProgress = getChildAt(0) as LoaderProgress;
+  
+  pro.loadBitRate  = LoadingBitRate.DSL_BIT_RATE;
+  pro.addEventListener(ProgressEvent.PROGRESS, onProgress);
+  pro.addEventListener(Event.COMPLETE, onComplete);
+  //trace(pro.loaderTarget is String, pro.loaderTarget);
+  
+  function onProgress(evt:ProgressEvent){
+   trace(evt.bytesLoaded, evt.bytesTotal);
+   tf.text = (evt.bytesLoaded/evt.bytesTotal00).toString();
+  }
+  function onComplete(evt:Event){
+   trace("FINISH");
+  }
+  var tf:TextField = new TextField();
+  addChild(tf);
+  </pre></div>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadBitRate">loadBitRate</a> : uint<div class="summaryTableDescription">
+   假设要下载的字节数.</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadPercent">loadPercent</a> : uint<div class="summaryTableDescription">
+   每一秒内要下载的百分数.</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#refreshMilliseond">refreshMilliseond</a> : uint<div class="summaryTableDescription">
+   刷新的速度,是毫秒为单位的.</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#simulationMode">simulationMode</a> : String = "none"<div class="summaryTableDescription">
+   可选的模拟下载模式.可选的值有none, bit/s, percent/s
+   </div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#source">source</a> : String<div class="summaryTableDescription">
+   要检测下载速度的名称,对象为字串,与ProgressBar不一样,这里应为得到parent[source]的对象
+   应为DisplayObject才对.如果对象为空或对象大小为0,则会throw Error.</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#LoaderProgress()">LoaderProgress</a>()</div>
+<div class="summaryTableDescription">
+   Construction function.<br></br>
+   直接把组件拖到场景中既可使用,不必用new LoaderProgress()来构建对象.</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:complete">complete</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  影片被下载完成时广播,不管是模拟下载还是真实下载.</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:progress">progress</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  当前正下载的影片过程广播此事件,不管是模拟下载还是真实下载.</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BIT_PER_SECOND">BIT_PER_SECOND</a> : String = "bit/s"<div class="summaryTableDescription">[static]按下载的字节数来模拟下载速度</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#NONE">NONE</a> : String = "none"<div class="summaryTableDescription">[static]不用模拟下载,按实际加载情况广播下载事件</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PERCENT_PER_SECOND">PERCENT_PER_SECOND</a> : String = "percent/s"<div class="summaryTableDescription">[static]按一秒内可下载的百分比数来模拟下载速度</div>
+</td><td class="summaryTableOwnerCol">LoaderProgress</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="loadBitRate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadBitRate</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadBitRate:uint</code>&nbsp;&nbsp;[read-write]<p>
+   假设要下载的字节数.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadBitRate():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loadBitRate(value:uint):void</code>
+<br>
+</div>
+<a name="loadPercent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadPercent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadPercent:uint</code>&nbsp;&nbsp;[read-write]<p>
+   每一秒内要下载的百分数.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadPercent():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loadPercent(value:uint):void</code>
+<br>
+</div>
+<a name="refreshMilliseond"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">refreshMilliseond</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>refreshMilliseond:uint</code>&nbsp;&nbsp;[read-write]<p>
+   刷新的速度,是毫秒为单位的.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get refreshMilliseond():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set refreshMilliseond(value:uint):void</code>
+<br>
+</div>
+<a name="simulationMode"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">simulationMode</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var simulationMode:String = "none"</code><p>
+   可选的模拟下载模式.可选的值有none, bit/s, percent/s
+   </p></div>
+<a name="source"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">source</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>source:String</code>&nbsp;&nbsp;[read-write]<p>
+   要检测下载速度的名称,对象为字串,与ProgressBar不一样,这里应为得到parent[source]的对象
+   应为DisplayObject才对.如果对象为空或对象大小为0,则会throw Error.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get source():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set source(value:String):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="LoaderProgress()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LoaderProgress</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function LoaderProgress()</code><p>
+   Construction function.<br></br>
+   直接把组件拖到场景中既可使用,不必用new LoaderProgress()来构建对象.
+   </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:complete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">complete</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.Event</code></a>
+<br>
+<p></p><p>
+  影片被下载完成时广播,不管是模拟下载还是真实下载.
+    </p></div>
+<a name="event:progress"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">progress</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.ProgressEvent</code></a>
+<br>
+<p></p><p>
+  当前正下载的影片过程广播此事件,不管是模拟下载还是真实下载.
+    </p></div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="BIT_PER_SECOND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BIT_PER_SECOND</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BIT_PER_SECOND:String = "bit/s"</code><p>按下载的字节数来模拟下载速度</p></div>
+<a name="NONE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">NONE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const NONE:String = "none"</code><p>不用模拟下载,按实际加载情况广播下载事件</p></div>
+<a name="PERCENT_PER_SECOND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PERCENT_PER_SECOND</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PERCENT_PER_SECOND:String = "percent/s"</code><p>按一秒内可下载的百分比数来模拟下载速度</p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0-->

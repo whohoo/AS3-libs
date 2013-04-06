@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Form,com.wlash.data.Form,addItem,build,checkDate,checkEmail,checkID,checkMobile,getInstance,resetTextField,setHintText,showHint,toString" name="keywords">
+<title>com.wlash.data.Form</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Form - Whohoo AS3 API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/wlash/data/Form.html&amp;com/wlash/data/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Form</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Form"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.wlash.data</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Form</td>
+</tr>
+</table>
+<p></p>
+ 一个实用的表单提交检查类.
+ 
+ <p>可定义输入文本框的顺序，对于单行输入框，按下回车(Enter)键时，可自动跳到下一
+ 文本框中。最后一个文本框中按下回画键，相当于提交数据。</p>
+ <p>还可对邮件，手机，身份证号，日期等数据进行检验。</p>
+ 
+ <p></p>
+<br>
+<span class="label">Example</span>
+<br>以下是调用的方法：
+ <div class='listing'><pre></pre></div><p></p>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Form()">Form</a>()</div>
+<div class="summaryTableDescription">
+  contruct function.<br></br>
+  in stage, it just only one form instance, so you could not create instance
+  by this function.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addItem()">addItem</a>(item:InteractiveObject):void</div>
+<div class="summaryTableDescription">
+  add a InteractiveObject.<br></br>
+  
+  </div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#build()">build</a>(enabled:Boolean = true):void</div>
+<div class="summaryTableDescription">
+  build listen event, when add all item to Form, you ought to build to start
+  listening the user action.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkDate()">checkDate</a>(dateStr:String):Boolean</div>
+<div class="summaryTableDescription">[static]
+  check date valid
+  </div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkEmail()">checkEmail</a>(mailStr:String):Boolean</div>
+<div class="summaryTableDescription">[static]
+  check email.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkID()">checkID</a>(id:String):Boolean</div>
+<div class="summaryTableDescription">[static]
+  check id number valid
+  only for RPC id card number.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#checkMobile()">checkMobile</a>(mobileNum:String):Boolean</div>
+<div class="summaryTableDescription">[static]
+  check mobile number,<br>
+  </br>
+  olny for china eare.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../data/Form.html">Form</a>
+</div>
+<div class="summaryTableDescription">[static]
+  create only one form.<br></br>
+  this class no contruct function, you only create instance by the method.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resetTextField()">resetTextField</a>():void</div>
+<div class="summaryTableDescription">
+  reset all input TextField.<br/>
+  all input TextField are reset to Empty.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setHintText()">setHintText</a>(txt:TextField):void</div>
+<div class="summaryTableDescription">[static]
+   定义的提示框,当调用Form.showHint()时,会慢慢消失文字
+   </div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showHint()">showHint</a>(text:String, second:uint = 4):void</div>
+<div class="summaryTableDescription">[static]
+  hints, you must embed font in that textfield or you would not see the words,<br/>
+  because the textfield display by fadeIn or fadeOut.</div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+  show this class name
+  </div>
+</td><td class="summaryTableOwnerCol">Form</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Form()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Form</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Form()</code><p>
+  contruct function.<br></br>
+  in stage, it just only one form instance, so you could not create instance
+  by this function. you must create instance by Form.getInstance();
+  </p><br>
+<span class="label">Example</span>
+<br>example code:
+  <div class='listing'><pre>
+  var form:Form = Form.getInstance();//correct
+  var form:Form = new Form();//WRONG
+  </pre></div>
+  <p></p>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addItem()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addItem(item:InteractiveObject):void</code><p>
+  add a InteractiveObject.<br></br>
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">item</span>:InteractiveObject</code> &mdash; TextField or button or movieclip.
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; if there are more then one SimpleButton or DisplayObjectContainer
+  
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  form.addItem(input_txt);
+  form.addItem(submit_btn);
+  </pre></div>
+  <p></p>
+</div>
+<a name="build()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">build</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function build(enabled:Boolean = true):void</code><p>
+  build listen event, when add all item to Form, you ought to build to start
+  listening the user action.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">enabled</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; if true, could skip next input TextField by press <b>Enter</b>.
+  
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  form.build(true);//support Enter Key. default
+  </pre></div>
+  <p></p>
+</div>
+<a name="checkDate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkDate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function checkDate(dateStr:String):Boolean</code><p>
+  check date valid
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">dateStr</span>:String</code> &mdash; format[yyyy-MM-dd hh:mm:ss]
+  
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  Form.checkDate("2007-01-22");//return true
+  Form.checkDate("2007-02-32");//return false
+  Form.checkDate("2007-02-22 12:11");//return true
+  </pre></div>
+  <p></p>
+</div>
+<a name="checkEmail()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkEmail</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function checkEmail(mailStr:String):Boolean</code><p>
+  check email.
+  </p><p>建议用 [restrict = "A-Za-z0-9\\-_.&#64;"]来限制文本框的输入.
+  只对输入的邮件的大概结构做判断,而不是全面合法性判断.
+  要求邮件地址:只能以字母或数字开头,可以有(_或-)连继的存在,如a---b&#64;live.com
+  但不能有a...b&#64;live.com的存在,因为不合法,也不能是abc.&#64;live.com
+  可以是以IP地址结尾的电子邮件,如abc&#64;123.22.34.32
+  </p>
+  <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mailStr</span>:String</code> &mdash; eamil address
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true or false
+  
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  Form.checkEmail("whohoo&#64;21cn.com");//return <code>true</code>
+  </pre></div>
+  <p></p>
+</div>
+<a name="checkID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function checkID(id:String):Boolean</code><p>
+  check id number valid
+  only for RPC id card number.
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; a string of id number.
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if it is valid.
+  
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  Form.checkID("4501314486437535445");//return false
+  </pre></div>
+  <p></p>
+</div>
+<a name="checkMobile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">checkMobile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function checkMobile(mobileNum:String):Boolean</code><p>
+  check mobile number,<br>
+  </br>
+  olny for china eare.
+  手机号码从130到139,且还有新增的158,159
+  注意,有些手机后跟有分机号码,在此不做判断
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mobileNum</span>:String</code> &mdash; mobile number
+  </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; false if invaild.
+  
+  </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  Form.checkMobile("137614874464");//return false for length>11.
+  </pre></div>
+  <p></p>
+</div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../data/Form.html">Form</a></code><p>
+  create only one form.<br></br>
+  this class no contruct function, you only create instance by the method.
+  </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/Form.html">Form</a></code> &mdash; 
+                        the only form you could create.
+  
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="resetTextField()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resetTextField</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resetTextField():void</code><p>
+  reset all input TextField.<br/>
+  all input TextField are reset to Empty.
+  </p></div>
+<a name="setHintText()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setHintText</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setHintText(txt:TextField):void</code><p>
+   定义的提示框,当调用Form.showHint()时,会慢慢消失文字
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">txt</span>:TextField</code></td>
+</tr>
+</table>
+</div>
+<a name="showHint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showHint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function showHint(text:String, second:uint = 4):void</code><p>
+  hints, you must embed font in that textfield or you would not see the words,<br/>
+  because the textfield display by fadeIn or fadeOut.
+  before call this function, you ought to call Form.setHintText(hints_txt);
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">text</span>:String</code> &mdash; show text
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">second</span>:uint</code> (default = <code>4</code>)<code></code> &mdash; [optional] invisble after second, default 4 sec.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">setHintText</div>
+<br>
+<span class="label">Example</span>
+<br>sample code:
+  <div class='listing'><pre>
+  Form.showHint("user name is empty.");
+  </pre></div>
+  <p></p>
+</div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function toString():String</code><p>
+  show this class name
+  </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; class name
+  </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 1.0-->

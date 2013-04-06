@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="State,mx.states.State,basedOn,name,overrides" name="keywords">
+<title>mx.states.State</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'State - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/states/State.html&amp;mx/states/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;State</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class State"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.states</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class State</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">State <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  The State class defines a view state, a particular view of a component.
+  For example, a product thumbnail could have two view states;
+  a base view state with minimal information, and a rich view state with
+  additional information.
+  The <code>overrides</code> property specifies a set of child classes
+  to add or remove from the base view state, and properties, styles, and event
+  handlers to set when the view state is in effect.
+   <p>You use the State class in the <code>states</code> property
+  of Flex components.
+  You can only specify a <code>states</code> property at the root of an
+  application or a custom control, not on child controls.</p>
+   <p>You enable a view state by setting a component's
+  <code>currentState</code> property.</p>
+   <p></p>
+<a name="mxmlSyntaxSummary"></a><span class="classHeaderTableLabel">MXML Syntax</span><span style="display:none" id="showMxmlLink"><a onclick="toggleMXMLOnly();" href="#mxmlSyntaxSummary"><img class="collapsedImage" alt="collapsed" title="collapsed" src="../../images/collapsed.gif"> Show MXML Syntax</a>
+<br>
+</span><span id="hideMxmlLink"><a onclick="toggleMXMLOnly();" href="#mxmlSyntaxSummary"><img class="expandedImage" alt="expanded" title="expanded" src="../../images/expanded.gif"> Hide MXML Syntax</a></span>
+<div class="mxmlSyntax" id="mxmlSyntax">  <p>The <code>&lt;mx:State&gt;</code> tag has the following attributes:</p>
+   <pre>
+  &lt;mx:State
+  <b>Properties</b>
+  basedOn="null"
+  name="null"
+  overrides="null"
+  /&gt;
+  </pre>
+   </div>
+<script type="text/javascript" language="javascript">
+<!--
+setMXMLOnly();
+--></script>
+<p>
+<span class="classHeaderTableLabel">Default MXML Property</span><code>overrides</code>
+</p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">mx.states.AddChild<br>mx.states.RemoveChild<br>mx.states.SetEventHandler<br>mx.states.SetProperty<br>mx.states.SetStyle<br>
+<a href="../states/Transition.html" target="">mx.states.Transition</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#basedOn">basedOn</a> : String<div class="summaryTableDescription">
+   The name of the view state upon which this view state is based, or
+   <code>null</code> if this view state is not based on a named view state.</div>
+</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">
+      The name of the view state.</div>
+</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#overrides">overrides</a> : Array<div class="summaryTableDescription">
+   The overrides for this view state, as an Array of objects that implement
+   the IOverride interface.</div>
+</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#State()">State</a>()</div>
+<div class="summaryTableDescription">
+   Constructor.</div>
+</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:enterState">enterState</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the view state has been entered.</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:exitState">exitState</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched before a view state is exited.</td><td class="summaryTableOwnerCol">State</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="basedOn"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">basedOn</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var basedOn:String</code><p>
+   The name of the view state upon which this view state is based, or
+   <code>null</code> if this view state is not based on a named view state.
+   If this value is <code>null</code>, the view state is based on a root
+   state that consists of the properties, styles, event handlers, and
+   children that you define for a component without using a State class.
+     </p><p>The default value is <code>null</code>.</p>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var name:String</code><p>
+      The name of the view state.
+   State names must be unique for a given component.
+   This property must be set.
+     </p></div>
+<a name="overrides"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">overrides</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var overrides:Array</code><p>
+   The overrides for this view state, as an Array of objects that implement
+   the IOverride interface. These overrides are applied in order when the
+   state is entered, and removed in reverse order when the state is exited.
+     </p><p>The following Flex classes implement the IOverride interface and let you
+   define the view state characteristics:</p>
+   <ul>
+    <li>AddChild</li>
+    <li>RemoveChild</li>
+    <li>SetEventHandler</li>
+    <li>SetProperty</li>
+    <li>SetStyle</li>
+   </ul>
+     <p>The <code>overrides</code> property is the default property of the
+   State class. You can omit the <code>&lt;mx:overrides&gt;</code> tag
+   and its child <code>&lt;mx:Array&gt;</code>tag if you use MXML tag
+   syntax to define the overrides.</p>
+  </div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="State()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">State</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function State()</code><p>
+   Constructor.
+  </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:enterState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enterState</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/FlexEvent.html"><code>mx.events.FlexEvent</code></a>
+<br>
+<span class="label">FlexEvent.type property = </span><a href="../events/FlexEvent.html#ENTER_STATE"><code>mx.events.FlexEvent.ENTER_STATE</code></a>
+<br><p>
+  Dispatched when the view state has been entered.
+  This event is dispatched after the changes
+  to the base view state have been applied.
+   </p><p>
+      The <code>FlexEvent.ENTER_STATE</code> constant defines the value of the
+      <code>type</code> property of the event object for a <code>enterState</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the
+           event listener that handles the event. For example, if you use
+           <code>myButton.addEventListener()</code> to register an event listener,
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event;
+           it is not always the Object listening for the event.
+           Use the <code>currentTarget</code> property to always access the
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<a name="event:exitState"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">exitState</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/FlexEvent.html"><code>mx.events.FlexEvent</code></a>
+<br>
+<span class="label">FlexEvent.type property = </span><a href="../events/FlexEvent.html#EXIT_STATE"><code>mx.events.FlexEvent.EXIT_STATE</code></a>
+<br><p>
+  Dispatched before a view state is exited.
+  This event is dispatched before the changes
+  to the base view state have been removed.
+   </p><p>
+      The <code>FlexEvent.EXIT_STATE</code> constant defines the value of the
+      <code>type</code> property of the event object for a <code>exitState</code> event.
+           </p><p>The properties of the event object have the following values:</p>
+      <table class="innertable">
+         <tr><th>Property</th><th>Value</th></tr>
+         <tr><td><code>bubbles</code></td><td>false</td></tr>
+         <tr><td><code>cancelable</code></td><td>false</td></tr>
+         <tr><td><code>currentTarget</code></td><td>The Object that defines the
+           event listener that handles the event. For example, if you use
+           <code>myButton.addEventListener()</code> to register an event listener,
+           myButton is the value of the <code>currentTarget</code>. </td></tr>
+         <tr><td><code>target</code></td><td>The Object that dispatched the event;
+           it is not always the Object listening for the event.
+           Use the <code>currentTarget</code> property to always access the
+           Object listening for the event.</td></tr>
+      </table>
+           </div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

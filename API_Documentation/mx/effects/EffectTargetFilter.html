@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="EffectTargetFilter,mx.effects.EffectTargetFilter,filterFunction,filterProperties,filterStyles,defaultFilterFunction" name="keywords">
+<title>mx.effects.EffectTargetFilter</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'EffectTargetFilter - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/effects/EffectTargetFilter.html&amp;mx/effects/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;EffectTargetFilter</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class EffectTargetFilter"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.effects</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class EffectTargetFilter</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="effectClasses/AddRemoveEffectTargetFilter.html">AddRemoveEffectTargetFilter</a>, <a href="effectClasses/HideShowEffectTargetFilter.html">HideShowEffectTargetFilter</a></td>
+</tr>
+</table>
+<p></p>
+  The EffectTargetFilter class defines a custom filter that is executed 
+  by each transition effect on each target of the effect. 
+   <p>The EffectTargetFilter class defines a
+  <code>defaultFilterFunction()</code> method that uses the
+  <code>filterProperties</code> and <code>filterStyles</code> properties
+  to determine whether to play the effect on each effect target.</p>
+  
+  <p>You can also define a custom filter function
+  to implement your own filtering logic.
+  To do so, define your filter function, and then specify that function
+  to an EffectTargetFilter object using the <code>filterFunction</code>
+  property.</p>
+  
+  <p>To configure an effect to use a custom filter, you pass an 
+  EffectTargetFilter object to the <code>Effect.customFilter</code> property 
+  of the effect.</p>
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#filterFunction">filterFunction</a> : Function<div class="summaryTableDescription">
+   A function that defines custom filter logic.</div>
+</td><td class="summaryTableOwnerCol">EffectTargetFilter</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#filterProperties">filterProperties</a> : Array<div class="summaryTableDescription"> 
+   An Array of Strings specifying component properties.</div>
+</td><td class="summaryTableOwnerCol">EffectTargetFilter</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#filterStyles">filterStyles</a> : Array<div class="summaryTableDescription"> 
+   An Array of Strings specifying style properties.</div>
+</td><td class="summaryTableOwnerCol">EffectTargetFilter</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#EffectTargetFilter()">EffectTargetFilter</a>()</div>
+<div class="summaryTableDescription">
+   Constructor.</div>
+</td><td class="summaryTableOwnerCol">EffectTargetFilter</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a><a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#defaultFilterFunction()">defaultFilterFunction</a>(propChanges:Array, instanceTarget:Object):Boolean</div>
+<div class="summaryTableDescription">
+   The default filter function for the EffectTargetFilter class.</div>
+</td><td class="summaryTableOwnerCol">EffectTargetFilter</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="filterFunction"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filterFunction</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var filterFunction:Function</code><p>
+   A function that defines custom filter logic.
+   Flex calls this method on every target of the effect.
+   If the function returns <code>true</code>,
+   the effect plays on the target;
+   if it returns <code>false</code>, the target is skipped by the effect.
+   A custom filter function gives you greater control over filtering
+   than the <code>Effect.filter</code> property. 
+     </p><p>The filter function has the following signature:</p>
+     <pre>
+   filterFunc(propChanges:Array, instanceTarget:Object):Boolean
+   {
+       // Return true to play the effect on instanceTarget, 
+       // or false to not play the effect.
+      } 
+      </pre>
+        <p>where:</p>
+      
+      <p><code>propChanges</code> - An Array of PropertyChanges objects, 
+      one object per target component of the effect.
+   If a property of a target is not modified by the transition,
+   it is not included in this Array.</p>
+      
+      <p><code>instanceTarget</code> - The specific target component
+   of the effect that you want to filter.
+   Within the custom filter function, you first search the
+   <code>propChanges</code> Array for the PropertyChanges object
+   that matches the <code>instanceTarget</code> argument
+   by comparing the <code>instanceTarget</code> argument
+   to the <code>propChanges.target</code> property.</p> 
+        <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="effectClasses/PropertyChanges.html" target="">mx.effects.effectClasses.PropertyChanges</a>
+</div>
+</div>
+<a name="filterProperties"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filterProperties</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var filterProperties:Array</code><p> 
+   An Array of Strings specifying component properties. 
+   If any of the properties in the Array changed on the target component, 
+   play the effect on the target. 
+     </p><p>If you define a custom filter function, you can examine the 
+   <code>filterProperties</code> property from within your function.</p>
+  </div>
+<a name="filterStyles"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filterStyles</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var filterStyles:Array</code><p> 
+   An Array of Strings specifying style properties. 
+   If any of the style properties in the Array changed on the target component, 
+   play the effect on the target. 
+     </p><p>If you define a custom filter function, you can examine the 
+   <code>filterStyles</code> property from within your function.</p>
+  </div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="EffectTargetFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EffectTargetFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function EffectTargetFilter()</code><p>
+   Constructor.
+  </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="defaultFilterFunction()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultFilterFunction</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function defaultFilterFunction(propChanges:Array, instanceTarget:Object):Boolean</code><p>
+   The default filter function for the EffectTargetFilter class. 
+   If the <code>instanceTarget</code> has different start and end values
+   for any of the values specified by the <code>filterProperties</code>
+   or <code>filterStyles</code> properties, play the effect on the target.
+     </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">propChanges</span>:Array</code> &mdash; An Array of PropertyChanges objects.
+   The <code>target</code> property of each PropertyChanges object
+   is equal to the effect's target. 
+   If no properties changed for an effect target,
+   it is not included in this Array.
+   
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">instanceTarget</span>:Object</code> &mdash; The target of the EffectInstance
+   that calls this function.
+   If an effect has multiple targets,
+   this function is called once per target. 
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Returns <code>true</code> to allow the effect instance to play. 
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="effectClasses/PropertyChanges.html" target="">mx.effects.effectClasses.PropertyChanges</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

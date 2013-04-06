@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="IAutomationObject,mx.automation.IAutomationObject,automationDelegate,automationName,automationValue,numAutomationChildren,showInAutomationHierarchy,automationTabularData,createAutomationIDPart,resolveAutomationIDPart,getAutomationChildAt,replayAutomatableEvent" name="keywords">
+<title>mx.automation.IAutomationObject</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IAutomationObject - Whohoo API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">whohoo AS2 documents</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?mx/automation/IAutomationObject.html&amp;mx/automation/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IAutomationObject</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IAutomationObject"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">mx.automation</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IAutomationObject</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../core/UIComponent.html">UIComponent</a>, <a href="../core/UITextField.html">UITextField</a></td>
+</tr>
+</table>
+<p></p>
+ The IAutomationObject interface defines the interface 
+ for a delegate object that implements automation
+ for a component.
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#automationDelegate">automationDelegate</a> : Object<div class="summaryTableDescription">
+      The delegate object that is handling the automation-related functionality.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#automationName">automationName</a> : String<div class="summaryTableDescription">
+      Name that can be used as an identifier for this object.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#automationTabularData">automationTabularData</a> : Object<div class="summaryTableDescription">[read-only]
+     An implementation of the <code>IAutomationTabularData</code> interface, which 
+     can be used to retrieve the data.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#automationValue">automationValue</a> : Array<div class="summaryTableDescription">[read-only]
+      This value generally corresponds to the rendered appearance of the 
+      object and should be usable for correlating the identifier with
+      the object as it appears visually within the application.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numAutomationChildren">numAutomationChildren</a> : int<div class="summaryTableDescription">[read-only]
+      The number of automation children this container has.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#showInAutomationHierarchy">showInAutomationHierarchy</a> : Boolean<div class="summaryTableDescription"> 
+      A flag that determines if an automation object
+      shows in the automation hierarchy.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createAutomationIDPart()">createAutomationIDPart</a>(child:<a href="IAutomationObject.html">IAutomationObject</a>):Object</div>
+<div class="summaryTableDescription">
+      Returns a set of properties that identify the child within 
+      this container.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getAutomationChildAt()">getAutomationChildAt</a>(index:int):<a href="../automation/IAutomationObject.html">IAutomationObject</a>
+</div>
+<div class="summaryTableDescription"> 
+      Provides the automation object at the specified index.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#replayAutomatableEvent()">replayAutomatableEvent</a>(event:Event):Boolean</div>
+<div class="summaryTableDescription">
+      Replays the specified event.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resolveAutomationIDPart()">resolveAutomationIDPart</a>(criteria:Object):Array</div>
+<div class="summaryTableDescription">
+      Resolves a child by using the id provided.</div>
+</td><td class="summaryTableOwnerCol">IAutomationObject</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="automationDelegate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">automationDelegate</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>automationDelegate:Object</code>&nbsp;&nbsp;[read-write]<p>
+      The delegate object that is handling the automation-related functionality.
+      Automation sets this when it creates the delegate object.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get automationDelegate():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set automationDelegate(value:Object):void</code>
+<br>
+</div>
+<a name="automationName"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">automationName</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>automationName:String</code>&nbsp;&nbsp;[read-write]<p>
+      Name that can be used as an identifier for this object.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get automationName():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set automationName(value:String):void</code>
+<br>
+</div>
+<a name="automationTabularData"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">automationTabularData</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>automationTabularData:Object</code>&nbsp;&nbsp;[read-only]<p>
+     An implementation of the <code>IAutomationTabularData</code> interface, which 
+     can be used to retrieve the data.
+     
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get automationTabularData():Object</code>
+<br>
+</div>
+<a name="automationValue"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">automationValue</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>automationValue:Array</code>&nbsp;&nbsp;[read-only]<p>
+      This value generally corresponds to the rendered appearance of the 
+      object and should be usable for correlating the identifier with
+      the object as it appears visually within the application.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get automationValue():Array</code>
+<br>
+</div>
+<a name="numAutomationChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numAutomationChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numAutomationChildren:int</code>&nbsp;&nbsp;[read-only]<p>
+      The number of automation children this container has.
+      This sum should not include any composite children, though
+      it does include those children not significant within the
+      automation hierarchy.
+     </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numAutomationChildren():int</code>
+<br>
+</div>
+<a name="showInAutomationHierarchy"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showInAutomationHierarchy</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>showInAutomationHierarchy:Boolean</code>&nbsp;&nbsp;[read-write]<p> 
+      A flag that determines if an automation object
+      shows in the automation hierarchy.
+      Children of containers that are not visible in the hierarchy
+      appear as children of the next highest visible parent.
+      Typically containers used for layout, such as boxes and Canvas,
+      do not appear in the hierarchy.
+           </p><p>Some controls force their children to appear
+      in the hierarchy when appropriate.
+      For example a List will always force item renderers,
+      including boxes, to appear in the hierarchy.
+      Implementers must support setting this property
+      to <code>true</code>.</p>
+     <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get showInAutomationHierarchy():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set showInAutomationHierarchy(value:Boolean):void</code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="createAutomationIDPart()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createAutomationIDPart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function createAutomationIDPart(child:<a href="IAutomationObject.html">IAutomationObject</a>):Object</code><p>
+      Returns a set of properties that identify the child within 
+      this container.  These values should not change during the
+      lifespan of the application.
+      
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:<a href="IAutomationObject.html">IAutomationObject</a></code> &mdash; Child for which to provide the id.
+     
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; Sets of properties describing the child which can
+              later be used to resolve the component.
+     </td>
+</tr>
+</table>
+</div>
+<a name="getAutomationChildAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getAutomationChildAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getAutomationChildAt(index:int):<a href="../automation/IAutomationObject.html">IAutomationObject</a></code><p> 
+      Provides the automation object at the specified index.  This list
+      should not include any children that are composites.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; The index of the child to return
+     
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../automation/IAutomationObject.html">IAutomationObject</a></code> &mdash; 
+                        The child at the specified index.
+     
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="replayAutomatableEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">replayAutomatableEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function replayAutomatableEvent(event:Event):Boolean</code><p>
+      Replays the specified event.  A component author should probably call 
+      super.replayAutomatableEvent in case default replay behavior has been defined 
+      in a superclass.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">event</span>:Event</code> &mdash; The event to replay.
+           </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if a replay was successful.  
+     </td>
+</tr>
+</table>
+</div>
+<a name="resolveAutomationIDPart()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resolveAutomationIDPart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resolveAutomationIDPart(criteria:Object):Array</code><p>
+      Resolves a child by using the id provided. The id is a set 
+      of properties as provided by the <code>createAutomationIDPart()</code> method.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">criteria</span>:Object</code> &mdash; Set of properties describing the child.
+             The criteria can contain regular expression values
+             resulting in multiple children being matched.
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash; Array of children that matched the criteria
+              or <code>null</code> if no children could not be resolved.
+     </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

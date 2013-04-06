@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<cross-domain-policy>
+  <allow-access-from domain="localhost" />
+  <allow-access-from domain="127.0.0.1" />
+  <allow-access-from domain="10.145.3.169" />
+  <allow-access-from domain="222.66.38.89" />
+  <allow-access-from domain="*" />
+</cross-domain-policy> 

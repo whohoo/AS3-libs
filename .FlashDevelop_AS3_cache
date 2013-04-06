@@ -1,0 +1,261 @@
+
+#file-cache D:\my_Documents\works\CODE\AS3\classes\com\robertpenner\geom\Vector3d.as
+package com.robertpenner.geom{import com.robertpenner.utils.Degree;public class Vector3d{/**
+* CLASS PROPERTIES
+*/
+public var x : Number;public var y : Number;public var z : Number;public var d : uint;/**
+* The length of the vector object.                     *                     * @usage                     * <pre><code>                     * var velocity:Vector = new Vector(3,4,0);                     * var newSpeed:Number = 10;                     * velocity.length = newSpeed;                     * trace (velocity);                     * trace (velocity.length);                     * </code></pre>
+*/
+public function get length () : Number;public function set length (len:Number) : Void;/**
+* The angle of the vector object.                     *                     * @usage                     * <pre><code>                     * var destination:Vector = new Vector(5,5);                     * var compassBearing:Number = destination.angle;                     * trace (compassBearing);                     * </code></pre>
+*/
+public function get angle () : Number;public function set angle (ang:Number) : Void;/**
+* Creates an instance of the Vector class.                     *                     * @usage                     * var v:Vector = new Vector(-9,4);                     * var v:Vector = new Vector(-9,4,3);                     * trace (v.x);                     * trace (v.y);
+*/
+public function Vector (...arg) : void;/**
+* Returns a string representation of the vector object.                     *                     * @return       Returns the string representation of the vector object.                     *                     * @usage                     * <pre><code>                     * var position:Vector = new Vector(2,4);                     * var position:Vector = new Vector(2,4,6.952013);                     * trace (position.toString());                     * trace (position);                     * </code></pre>
+*/
+public function toString () : String;/**
+* Reinitializes the vector object.                     *                     * @param       x       The x value of the vector.                     * @param       y       The y value of the vector.                     * @param       z       The z value of the vector.                     *                     * @usage                     * <pre><code>                     * var acceleration:Vector = new Vector(0,0,0);                     * acceleration.reset(10,20,30);                     * trace (acceleration);                     * </code></pre>
+*/
+public function reset (...arg) : void;/**
+* Returns a new vector object containing the x, y and z values of the current vector.                     *                     * @return       Returns a copy of the current vector object.                     *                     * @usage                     * <pre><code>                     * var force:Vector = new Vector3d(2,4,6);                     * var forceCopy:Vector = force.getClone();                     * trace (forceCopy);                     * trace (forceCopy == force);                     * </code></pre>
+*/
+public function getClone () : Vector;/**
+* Tests the equality of two vector objects.                     *                     * @param       v       The vector object to compare with the current vector.                     * @return       Returns true if the values of the two x properties, the two y properties and the twoz properties are the same.                     *                     * @usage                     * <pre><code>                     * var force:Vector = new Vector(2,4,6);                     * var forceCopy:Vector = force.getClone();                     * trace (forceCopy.equals(force));                     * </code></pre>
+*/
+public function equal (v:Vector) : Boolean;/**
+* Adds a vector object to the current vector.                     *                     * @param       v       The vector object to add to the current vector.                     *                     * @usage                     * <pre><code>                     * var position:Vector = new Vector(1,3,2);                     * var velocity:Vector = new Vector(3,0,1);                     * position.plus(velocity);                     * trace (position);                     * </code></pre>
+*/
+public function plus (v:Vector) : void;/**
+* Performs addition on two vector objects and returns the result of the addition as a new vector.                     *                     * @param       v       The vector object to add to the current vector.                     * @return       Returns the result of the addition as a new vector.                     *                     * @usage                     * <pre><code>                     * var position:Vector = new Vector(1,1,1);                     * var velocity:Vector = new Vector(2,1,3);                     * var newPosition:Vector = position.plusNew(velocity);                     * trace (newPosition);                     * </code></pre>
+*/
+public function plusNew (v:Vector) : Vector;/**
+* Subtracts a vector object from the current vector.                     *                     * @param       v       The vector object to subtract from the current vector.                     *                     * @usage                     * <pre><code>                     * var forceA:Vector = new Vector(1,1,3);                     * var forceB:Vector = new Vector(-2,-1,2);                     * forceA.minus(forceB);                     * trace (forceA);                     * </code></pre>
+*/
+public function minus (v:Vector) : void;/**
+* Performs subtraction on two vector objects and returns the result of the subtraction as a newvector.                     *                     * @param       v       The vector object to subtract from the current vector.                     * @return       Returns the result of the subtraction as a new vector.                     *                     * @usage                     * <pre><code>                     * var farPoint:Vector = new Vector(10,-6,5);                     * var nearPoint:Vector = new Vector(6,-2,0);                     * var displacement:Vector = farPoint.minusNew(nearPoint);                     * trace (displacement);                     * </code></pre>
+*/
+public function minusNew (v:Vector) : Vector;/**
+* Reverses the direction of the current vector.                     *                     * @usage                     * <pre><code>                     * var direction:Vector = new Vector(3,-6,-9);                     * direction.negate();                     * trace (direction);                     * </code></pre>
+*/
+public function negate () : void;/**
+* Reverses the direction of the current vector and returns the result as a new vector.                     *                     * @return       Returns the reversed vector object as a new vector.                     *                     * @usage                     * <pre><code>                     * var forward:Vector = new Vector(99,0,2);                     * var backward:Vector = forward.negateNew();                     * trace (backward);                     * </code></pre>
+*/
+public function negateNew () : Vector;/**
+* Scales the length of the current vector object by a scale factor.                     *                     * @param       s       The scale factor to multiply the current vector by.                     *                     * @usage                     * <pre><code>                     * var windForce:Vector = new Vector(2,3,3);                     * windForce.scale(2);                     * trace (windForce);                     * </code></pre>
+*/
+public function scale (s:Number) : void;/**
+* Scales the length of the current vector object by a scale factor and returns the result of thescale as a new vector.                     *                     * @param       s       The scale factor to multiply the current vector by.                     * @return       Returns the scaled vector object as a new vector.                     *                     * @usage                     * <pre><code>                     * var windForce:Vector = new Vector(-2,1,2);                     * var galeForce:Vector = windForce.scaleNew(2); //strong wind                     * trace (galeForce);                     * </code></pre>
+*/
+public function scaleNew (s:Number) : Vector;/**
+* Gets the size of the current vector.                     *                     * @return       Returns the size of the current vector.                     *                     * @usage                     * <pre><code>                     * var velocity:Vector = new Vector(3,4,0);                     * var speed:Number = velocity.getLength();                     * trace (speed);                     * </code></pre>
+*/
+public function getLength () : Number;/**
+* Sets the size of the current vector.                     *                     * @param       len              The length that the current vector will be set.                     *                     * @usage                     * <pre><code>                     * var velocity:Vector = new Vector(3,4,8);                     * var newSpeed:Number = 10;                     * velocity.setLength(newSpeed);                     * trace (velocity);                     * trace (velocity.getLength());                     * </code></pre>
+*/
+public function setLength (len:Number) : void;/**
+* Gets the angle of the current vector.                     *                     * @return       Returns the angle of the current vector.                     *                     * @usage                     * <pre><code>                     * var destination:Vector = new Vector(5,5,0);                     * var compassBearing:Number = destination.getAngle();                     * trace (compassBearing);                     * </code></pre>
+*/
+public function getAngle () : Number;/**
+* Sets the angle of the current vector.                     *                     * @param       ang              The angle that the current vector will be set.                     *                     * @usage                     * <pre><code>                     * var velocity:Vector = new Vector(7,0,0);                     * var newBearing:Number = 180;                     * velocity.setAngle(newBearing);                     * trace (velocity);                     * trace (velocity.getAngle());                     * </code></pre>
+*/
+public function setAngle (ang:Number) : void;/**
+* Rotates the angle of the current vector object by a certain amount of degrees.                     *                     * @param       ang              The amount of degrees that the current vector object will be rotatedby.                     *                     * @usage                     * <pre><code>                     * var direction:Vector = new Vector(5,5,0);                     * trace (direction.getAngle());                     * direction.rotate(-90);                     * trace (direction);                     * trace (direction.getAngle());                     * </code></pre>
+*/
+public function rotate (ang:Number) : void;/**
+* Rotates the angle of the current vector object by a certain amount of degrees and returns theresult of the rotation as a new vector.                     *                     * @param       ang              The amount of degrees that the current vector object will be rotatedby.                     * @return       Returns the result of the rotation as a new vector.                     *                     * @usage                     * <pre><code>                     * var direction:Vector = new Vector(5,5,0);                     * var newDirection:Vector = direction.rotateNew(10);                     * trace (newDirection.getAngle());                     * </code></pre>
+*/
+public function rotateNew (ang:Number) : Vector;/**
+* Rotates the current vector object around the x and y axes by a certain amount of degrees.                     *                     * @param       a              The amount of degrees that the current vector object will be rotatedaround the x-axis by.                     * @param       b              The amount of degrees that the current vector object will be rotatedaround the y-axis by.                     *                     * @usage                     * <pre><code>                     * var p:Vector3d = new Vector3d(8,0,0);                     * p.rotateXY(45,45);                     * trace (p);                     * </code></pre>
+*/
+public function rotateXY (a:Number, b:Number) : void;/**
+* Rotates the current vector object around the x and y axes by the cosine and sine of an angle.                     *                     * @param       ca              The cosine of the angle to rotate the current vector object aroundthe x-axis by.                     * @param       sa              The sine of the angle to rotate the current vector object around thex-axis by.                     * @param       cb              The cosine of the angle to rotate the current vector object aroundthe y-axis by.                     * @param       sb              The sine of the angle to rotate the current vector object around they-axis by.                     *                     * @usage                     * <pre><code>                     * var p:Vector3d = new Vector3d(6,1,4);                     * var cosAngleA:Number = Degree.cosD(45);                     * var sinAngleA:Number = Degree.sinD(45);                     * var cosAngleB:Number = Degree.cosD(90);                     * var sinAngleB:Number = Degree.sinD(90);                     * p.rotateXYTrig(cosAngleA, sinAngleA, cosAngleB, sinAngleB);                     * trace (p);                     * </code></pre>
+*/
+public function rotateXYTrig (ca:Number, sa:Number, cb:Number, sb:Number) : void;/**
+* Rotates the current vector object around the x, y and z axes by a certain amount of degrees.                     *                     * @param       a              The amount of degrees that the current vector object will be rotatedaround the x-axis by.                     * @param       b              The amount of degrees that the current vector object will be rotatedaround the y-axis by.                     * @param       c              The amount of degrees that the current vector object will be rotatedaround the z-axis by.                     *                     * @usage                     * <pre><code>                     * var p:Vector3d = new Vector3d(8,0,0);                     * p.rotateXYZ(45,45,45);                     * trace (p);                     * </code></pre>
+*/
+public function rotateXYZ (a:Number, b:Number, c:Number) : void;/**
+* Rotates the current vector object around the x, y and z axes by the cosine and sine of an angle.                     *                     * @param       ca              The cosine of the angle to rotate the current vector object aroundthe x-axis by.                     * @param       sa              The sine of the angle to rotate the current vector object around thex-axis by.                     * @param       cb              The cosine of the angle to rotate the current vector object aroundthe y-axis by.                     * @param       sb              The sine of the angle to rotate the current vector object around they-axis by.                     * @param       cc              The cosine of the angle to rotate the current vector object aroundthe z-axis by.                     * @param       sc              The sine of the angle to rotate the current vector object around thez-axis by.                     *                     * @usage                     * <pre><code>                     * var p:Vector3d = new Vector3d(6,1,4);                     * var cosAngleA:Number = Degree.cosD(45);                     * var sinAngleA:Number = Degree.sinD(45);                     * var cosAngleB:Number = Degree.cosD(90);                     * var sinAngleB:Number = Degree.sinD(90);                     * var cosAngleC:Number = Degree.cosD(135);                     * var sinAngleC:Number = Degree.sinD(135);                     * p.rotateXYZTrig(cosAngleA, sinAngleA, cosAngleB, sinAngleB, cosAngleC, sinAngleC);                     * trace (p);                     * </code></pre>
+*/
+public function rotateXYZTrig (ca:Number, sa:Number, cb:Number, sb:Number, cc:Number, sc:Number) : void;}}
+#file-cache D:\my_Documents\works\CODE\AS3\classes\com\wlash\exception\InitError.as
+package com.wlash.exception{public class InitError extends Error{public function InitError (message:String = "", id:int = 0);public function toString () : String;}}
+#file-cache D:\my_Documents\works\CODE\AS3\classes\com\wlash\utils\Line.as
+package com.wlash.utils{import com.wlash.utils.Vector;/**
+* a line class.<p>
+	* </p>
+*/
+public class Line extends Object{public var p0 : Vector;public var p1 : Vector;/**
+* 构建线条对象.
+		 * 
+		 * @param   startVector 
+		 * @param   endVector   
+		 * @return
+*/
+public function Line (startVector:Vector, endVector:Vector);/**
+* 点p是否在此线条上
+		 * @param	p
+		 * @return
+*/
+public function online (p:Vector) : Boolean;/**
+* check is intersect to line
+		* @param line
+		* @return
+*/
+public function intersect (line:Line) : Boolean;/**
+* 返回此线的点座标
+		 * @return
+*/
+public function toString () : String;/**
+* 主要在intersect方法内调用
+		 * @param	lineA
+		 * @param	lineB
+		 * @param	prop x座标或y座标.
+		 * @return
+*/
+private static function compareLine (lineA:Line, lineB:Line, prop:String) : Boolean;/**
+* 由四点构成的两条直接是否相交
+		 * @param	line0Ax 线0,A点的x轴座标
+		 * @param	line0Ay 线0,A点的y轴座标
+		 * @param	line0Bx 线0,B点的x轴座标
+		 * @param	line0By 线0,B点的y轴座标
+		 * @param	line1Ax 线1,A点的x轴座标
+		 * @param	line1Ay 线1,A点的y轴座标
+		 * @param	line1Bx 线1,B点的x轴座标
+		 * @param	line1By 线1,B点的y轴座标
+		 * @return
+*/
+public static function intersectLines (line0Ax:Number, line0Ay:Number, line0Bx:Number, line0By, line1Ax:Number, line1Ay, line1Bx:Number, line1By) : Boolean;/**
+* 两线条是否十字相交.(跨立实验 )
+		 * @param	lineA
+		 * @param	lineB
+		 * @return
+*/
+public static function crossLine (lineA:Line, lineB:Line) : Boolean;}}
+#file-cache D:\my_Documents\works\CODE\AS3\classes\com\wlash\utils\MCmoveInOut.as
+package com.wlash.utils{import flash.display.MovieClip;import flash.display.Stage;import flash.events.Event;import com.wlash.exception.InitError;public class MCmoveInOut extends Object{public static var isInit : Boolean;/**
+* initiallize target(movieclip), make target had tow methods(moveIn,moveOut)<br></br>		 * if not point out which movieclip you wannna, it would make all movieclips<br></br>		 * had those methods		 * 		 * @param   target if not movieclip or not undefined, it would regist <br></br>		 * 		MovieClip.prototype, that means all movieclip would had those <br></br>		 * 		methods.		 * @throws InitError		 * @return
+*/
+public static function initialize () : Boolean;/**
+* a empty private CONSTRUCT FUNCTION, you can't create instance by this.
+*/
+internal function MCmoveInOut ();/**
+* show this class		 * 		 * @return
+*/
+public function toString () : String;}}
+#file-cache D:\my_Documents\works\CODE\AS3\classes\com\wlash\utils\Vector.as
+package com.wlash.utils{public class Vector extends Object{/**
+x position
+*/
+public var x : Number;/**
+y position
+*/
+public var y : Number;internal function set angle (value:Number) : Void;/**
+vector's angle
+*/
+internal function get angle () : Number;internal function set length (value:Number) : Void;/**
+vector's length
+*/
+internal function get length () : Number;/**
+* create a vector class.
+		* @param x 0 are defalut value
+		* @param y 0 are defalut value
+*/
+public function Vector (x:Number = 0, y:Number = 0);/**
+* reset x, y
+		* @param x
+		* @param y
+*/
+public function reset (x:Number = 0, y:Number = 0);/**
+* clone a new vector.
+		* @return new Vector
+*/
+public function getClone () : Vector;/**
+* compare two class is equals
+		* @param v
+		* @return true of false
+*/
+public function equals (v:Vector) : Boolean;/**
+* plus tow class
+		* @param v
+*/
+public function plus (v:Vector) : void;/**
+* plus and get a new class.
+		* @param v
+		* @return
+*/
+public function plusNew (v:Vector) : Vector;/**
+* tow class minus.
+		* @param v
+*/
+public function minus (v:Vector) : void;/**
+* minus and get a new class.
+		* @param v
+		* @return
+*/
+public function minusNew (v:Vector) : Vector;/**
+* negate
+*/
+public function negate () : void;/**
+* ngate and get a new class.
+		* @return
+*/
+public function negateNew () : Vector;/**
+* scale this vector3d
+		* @param s
+*/
+public function scale (s:Number) : void;/**
+* scale and return a new class
+		* @param s
+		* @return
+*/
+public function scaleNew (s:Number) : Vector;public function rotate (angle:Number) : void;public function rotateNew (angle:Number) : Vector;public function getNormal () : Vector;public function isNormalTo (v:Vector) : Boolean;/**
+* dot
+		* @param v another vector class.
+		* @return
+*/
+public function dot (v:Vector) : Number;/**
+* cross and multiply
+		* @param v another vector class.
+		* @return
+*/
+public function multiply (v:Vector) : Number;/**
+* the angle of tow class.
+		* @param v
+		* @return angle
+*/
+public function angleBetween (v:Vector) : Number;/**
+* show class name
+		* @return class value
+*/
+public function toString () : String;private function getAngle () : Number;private function setAngle (angle:Number) : void;/**
+* get vector length.
+		* @return vector length.
+*/
+private function getLength () : Number;/**
+* set vector length.
+		* @param len
+*/
+private function setLength (len:Number) : void;/**
+* get angle cosine value.
+		* @param angle 
+		* @return
+*/
+public static function cosD (angle:Number) : Number;/**
+* get ratio anti-cosine value.
+		* @param ratio 
+		* @return
+*/
+public static function acosD (ratio:Number) : Number;/**
+* get angle sine value.
+		* @param angle 
+		* @return
+*/
+public static function sinD (angle:Number) : Number;/**
+* get angle atan2 value.
+		* @param x 
+		* @param y 
+		* @return
+*/
+public static function atan2D (y:Number, x:Number) : Number;}}

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="SimpleEase,fl.motion.SimpleEase,ease,target,easeQuadPercent,easeNone,getValue" name="keywords">
+<title>fl.motion.SimpleEase</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SimpleEase - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/SimpleEase.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SimpleEase</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SimpleEase"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SimpleEase</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="ITween.html">ITween</a></td>
+</tr>
+</table>
+<p></p>
+ The SimpleEase class allows you to control an animation with 
+ the kind of percentage easing that is used in the Flash timeline.
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ease">ease</a> : Number<div class="summaryTableDescription">
+     A percentage between <code>-1</code> (100% ease in or acceleration) and <code>1</code> (100% ease out or deceleration).</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#target">target</a> : String<div class="summaryTableDescription">
+     The name of the animation property to target.</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SimpleEase()">SimpleEase</a>(xml:XML = null)</div>
+<div class="summaryTableDescription">
+     Constructor for SimpleEase instances.</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#easeNone()">easeNone</a>(time:Number, begin:Number, change:Number, duration:Number):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates an interpolated value for a numerical property of animation, 
+     using a linear tween of constant velocity.</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#easeQuadPercent()">easeQuadPercent</a>(time:Number, begin:Number, change:Number, duration:Number, percent:Number):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates an interpolated value for a numerical property of animation, 
+     using a percentage of quadratic easing.</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getValue()">getValue</a>(time:Number, begin:Number, change:Number, duration:Number):Number</div>
+<div class="summaryTableDescription">
+     Calculates an interpolated value for a numerical property of animation,
+     using a percentage of quadratic easing.</div>
+</td><td class="summaryTableOwnerCol">SimpleEase</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="ease"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ease</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ease:Number</code>&nbsp;&nbsp;[read-write]<p>
+     A percentage between <code>-1</code> (100% ease in or acceleration) and <code>1</code> (100% ease out or deceleration). 
+     Defaults to <code>0</code>, which means that the tween animates at a constant speed, without acceleration or deceleration.
+     </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ease():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set ease(value:Number):void</code>
+<br>
+</div>
+<a name="target"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">target</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>target:String</code>&nbsp;&nbsp;[read-write]<p>
+     The name of the animation property to target.
+     </p><p>The default value is <code>""</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get target():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set target(value:String):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/ITween.html#target" target="">fl.motion.ITween.target</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SimpleEase()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SimpleEase</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SimpleEase(xml:XML = null)</code><p>
+     Constructor for SimpleEase instances.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> (default = <code>null</code>)<code></code> &mdash; Optional E4X XML object defining a SimpleEase object in Motion XML format.
+     </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="easeNone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">easeNone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function easeNone(time:Number, begin:Number, change:Number, duration:Number):Number</code><p>
+     Calculates an interpolated value for a numerical property of animation, 
+     using a linear tween of constant velocity.
+     The function signature matches that of the easing functions in the fl.motion.easing package.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">time</span>:Number</code> &mdash; This value is between <code>0</code> and <code>duration</code>, inclusive.
+     You can choose any unit(for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>duration</code> unit.
+       </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">begin</span>:Number</code> &mdash; The value of the animation property at the start of the tween, when time is <code>0</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">change</span>:Number</code> &mdash; The change in the value of the animation property over the course of the tween. 
+     This value can be positive or negative. For example, if an object rotates from 90 to 60 degrees, the <code>change</code> is <code>-30</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The length of time for the tween. This value must be greater than zero.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>time</code> unit.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The interpolated value at the specified time.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="easing/package-detail.html" target="">fl.motion.easing</a>
+</div>
+</div>
+<a name="easeQuadPercent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">easeQuadPercent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function easeQuadPercent(time:Number, begin:Number, change:Number, duration:Number, percent:Number):Number</code><p>
+     Calculates an interpolated value for a numerical property of animation, 
+     using a percentage of quadratic easing.
+     The function signature matches that of the easing functions in the fl.motion.easing package.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">time</span>:Number</code> &mdash; This value is between <code>0</code> and <code>duration</code>, inclusive.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>duration</code> unit.
+       </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">begin</span>:Number</code> &mdash; The value of the animation property at the start of the tween, when time is <code>0</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">change</span>:Number</code> &mdash; The change in the value of the animation property over the course of the tween. 
+     This value can be positive or negative. For example, if an object rotates from 90 to 60 degrees, the <code>change</code> is <code>-30</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The length of time for the tween. This value must be greater than zero.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>time</code> unit.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">percent</span>:Number</code> &mdash; A percentage between <code>-1</code> (100% ease in or acceleration) and <code>1</code> (100% ease out or deceleration). 
+     
+     </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The interpolated value at the specified time.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="easing/package-detail.html" target="">fl.motion.easing</a>
+</div>
+</div>
+<a name="getValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getValue(time:Number, begin:Number, change:Number, duration:Number):Number</code><p>
+     Calculates an interpolated value for a numerical property of animation,
+     using a percentage of quadratic easing. 
+     The percent value is read from the SimpleEase instance's <code>ease</code> property
+     rather than being passed into the method.
+     Using this property allows the function signature to match the ITween interface.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">time</span>:Number</code> &mdash; This value is between <code>0</code> and <code>duration</code>, inclusive.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>duration</code> unit.
+       </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">begin</span>:Number</code> &mdash; The value of the animation property at the start of the tween, when time is <code>0</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">change</span>:Number</code> &mdash; The change in the value of the animation property over the course of the tween. 
+     This value can be positive or negative. For example, if an object rotates from 90 to 60 degrees, the <code>change</code> is <code>-30</code>.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duration</span>:Number</code> &mdash; The length of time for the tween. This value must be greater than zero.
+     You can choose any unit (for example, frames, seconds, milliseconds), 
+     but your choice must match the <code>time</code> unit.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The interpolated value at the specified time.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../motion/SimpleEase.html#ease" target="">ease</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->

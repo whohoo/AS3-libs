@@ -1,0 +1,170 @@
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Mon Jun 15 2009 18:16:07 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla_0.swf
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla_1.swf
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla_2.swf
+done. time: 38.211 s
+
+done. time: 9.966 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Wed Jun 17 2009 10:10:04 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Wed Jun 17 2009 10:14:01 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 26.037 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Wed Jun 17 2009 10:38:31 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 23.102 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 09:55:33 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 12.296 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 10:32:50 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 5.72 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 14:37:19 GMT+0800: 
+totalFrames: 79, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 14:37:58 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 14:38:46 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 14:39:33 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 14:40:22 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 15:31:59 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 15:33:44 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 15:34:20 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:06:36 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:10:21 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:16:35 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:17:40 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:20:25 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:21:40 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:22:57 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:23:50 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:34:29 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Tue Jun 23 2009 18:35:53 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:03:05 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 237
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 237
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 237
+done. time: 20.418 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:06:47 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 237
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:10:54 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 237
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:15:04 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:20:01 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:21:17 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:22:10 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 17.215 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:24:46 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 19.106 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:28:40 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 15.794 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:31:04 GMT+0800: 
+totalFrames: 237, sequences: 3
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source//jpg-sequence_2.swf, totalFrames: 79
+done. time: 17.278 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:39:57 GMT+0800: 
+totalFrames: 237, sequences: 3
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:40:41 GMT+0800: 
+totalFrames: 237, sequences: 3
+first frame actionscript in jpg-sequence_0.swf:
+var __seqFrames:Array = [79, 79, 79];
+var __frameLabel:Array = [{ frame:1, name:"scene0" }, { frame:54, name:"scene1" }, { frame:105, name:"scene2" }, { frame:165, name:"scene3" }, { frame:237, name:"scene4" }];
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_2.swf, totalFrames: 79
+done. time: 17.043 s
+
+[file:///D|/wally/works/Labs/video playback/source//jpg-sequence.fla] export 3 sequences at Thu Jun 25 2009 14:43:04 GMT+0800: 
+totalFrames: 237, sequences: 3
+first frame actionscript in jpg-sequence_0.swf:
+var __seqFrames:Array = [79, 79, 79];
+var __frameLabel:Array = [{ frame:1, name:"scene0" }, { frame:54, name:"scene1" }, { frame:105, name:"scene2" }, { frame:165, name:"scene3" }, { frame:237, name:"scene4" }];
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_0.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_1.swf, totalFrames: 79
+export sequence name: file:///D|/wally/works/Labs/video playback/source/jpg-sequence_2.swf, totalFrames: 79
+done. time: 20.636 s

@@ -1,0 +1,825 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="MatrixTransformer,fl.motion.MatrixTransformer,getScaleX,setScaleX,getScaleY,setScaleY,getSkewXRadians,setSkewXRadians,getSkewYRadians,setSkewYRadians,getSkewX,setSkewX,getSkewY,setSkewY,getRotationRadians,setRotationRadians,getRotation,setRotation,rotateAroundInternalPoint,rotateAroundExternalPoint,matchInternalPointWithExternal" name="keywords">
+<title>fl.motion.MatrixTransformer</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'MatrixTransformer - Whohoo AS3 API Documentation';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/motion/MatrixTransformer.html&amp;fl/motion/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;MatrixTransformer</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class MatrixTransformer"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.motion</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class MatrixTransformer</td>
+</tr>
+</table>
+<p></p>
+ The MatrixTransformer class contains methods for modifying individual properties of a transformation matrix:
+ horizontal and vertical scale, horizontal and vertical skew, and rotation.
+ This class also has methods for rotating around a given transformation point rather than the typical (0, 0) point.
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../motionXSD.html" target="">Motion XML Elements</a>
+<br>flash.geom</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRotation()">getRotation</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of rotation present in a matrix, in degrees.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRotationRadians()">getRotationRadians</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of rotation present in a matrix, in radians.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getScaleX()">getScaleX</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the horizontal scale present in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getScaleY()">getScaleY</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the vertical scale present in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSkewX()">getSkewX</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of horizontal skew present in a matrix, in degrees.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSkewXRadians()">getSkewXRadians</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of horizontal skew present in a matrix, in radians.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSkewY()">getSkewY</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of vertical skew present in a matrix, in degrees.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSkewYRadians()">getSkewYRadians</a>(m:Matrix):Number</div>
+<div class="summaryTableDescription">[static]
+     Calculates the angle of vertical skew present in a matrix, in radians.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#matchInternalPointWithExternal()">matchInternalPointWithExternal</a>(m:Matrix, internalPoint:Point, externalPoint:Point):void</div>
+<div class="summaryTableDescription">[static]
+     Moves a matrix as necessary to align an internal point with an external point.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#rotateAroundExternalPoint()">rotateAroundExternalPoint</a>(m:Matrix, x:Number, y:Number, angleDegrees:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Rotates a matrix about a point defined outside the matrix's transformation space.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#rotateAroundInternalPoint()">rotateAroundInternalPoint</a>(m:Matrix, x:Number, y:Number, angleDegrees:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Rotates a matrix about a point defined inside the matrix's transformation space.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRotation()">setRotation</a>(m:Matrix, rotation:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the angle of rotation in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRotationRadians()">setRotationRadians</a>(m:Matrix, rotation:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the angle of rotation in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScaleX()">setScaleX</a>(m:Matrix, scaleX:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the horizontal scale in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScaleY()">setScaleY</a>(m:Matrix, scaleY:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the vertical scale in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSkewX()">setSkewX</a>(m:Matrix, skewX:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the horizontal skew in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSkewXRadians()">setSkewXRadians</a>(m:Matrix, skewX:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the horizontal skew in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSkewY()">setSkewY</a>(m:Matrix, skewY:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the vertical skew in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSkewYRadians()">setSkewYRadians</a>(m:Matrix, skewY:Number):void</div>
+<div class="summaryTableDescription">[static]
+     Changes the vertical skew in a matrix.</div>
+</td><td class="summaryTableOwnerCol">MatrixTransformer</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getRotation()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRotation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRotation(m:Matrix):Number</code><p>
+     Calculates the angle of rotation present in a matrix, in degrees.
+     If the horizontal and vertical skews are not equal, 
+     the vertical skew value is used.
+     This matches the rotation behavior in Flash Player.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of rotation, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getRotationRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRotationRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRotationRadians(m:Matrix):Number</code><p>
+     Calculates the angle of rotation present in a matrix, in radians.
+     If the horizontal and vertical skews are not equal, 
+     the vertical skew value is used.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of rotation, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getScaleX()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getScaleX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getScaleX(m:Matrix):Number</code><p>
+     Calculates the horizontal scale present in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The horizontal scale.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getScaleY()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getScaleY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getScaleY(m:Matrix):Number</code><p>
+     Calculates the vertical scale present in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The vertical scale.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getSkewX()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSkewX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getSkewX(m:Matrix):Number</code><p>
+     Calculates the angle of horizontal skew present in a matrix, in degrees.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of horizontal skew, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getSkewXRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSkewXRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getSkewXRadians(m:Matrix):Number</code><p>
+     Calculates the angle of horizontal skew present in a matrix, in radians.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of horizontal skew, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getSkewY()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSkewY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getSkewY(m:Matrix):Number</code><p>
+     Calculates the angle of vertical skew present in a matrix, in degrees.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of vertical skew, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="getSkewYRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSkewYRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getSkewYRadians(m:Matrix):Number</code><p>
+     Calculates the angle of vertical skew present in a matrix, in radians.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The angle of vertical skew, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="matchInternalPointWithExternal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">matchInternalPointWithExternal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function matchInternalPointWithExternal(m:Matrix, internalPoint:Point, externalPoint:Point):void</code><p>
+     Moves a matrix as necessary to align an internal point with an external point.
+     This can be used to match a point in a transformed movie clip with one in its parent.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">internalPoint</span>:Point</code> &mdash; A Point instance defining a position within the matrix's transformation space.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">externalPoint</span>:Point</code> &mdash; A Point instance defining a reference position outside the matrix's transformation space.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="rotateAroundExternalPoint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">rotateAroundExternalPoint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function rotateAroundExternalPoint(m:Matrix, x:Number, y:Number, angleDegrees:Number):void</code><p>
+     Rotates a matrix about a point defined outside the matrix's transformation space.
+     This can be used to rotate a movie clip around a transformation point in its parent. 
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The x coordinate of the point.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The y coordinate of the point.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">angleDegrees</span>:Number</code> &mdash; The angle of rotation in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="rotateAroundInternalPoint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">rotateAroundInternalPoint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function rotateAroundInternalPoint(m:Matrix, x:Number, y:Number, angleDegrees:Number):void</code><p>
+     Rotates a matrix about a point defined inside the matrix's transformation space.
+     This can be used to rotate a movie clip around a transformation point inside itself. 
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; The x coordinate of the point.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; The y coordinate of the point.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">angleDegrees</span>:Number</code> &mdash; The angle of rotation in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setRotation()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRotation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setRotation(m:Matrix, rotation:Number):void</code><p>
+     Changes the angle of rotation in a matrix.
+     If the horizontal and vertical skews are not equal,
+     the vertical skew is set to the rotation value
+     and the horizontal skew is increased by the difference between the 
+     old rotation and the new rotation.
+     This matches the rotation behavior in Flash Player.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">rotation</span>:Number</code> &mdash; The angle of rotation, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setRotationRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRotationRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setRotationRadians(m:Matrix, rotation:Number):void</code><p>
+     Changes the angle of rotation in a matrix.
+     If the horizontal and vertical skews are not equal,
+     the vertical skew is set to the rotation value
+     and the horizontal skew is increased by the difference between the 
+     old rotation and the new rotation.
+     This matches the rotation behavior in Flash Player.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">rotation</span>:Number</code> &mdash; The angle of rotation, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setScaleX()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScaleX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setScaleX(m:Matrix, scaleX:Number):void</code><p>
+     Changes the horizontal scale in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">scaleX</span>:Number</code> &mdash; The new horizontal scale.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setScaleY()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScaleY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setScaleY(m:Matrix, scaleY:Number):void</code><p>
+     Changes the vertical scale in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">scaleY</span>:Number</code> &mdash; The new vertical scale.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setSkewX()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSkewX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setSkewX(m:Matrix, skewX:Number):void</code><p>
+     Changes the horizontal skew in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">skewX</span>:Number</code> &mdash; The new horizontal skew, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setSkewXRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSkewXRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setSkewXRadians(m:Matrix, skewX:Number):void</code><p>
+     Changes the horizontal skew in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">skewX</span>:Number</code> &mdash; The new horizontal skew, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setSkewY()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSkewY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setSkewY(m:Matrix, skewY:Number):void</code><p>
+     Changes the vertical skew in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">skewY</span>:Number</code> &mdash; The new vertical skew, in degrees.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<a name="setSkewYRadians()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSkewYRadians</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function setSkewYRadians(m:Matrix, skewY:Number):void</code><p>
+     Changes the vertical skew in a matrix.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">m</span>:Matrix</code> &mdash; A Matrix instance to be modified.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">skewY</span>:Number</code> &mdash; The new vertical skew, in radians.
+     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.geom.Matrix</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6</center>
+</div>
+</body>
+</html>
+<!--www.wlash.com | whohoo@21cn.com | Author: Wally.Ho | version: 0.6-->
