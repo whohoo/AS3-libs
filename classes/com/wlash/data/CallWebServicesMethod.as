@@ -137,7 +137,7 @@ package com.wlash.data{
 					setHttpRequest(wsUrl, methodName, labels, args, headerObj, complexType);
 				break;
 				case 1://soap 1.1
-					urlRequest.requestHeaders.push(new URLRequestHeader("SOAPAction", xmlns + "/" + methodName));
+					urlRequest.requestHeaders.push(new URLRequestHeader("SOAPAction", xmlns +  methodName));
 				case 2://soap 1.2
 					setSoapRequest(wsUrl, xmlns, methodName, labels, args, headerObj, complexType);
 				break;

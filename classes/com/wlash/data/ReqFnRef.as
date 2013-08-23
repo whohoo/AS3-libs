@@ -1,11 +1,14 @@
 ﻿/*utf8*/
 //**********************************************************************************//
-//	name:	AbRequestData 1.0
+//	name:	AbRequestData 1.3
 //	author:	Wally.Ho
 //	email:	whohoo@21cn.com
 //	date:	2010/11/26 10:09
 //	description: 
-//				
+//				1.1 增加xmlComplete事件
+//					增加requestData的引用
+//				1.2 增加dataComplete事件
+//				1.3 增加当事件为空的判断
 //**********************************************************************************//
 
 
@@ -18,9 +21,6 @@ package com.wlash.data {
 	import flash.events.SecurityErrorEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
-	import flash.net.URLVariables;
-	import flash.system.Capabilities;
-	import flash.utils.Dictionary;
 
 
 
@@ -32,17 +32,41 @@ package com.wlash.data {
 	public class ReqFnRef extends Object {
 		
 		public var url:String;
-		public var cbFn:Function;
-		public var errFn:Function;
-		public var obj:Object;
+		
+		public var data:Object;
 		public var paramObj:Object;
 		
 		public var statusCode:int;
 		public var ioErrorText:String;
 		public var securityErrorText:String;
+		
+		internal var requestData:AbRequestData;
+		internal var _completeFn:Function;//当加载成功时调用的该当,通过属性来指定
+		
+		private var _callBackFn:Function;
+		private var _errorFn:Function;
 		//*************************[READ|WRITE]*************************************//
+		public function set callBackFn(value:Function):void {
+			if (value == null) {
+				_callBackFn	=	function(...args) { };
+			}else {
+				_callBackFn	=	value;
+			}
+			
+		}
 
+		public function get callBackFn():Function { return _callBackFn; }
+		
+		public function set errorFn(value:Function):void {
+			if (value == null) {
+				_errorFn	=	function(...args) { };
+			}else {
+				_errorFn	=	value;
+			}
+			
+		}
 
+		public function get errorFn():Function { return _errorFn; }
 		//*************************[READ ONLY]**************************************//
 		
 		//*************************[STATIC]*****************************************//
@@ -52,13 +76,14 @@ package com.wlash.data {
 		/**
 		 * CONSTRUCTION FUNCTION.<br />
 		 */
-		public function ReqFnRef(cb:Function, err:Function, url:String, pObj:Object = null, thisObject:Object = null){
+		public function ReqFnRef(reqData:AbRequestData, cb:Function, err:Function, url:String, pObj:Object = null, data:* = null) {
+			requestData	=	reqData;
 			statusCode	=	-1;
-			cbFn		=	cb;
-			errFn		=	err;
+			callBackFn	=	cb;
+			errorFn		=	err;
 			this.url	=	url;
 			paramObj	=	pObj;
-			obj			=	thisObject;
+			this.data	=	data;
 		}
 
 		//*************************[PUBLIC METHOD]**********************************//
@@ -67,11 +92,14 @@ package com.wlash.data {
 		 * @return class name
 		 */
 		public function toString():String {
-			return "ReqFnRef 1.0 [statusCode=" + statusCode + ", ioErrorText=" + ioErrorText +
+			return "ReqFnRef 1.1 [statusCode=" + statusCode + ", ioErrorText=" + ioErrorText +
 						", securityErrorText=" + securityErrorText + ", url=" + url + "]";
 		}
 
 		public function destroy():void {
+			_completeFn			=	null;
+			requestData			=	null;
+			
 			securityErrorText	=	null;
 			statusCode			=	-1;
 			ioErrorText			=	null;
@@ -79,15 +107,62 @@ package com.wlash.data {
 			url					=	null;
 			paramObj			=	null;
 			
-			cbFn				=	null;
-			errFn				=	null;
-			obj					=	null;
+			callBackFn			=	null;
+			errorFn				=	null;
+			data				=	null;
 			paramObj			=	null;
 		}
 		
 
-
 		//*************************[INTERNAL METHOD]********************************//
+		/**
+		 * 只处理普通的xml样式的返回
+		 * @param	e
+		 */
+		internal function xmlComplete(e:Event):void {
+			var urlLoader:URLLoader	=	e.currentTarget as URLLoader;
+			var data:Object			=	urlLoader.data;
+			if (String(data).length != 0) {
+				if (String(data).indexOf("<") >= 0) {
+					try{
+						var xml:XML		=	new XML(String(data));
+						if(_completeFn!=null)	_completeFn(xml, this);
+					}catch (err:TypeError) {//1.如果【元素类型“writing”必须以匹配的结束标记“</writing>”结束。】
+						//这表示是XML错误，
+						//2.如果throw出的是无法访问对象或属性，则是外部定义的_completeFn里的函数
+						//某个属性访问不到
+						ioErrorText	=	err.message;
+						if(errorFn!=null)	errorFn(this);
+					}
+				}else {
+					ioErrorText	=	"not XML format";
+					if(errorFn!=null)	errorFn(this);
+				}
+			}else {
+				ioErrorText	=	"empty content";
+				if(errorFn!=null)	errorFn(this);
+			}
+			
+			requestData.releaseEvents(urlLoader);
+		}
+		
+		/**
+		 * 只处理普通的xml样式的返回
+		 * @param	e
+		 */
+		internal function dataComplete(e:Event):void {
+			var urlLoader:URLLoader	=	e.currentTarget as URLLoader;
+			var data:Object			=	urlLoader.data;
+			if (String(data).length != 0) {
+				if(_completeFn!=null)	_completeFn(String(data), this);
+			}else {
+				ioErrorText	=	"empty content";
+				if(errorFn!=null)	errorFn(this);
+			}
+			
+			requestData.releaseEvents(urlLoader);
+		}
+		
 		internal function securityError(e:SecurityErrorEvent):void {
 			securityErrorText	=	e.text;
 		}
@@ -97,13 +172,19 @@ package com.wlash.data {
 			if (statusCode != 200 && //success
 				statusCode != 0 &&//for local file
 				statusCode < 400) {
-				errFn(this);
+				if(errorFn!=null)	errorFn(this);
+				
+				var urlLoader:URLLoader	=	e.currentTarget as URLLoader;
+				requestData.releaseEvents(urlLoader);
 			}
 		}
 		
 		internal function ioError(e:IOErrorEvent):void {
 			ioErrorText	=	e.text;
-			errFn(this);
+			if(errorFn!=null)	errorFn(this);
+			
+			var urlLoader:URLLoader	=	e.currentTarget as URLLoader;
+			requestData.releaseEvents(urlLoader);
 		}
 		
 		

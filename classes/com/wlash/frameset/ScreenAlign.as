@@ -1,9 +1,10 @@
 ﻿//******************************************************************************
-//	name:	SceenAlign 1.1
+//	name:	SceenAlign 1.2
 //	author:	whohoo
 //	email:	whohoo@21cn.com
 //	date:	2010/10/12 12:03
 //	description: source from xyz.
+//		v1.2 add min and max bounds
 //		v1.1 当x或y轴方向没有改变时，就不要使用Tweenlite去移动
 //			 移动的TweenLite移到init中判断，
 //			 对Tweenlite增加了overwrite,此值班为0(false),就是不会覆盖原来的tweenlite
@@ -11,7 +12,7 @@
 
 
 //[com.wlash.frameset.ScreenAlign]
-package com.wlash.frameset {	
+package controls {	
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
 	//import flash.display.StageAlign;
@@ -27,14 +28,13 @@ package com.wlash.frameset {
 	 * 日期:		2009.09.29 准备回老家过节咯
 	 * description	这家伙很懒，什么也没留下
 	 * 用法：	
-			import com.xyz.general.Align;
+			import com.wlash.frameset.ScreenAlign;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
-			Align.stageRect = new Rectangle(0, 0, 1250, 850);	
+			ScreenAlign.init(stage, new Rectangle(0, 0, 1250, 850);	
 			//设置舞台原始区域
-			Align.rate = .3;
+			ScreenAlign.rate = .3;
 			//自适应缓动的速度,默认为0.5
-			Align.setALign(menu_mc); 
-			Align.setALign(logo_mc, StageAlign.BOTTOM_RIGHT); 
+			ScreenAlign.add(logo_mc, StageAlign.BOTTOM_RIGHT); 
 			//设置需要自适应的元件和对齐方式,默认为左上对齐
 	 */ 
 	public class ScreenAlign {		    
@@ -118,9 +118,17 @@ package com.wlash.frameset {
 			stage.removeEventListener(Event.RESIZE, _onStageResize);
 		}
 		
-		static public function add(mc:DisplayObject, align:String = "TL"):void {  
+		/**
+		 * @param mc
+		 * @param align
+		 * @param props {minX,maxX,minY,maxY}
+		 */
+		static public function add(mc:DisplayObject, align:String = "TL", props:Object=null):void {  
 			if (mc) {
 				var obj:Object	=	{ mc:mc, align:align.toUpperCase() , x:mc.x, y:mc.y };
+				for(var name:String in props){
+					obj[name] = props[name];
+				}
 				mcArr.push(obj  );
 				_renderMc(obj);
 			}
@@ -193,6 +201,17 @@ package com.wlash.frameset {
 					//break;
 			}   
 			
+			if(obj.minX && gox<obj.minX){
+				gox = obj.minX;
+			}else if(obj.maxX && gox>obj.maxX){
+				gox = obj.maxX;
+			}
+			
+			if(obj.minY && goy<obj.minY){
+				goy = obj.minY;
+			}else if(obj.maxY && gox>obj.maxY){
+				goy = obj.maxY;
+			}
 			var twClass:Class	=	_twClass;
 			
 			if (twClass) {

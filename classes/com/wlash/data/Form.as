@@ -11,224 +11,16 @@
 
 
 package com.wlash.data {
-	import fl.transitions.easing.Strong;
-	import flash.display.InteractiveObject;
-	import flash.events.TimerEvent;
-	import flash.text.TextField;
-	import flash.events.Event;
-	import flash.events.KeyboardEvent;
-	import flash.ui.Keyboard;
-	import flash.events.MouseEvent;
-	import flash.utils.Timer;
-	import fl.transitions.Tween;
-	import fl.transitions.TweenEvent;
 	
-	/**
-	* 一个实用的表单提交检查类.
-	* 
-	* <p>可定义输入文本框的顺序，对于单行输入框，按下回车(Enter)键时，可自动跳到下一
-	* 文本框中。最后一个文本框中按下回画键，相当于提交数据。</p>
-	* <p>还可对邮件，手机，身份证号，日期等数据进行检验。</p>
-	* 
-	* @example 以下是调用的方法：
-	* <listing>
-	* var form:Form	=	new Form.getInstance();//因为要消除原来可能存在旧的form对象， 
-	* form.addItem(name_txt);//把用户名文本框添加入
-	* form.addItem(password_txt);//把输入密码框添加入
-	* form.addItem(okay_btn);//添加提交按键
-	* form.build(true);//构建form对象，可以使用回车键进行切换。
-	* //如果要使用提示信息，必先添加信息框到Form当中。如下：
-	* Form.setHintText(hints_txt);//hints_txt为文本框，把要显示的字体embed进去，可有fade效果。
-	* //然后可以使用
-	* Fomr.showHintText("要显示的字符。");//自动显示“要显示的字符”
-	* //同时可以限制文本框可接受的字符。
-	* email_txt.restrict = "A-Za-z0-9\\-_.@";
-	* phone_txt.restrict = "0-9\\-"	;
-	* </listing>
-	* 
-	*/
+	
+	
 	public class Form extends Object{
 		
-		private var _item:Array;
 		
-		/**
-		* set the hint text, when some info wanna hint.<br></br>
-		* this is a textfield embed font that you wannna hint.
-		*/
-		private  static var _hintText:TextField;
-		
-		private static var _form:Form;
-		private static var _timer:Timer;
-		private static var _tween:Tween;
-		
-		/**
-		* contruct function.<br></br>
-		* in stage, it just only one form instance, so you could not create instance
-		* by this function. you must create instance by Form.getInstance();
-		* @example example code:
-		* <listing>
-		* var form:Form	=	Form.getInstance();//correct
-		* var form:Form	=	new Form();//WRONG
-		* </listing>
-		*/
 		function Form():void{
-			this._item		=	[];
-		}
-		
-		/**
-		* create only one form.<br></br>
-		* this class no contruct function, you only create instance by the method.
-		* @return the only form you could create.
-		*/
-		public static function getInstance():Form{
-			if(_form!=null){
-				_form.destroy();//把原来的key事件去除,
-			}
-			_form	=	new Form();
-			
-			return _form;
-		}
-		
-		//******************[PRIVATE METHOD]******************//
-		/**
-		* when user press keyCode, skip next input textfield or release button.
-		* @param keyEvent
-		*/
-		private function onKeyUp(keyEvent:KeyboardEvent):void {
-			if(keyEvent.keyCode==Keyboard.ENTER){
-				var curObj:Object		=	keyEvent.target.stage.focus;
-				var nextObj:Object		=	nextItem(curObj);
-				
-				if (nextObj is TextField) {
-					if(nextObj.multiline==false){
-						keyEvent.target.stage.focus	=	nextObj;
-					}
-				}else {
-					if (nextObj.hasEventListener(MouseEvent.CLICK)) {
-					//if (nextObj.willTrigger(MouseEvent.CLICK){//区别hasEventListener??
-						nextObj.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
-					}
-				}
-			}
-		};
-		private function onBtnRemove(event:Event):void {
-			destroy();
-		}
-		
-		/**
-		* seek next button or input textfield
-		* @param  current text or button
-		* @return next text or button
-		*/
-		private function nextItem(item:Object):Object{
-			var i:Number	=	this._item.length;
-			//item			=	eval(item);
-			while(i--){
-				if(this._item[i]==item){
-					return	this._item[i+1];
-				};
-			};
-			return null;
-		};
-		
-		/**
-		* destroy this Form
-		*/
-		private function destroy():void {
-			try {
-				var obj:Object	=	_item[_item.length - 1];
-				obj.parent.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
-				obj.removeEventListener(Event.REMOVED, onBtnRemove);
-			}catch (e:TypeError) {
-				trace("obj: " + obj, e);
-			}
-			this._item	=	null;
-		}
-		
-		//******************[PUBLIC METHOD]******************//
-		/**
-		* add a InteractiveObject.<br></br>
-		* 
-		* @param item TextField or button or movieclip.
-		* @throws Error if there are more then one SimpleButton or DisplayObjectContainer
-		* 
-		* @example sample code:
-		* <listing>
-		* form.addItem(input_txt);
-		* form.addItem(submit_btn);
-		* </listing>
-		*/
-		public function addItem(item:InteractiveObject):void {
-			if (_item.length == 0) {
-				_item.push(item);
-				return ;
-			}
-			var obj:InteractiveObject	=	_item[_item.length - 1] as InteractiveObject;
-			if(obj is TextField){
-				_item.push(item);
-			}else{
-				throw new Error("only ONE SimpleButton|DisplayObjectContainer is supported. [(" +
-									_item.length+".) "+typeof(item)+"], last item is ["+
-									_item[_item.length-1].name+"].");
-			}
-		}
-		
-		/**
-		* build listen event, when add all item to Form, you ought to build to start
-		* listening the user action.
-		* 
-		* @param enabled if true, could skip next input TextField by press <b>Enter</b>.
-		* 
-		* @example sample code:
-		* <listing>
-		* form.build(true);//support Enter Key. default
-		* </listing>
-		*/
-		public function build(enabled:Boolean=true):void{
-			var i:Number	=	_item.length;
-			var obj:InteractiveObject	=	null;
-			while(i--){
-				obj	=	this._item[i] as InteractiveObject;
-				obj.tabIndex	=	i;
-			}
-			obj.stage.focus	=	obj;//光标在第一个文本框上.
-
-			if(enabled){
-				obj	=	_item[_item.length - 1] as InteractiveObject;
-				if (obj is TextField)	return;
-				try{
-					obj.parent.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp);
-					obj.addEventListener(Event.REMOVED_FROM_STAGE, onBtnRemove);
-				}catch (e:TypeError) {
-					trace("obj: " + obj, e);
-				}
-			}
-		}
-		
-		/**
-		* reset all input TextField.<br/>
-		* all input TextField are reset to Empty.
-		*/
-		public function resetTextField():void{
-			var len:uint	=	_item.length;
-			var txt:InteractiveObject;
-			for(var i:uint=0;i<len;i++){
-				txt	=	_item[i] as InteractiveObject;
-				if(txt is TextField){
-					txt["text"]	=	"";
-				}
-			}
 		}
 		
 		
-		
-		/**
-		* show this class name
-		* @return class name
-		*/
-		public function toString():String{
-			return "[Form 2.0] item.length= "+_item.length;
-		}
 		
 		
 		//**************[static function]*********//
@@ -270,7 +62,6 @@ package com.wlash.data {
 			//((25[0-5]|2[0-4]\d|[01]?\d\d?)[.]){3}(25[0-5]|2[0-4]\d|[01]?\d\d?) 这样可以规定的结构是
 			//0.0.0.0到255.255.255.255, 实际上,有些特殊的IP地址是不可能为邮件地址的,如最后一位为0的时候
 			//表示是广播地址,或127.0.0.1表示本机等.所以这个判断只是结构判断,而不是真正的合法性判断,
-			//"^(([0-9a-zA-Z]+)|([0-9a-zA-Z]+[_.0-9a-zA-Z-]*[0-9a-zA-Z]+))@([a-zA-Z0-9-]+[.])+([a-zA-Z]{2}|net|NET|cn|CN|com|COM|gov|GOV|mil|MIL|org|ORG|edu|EDU|int|INT)$"
 			var pattern:RegExp	=	/^[a-z0-9]+([.]?[\w-]+)*@(([a-z0-9][a-z0-9-]*[.])+[a-z]{2,4}|((25[0-5]|2[0-4]\d|[01]?\d\d?)[.]){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))$/i;
             return pattern.test(mailStr);
 		}
@@ -295,7 +86,8 @@ package com.wlash.data {
 			//1(5[8-9])表示158到159,
 			//最后再跟8个数字
 			//有些手机后可能跟有分机,在此不做判断.
-			var pattern:RegExp	=	/^0?1(3\d|5[8-9])\d{8}$/;
+			//var pattern:RegExp	=	/^0?1(3\d|5[0-9])\d{8}$/;
+			var pattern:RegExp	=	/^0?1(3\d|5\d|8\d)\d{8}$/;
 			return pattern.test(mobileNum);
 			
 		}
@@ -366,104 +158,41 @@ package com.wlash.data {
 		}
 		
 		/**
-		* check id number valid
-		* only for RPC id card number.
-		* @param id a string of id number.
-		* @return true if it is valid.
-		* 
-		* @example sample code:
-		* <listing>
-		* Form.checkID("4501314486437535445");//return false
-		* </listing>
-		*/
-		public static function checkID(id:String):Boolean{
-			var idStr:String;
-			var idLen:Number	=	id.length;
-			if(idLen==15){
-				idStr	=	id.substr(0, 6)+"19"+id.substr(6);
-			}else if(idLen==18){
-				idStr	=	id.substr(0,17);
-			}else{
-				return false;
-			}
-			
-			//////检查出生日期的正确性
-			var dateStr:String	=	idStr.substr(6, 4)+"-"+idStr.substr(10, 2)+"-"+
-																idStr.substr(12, 2);
-			if (!checkDate(dateStr)) {
-				return false;
-			}else if (idLen == 15) {//如果是15位长度的旧版ID号,
-				return true;
-			}//18位的继续检查最后一位验证码是否正确.
-			
-			//检查最后一位数字,如果是18位的身分证号
-			var arr:Array	=	idStr.split("");
-			var WI:Array	=	[7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
-			var VERIFYCODE:String	=	"10X98765432";
-			var s:uint	=	0;
-			for(var i:uint=0;i<17;i++){
-				s	+=	uint(arr[i])*WI[i];
-			}
-			var lastDigit:String	=	VERIFYCODE.charAt(s%11);
-			
-			return id.substr(17, 1) == lastDigit;
-		}
-		
-		/**
-		* hints, you must embed font in that textfield or you would not see the words,<br/>
-		* because the textfield display by fadeIn or fadeOut.
-		* before call this function, you ought to call Form.setHintText(hints_txt);
-		* 
-		* @param text show text
-		* @param second [optional] invisble after second, default 4 sec.
-		* 
-		* @see setHintText
-		* 
-		* @example sample code:
-		* <listing>
-		* Form.showHint("user name is empty.");
-		* </listing>
-		*/
-		public static function showHint(text:String, second:uint=4):void {
-			if (_hintText == null) {
-				trace("ERROR:\ryou must call [Form.setHintText(txt)] before call [Form.showHint(text)].");
-				return;
-			}
-
-			_timer.delay	=	second * 1000;
-			_timer.start();
-			_hintText.text	=	text;
-			_hintText.alpha	=	100;
-		}
-		
-		/**
-		 * 定义的提示框,当调用Form.showHint()时,会慢慢消失文字
-		 * @param	txt
+		 * 去除左右空白字符
+		 * @param	char
+		 * @return
 		 */
-		public static function setHintText(txt:TextField):void {
-			_hintText	=	txt;
-			if (_timer == null) {
-				_timer	=	new Timer(4000);
-				_timer.addEventListener(TimerEvent.TIMER, onTimer);
+		public static function trim(char:String):String{
+			if(char==null){
+				return null;
 			}
-			_timer.stop();
-			if (_tween == null) {
-				_tween =	new Tween(txt, "alpha", 
-							Strong.easeOut,
-							100, 0, 1.5, true);
-				_tween.stop();
-				_tween.addEventListener(TweenEvent.MOTION_FINISH, onMotionFinish);
-			}
-			
+			return rtrim(ltrim(char));
 		}
-		//EVENTS.
-		private static function onTimer(tEvent:TimerEvent):void {
-			tEvent.target.stop();
-			_tween.start();//让文字消失
+
+		/**
+		 * 去除左空白字符
+		 * @param	char
+		 * @return
+		 */
+		public static function ltrim(char:String):String{
+			if(char==null){
+				return null;
+			}
+			var pattern:RegExp=/^\s*/;
+			return char.replace(pattern, "");
 		}
 		
-		private static function onMotionFinish(tEvent:TweenEvent):void {
-			_hintText.text	=	"";
-		}
+		/**
+		 * 去除右空白字符
+		 * @param	char
+		 * @return
+		 */
+		public static function rtrim(char:String):String{
+			if(char==null){
+				return null;
+			}
+			var pattern:RegExp=/\s*$/;
+			return char.replace(pattern, "");
+		} 
 	}
 }

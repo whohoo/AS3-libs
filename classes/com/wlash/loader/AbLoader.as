@@ -16,6 +16,7 @@ package com.wlash.loader {
 	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.system.LoaderContext;
 	
 	import flash.display.LoaderInfo;
 	import flash.events.ProgressEvent;
@@ -37,6 +38,8 @@ package com.wlash.loader {
 		protected var loader0:Loader;
 		protected var loader1:Loader;
 		protected var _loadUrl:String;
+		
+		protected var _checkPolicyFile:Boolean;
 		
 		private var _contentShowFn:Function;
 		
@@ -66,7 +69,8 @@ package com.wlash.loader {
 		//*************************[PUBLIC METHOD]**********************************//
 		public function loadContent(url:String, showFn:Function = null):void {
 			_loadUrl	=	url;
-			preLoader.load(new URLRequest(url));
+			var loaderContext:LoaderContext	=	new LoaderContext(_checkPolicyFile);
+			preLoader.load(new URLRequest(url), loaderContext);
 			_contentShowFn		=	showFn;
 			isLoaded			=	false;
 			_contentPercent		=	0;

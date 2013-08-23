@@ -1,17 +1,18 @@
 ﻿/*utf8*/
 //**********************************************************************************//
-//	name:	ThumbImageLoader 1.0
+//	name:	ThumbImageLoader 1.1
 //	author:	Wally.Ho
 //	email:	whohoo@21cn.com
 //	date:	Wed Jun 22 2011 15:51:03 GMT+0800
 //	description: This file was created by "vans_legend.fla" file.
-//				
+//				1.1 增加smoothing属性
 //**********************************************************************************//
 
 
 //[com.wlash.loader.AbImageLoader]
 package com.wlash.loader {
 
+	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.LoaderInfo;
 	import flash.display.MovieClip;
@@ -23,6 +24,7 @@ package com.wlash.loader {
 	import flash.events.ProgressEvent;
 	import flash.events.SecurityErrorEvent;
 	import flash.net.URLRequest;
+	import flash.system.LoaderContext;
 	
 	
 	
@@ -45,8 +47,10 @@ package com.wlash.loader {
 		
 		protected var _centerImageX:Number;
 		protected var _centerImageY:Number;
+		protected var _checkPolicyFile:Boolean;
 		
 		private var _fitToMask:Boolean;
+		private var _smoothing:Boolean;
 		private var _mouseScroll:Boolean;
 		private var _isHoverImage:Boolean;
 		//*************************[READ|WRITE]*************************************//
@@ -55,17 +59,17 @@ package com.wlash.loader {
 		public function set fitToMask(value:Boolean):void {
 			if (value == _fitToMask)	return;
 			_fitToMask	=	value;
-			if (value) {
-				if (_loader.width * mask_mc.width < _loader.height * mask_mc.height) {
-					_loader.width	=	mask_mc.width;
-					_loader.scaleY	=	_loader.scaleX;
-				}else {
-					_loader.height	=	mask_mc.height;
-					_loader.scaleX	=	_loader.scaleY;
-				}
-			}else {
-				_loader.scaleX	=	1;
-				_loader.scaleY	=	1;
+			_setFitToMask(_loader, value);
+		}
+		
+		public function get smoothing():Boolean { return _smoothing; }
+		
+		public function set smoothing(value:Boolean):void {
+			if (value == _smoothing)	return;
+			_smoothing	=	value;
+			var bmp:Bitmap	=	_loader.content as Bitmap;
+			if (bmp) {
+				bmp.smoothing	=	value;
 			}
 		}
 		
@@ -100,6 +104,7 @@ package com.wlash.loader {
 		}
 		//*************************[PUBLIC METHOD]**********************************//
 		public function loadImage(url:String):void {
+			
 			_loadImage(new URLRequest(url));
 		}
 		
@@ -128,6 +133,33 @@ package com.wlash.loader {
 		
 		
 		//*************************[PROTECTED METHOD]*******************************//
+		/**
+		 * 在调用此方法前，最好图片是居中的，调用_setContainerCenter使图片居中
+		 * @param	loader
+		 * @param	value
+		 */
+		protected function _setFitToMask(loader:Loader, value:Boolean):void {
+			if (value) {
+				if (loader.width * mask_mc.height < loader.height * mask_mc.width) {
+					loader.width	=	mask_mc.width;
+					loader.scaleY	=	loader.scaleX;
+				}else {
+					loader.height	=	mask_mc.height;
+					loader.scaleX	=	loader.scaleY;
+				}
+			}else {
+				loader.scaleX	=	1;
+				loader.scaleY	=	1;
+			}
+			_setLoaderCenter(loader);
+		}
+		
+		protected function _setLoaderCenter(loader:Loader):void {
+			loader.x		=	-loader.width * .5;
+			loader.y		=	-loader.height * .5;
+			_centerImageX	=	loader.x;
+			_centerImageY	=	loader.y;
+		}
 		
 		protected function _onOverImage(e:MouseEvent):void {
 			_isHoverImage	=	true;
@@ -162,7 +194,8 @@ package com.wlash.loader {
 		}
 		
 		protected function _loadImage(req:URLRequest):void {
-			_loader.load(req);
+			var loaderContext:LoaderContext	=	new LoaderContext(_checkPolicyFile);
+			_loader.load(req, loaderContext);
 		}
 		
 		/*****BEGIN DOWNLOAD EVENTS ******/

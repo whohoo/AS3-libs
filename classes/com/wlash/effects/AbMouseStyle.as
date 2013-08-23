@@ -1,11 +1,12 @@
 ﻿/*utf8*/
 //**********************************************************************************//
-//	name:	MouseStyle 1.0
+//	name:	MouseStyle 1.2
 //	author:	Wally.Ho
 //	email:	whohoo@21cn.com
 //	date:	Mon Jan 04 2010 17:58:30 GMT+0800
 //	description: This file was created by "collection.fla" file.
-//				
+//				v1.1 修改了stage不一定为Stage对象,可为任何DisplayObjectContainer
+//				v1.2 修改render事件,当root可能不存在的情况
 //**********************************************************************************//
 
 
@@ -13,6 +14,7 @@
 package com.wlash.effects {
 
 	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
 	import flash.display.FrameLabel;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
@@ -34,7 +36,7 @@ package com.wlash.effects {
 		
 		protected var _prevStyle:Object	=	"default";
 		protected var _styleFrames:Object;
-		protected var _stage:Stage;
+		protected var _stage:DisplayObjectContainer	=	DisplayObjectContainer(root);
 		
 		//*************************[READ|WRITE]*************************************//
 		/**@private */
@@ -63,7 +65,7 @@ package com.wlash.effects {
 			_init();
 		}
 		//*************************[PUBLIC METHOD]**********************************//
-		public function setStage(value:Stage):void {
+		public function setStage(value:DisplayObjectContainer):void {
 			_stage	=	value;
 		}
 		
@@ -71,13 +73,14 @@ package com.wlash.effects {
 			removeMouseStyle();
 			if(_stage){
 				_stage.addChild(this);
+				_stage.addEventListener(MouseEvent.MOUSE_MOVE, _onRender, false, 0, true);
 			}
 			setVisible(true);
 			
 			changeStyle(value);
 			
 			//addEventListener(Event.ENTER_FRAME, _onRender, false, 0, true);
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, _onRender, false, 0, true);
+			
 			_onRender(null);
 		}
 		
@@ -88,7 +91,9 @@ package com.wlash.effects {
 		
 		public function destroy():void {
 			//removeEventListener(Event.ENTER_FRAME, _onRender);
-			stage.removeEventListener(MouseEvent.MOUSE_MOVE, _onRender);
+			if(_stage){
+				_stage.removeEventListener(MouseEvent.MOUSE_MOVE, _onRender);
+			}
 		}
 		
 		public function changeStyle(value:Object):void {
@@ -137,8 +142,10 @@ package com.wlash.effects {
 		
 		protected function removeMouseStyle():void {
 			destroy();
-			if(_stage){
-				_stage.removeChild(this);
+			if (_stage) {
+				if(_stage.getChildByName(name)){
+					_stage.removeChild(this);
+				}
 			}
 		}
 		
@@ -168,9 +175,13 @@ package com.wlash.effects {
 		}
 		
 		private function _onRender(e:MouseEvent):void {
-			if(e!=null)		e.updateAfterEvent();
-			x	=	root.mouseX;
-			y	=	root.mouseY;
+			//trace( "AbMouseStyle._onRender > e : " + e,root,_stage,stage );
+			if (e)		e.updateAfterEvent();
+			var mc:DisplayObject	=	root;
+			if (!mc)	mc	=	_stage;
+			if (!mc)	return;
+			x	=	mc.mouseX;
+			y	=	mc.mouseY;
 		}
 		
 		//*************************[STATIC METHOD]**********************************//

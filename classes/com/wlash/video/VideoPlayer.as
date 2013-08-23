@@ -397,7 +397,7 @@ package com.wlash.video {
 		public function onMetaData(info:Object):void {
 			if (_metadata != null) return;
 			_metadata = info;
-			//for( var i:String in info ) trace( "key : " + i + ", value : " + info[ i ] );
+			for( var i:String in info ) trace( "key : " + i + ", value : " + info[ i ] );
 			if (isNaN(_duration)) _duration = info.duration;
 			//if (_videoWidth < 0) _videoWidth = info.width;
 			//if (_videoHeight < 0) _videoHeight = info.height;

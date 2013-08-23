@@ -12,6 +12,7 @@
 //[com.wlash.loader.AbImageLoader]
 package com.wlash.loader {
 
+	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.LoaderInfo;
 	import flash.display.MovieClip;
@@ -49,7 +50,8 @@ package com.wlash.loader {
 		protected var _fadeStepNum:Number;
 		protected var _scrollStepNum:Number;
 		
-		private var _fitToMask:Boolean;
+		protected var _fitToMask:Boolean;
+		private var _smoothing:Boolean;
 		private var _mouseScroll:Boolean;
 		private var _isHoverImage:Boolean;
 		
@@ -60,7 +62,7 @@ package com.wlash.loader {
 		public function set fitToMask(value:Boolean):void {
 			if (value == _fitToMask)	return;
 			_fitToMask	=	value;
-			_setFitToMask(curLoader, value);
+			_setFitToMask(preLoader, value);
 		}
 		/** 图片因mask被截掉部分，可通过mouse移动来浏览 */
 		public function get mouseScroll():Boolean { return _mouseScroll; }
@@ -79,6 +81,17 @@ package com.wlash.loader {
 				stopImageScroll();
 			}
 		}
+		
+		public function get smoothing():Boolean { return _smoothing; }
+		
+		public function set smoothing(value:Boolean):void {
+			if (value == _smoothing)	return;
+			_smoothing	=	value;
+			var bmp:Bitmap	=	preLoader.content as Bitmap;
+			if (bmp) {
+				bmp.smoothing	=	value;
+			}
+		}
 		//*************************[READ ONLY]**************************************//
 		
 		
@@ -90,11 +103,18 @@ package com.wlash.loader {
 		 * Create this class BY [new ThumbImageLoader();]
 		 */
 		public function AbImageLoader2() {
-			
+			//loader0.x =	mask_mc.width >> 1;
+			//loader0.y =	mask_mc.height >> 1;
+			//
+			//loader1.x =	mask_mc.width >> 1;
+			//loader1.y =	mask_mc.height >> 1;
 			_init();
 		}
 		//*************************[PUBLIC METHOD]**********************************//
-		
+		public function loadImage(url:String):void {
+			
+			loadContent(url);
+		}
 		
 		
 		override public function destroy():void {
@@ -211,6 +231,9 @@ package com.wlash.loader {
 				curLoader.visible	=	false;
 				removeEventListener(Event.ENTER_FRAME, _onSwitchImages);
 				_onSwitchImageDone();
+				
+			}else {
+				
 			}
 		}
 		
@@ -237,6 +260,7 @@ package com.wlash.loader {
 		 */
 		private function _init():void {
 			_createContainer();
+			_setContainerCenter();
 			
 			_container.mask		=	mask_mc;
 			_container.addChild(loader0);

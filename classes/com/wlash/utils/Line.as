@@ -88,8 +88,7 @@ package com.wlash.utils {
 		 * @return
 		 */
 		private static function compareLine(lineA:Line, lineB:Line, prop:String):Boolean{
-			return Math.max(lineA.p0[prop], lineA.p1[prop])>=
-				Math.min(lineB.p0[prop], lineB.p1[prop]);
+			return Math.max(lineA.p0[prop], lineA.p1[prop]) >= Math.min(lineB.p0[prop], lineB.p1[prop]);
 		}
 		
 		/**

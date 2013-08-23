@@ -169,7 +169,7 @@ package com.wlash.effects {
 		
 		internal function createShadow(color:uint):void {
 			var psClass:Class	=	getDefinitionByName("PageShade") as Class;
-			shade	=	new psClass();
+			shadow	=	new psClass();
 			
 			addChildAt(shadow, 0);
 			
