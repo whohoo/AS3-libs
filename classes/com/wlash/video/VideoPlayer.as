@@ -17,8 +17,10 @@ package com.wlash.video {
 
 
 	import flash.display.DisplayObjectContainer;
+	import flash.display.DisplayObject;
 	import flash.display.Shape;
 	import flash.display.Sprite;
+	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.events.FullScreenEvent;
 	import flash.events.MouseEvent;
@@ -31,7 +33,11 @@ package com.wlash.video {
 	import flash.events.NetStatusEvent;
 	import flash.events.SecurityErrorEvent;
 	import flash.events.AsyncErrorEvent;
+	import flash.events.ProgressEvent;
+	import flash.events.IOErrorEvent;
 	import flash.system.Capabilities;
+	import flash.net.URLRequest;
+	import flash.utils.getDefinitionByName;
 	
 	/**
 	 * video start play
@@ -88,6 +94,9 @@ package com.wlash.video {
 	 * 
 	 */
 	public class VideoPlayer extends Sprite {
+		/**preview image*/
+		public var preview_mc:Sprite;
+
 		/**@private */
 		public var video_mc:Video;
 		[Inspectable(defaultValue = "true", verbose = "0", type = "Boolean", category = "")]
@@ -101,7 +110,10 @@ package com.wlash.video {
 		[Inspectable(defaultValue = "false", verbose = "0", type = "Boolean", category = "")]
 		/**loop play video when video play end*/
 		public var loopPlay:Boolean		=	false;
-		
+
+
+		protected var _previewLoader:Loader;
+		private var _preview:String;
 		//be add to stage at top
 		//protected var _fullscreenMc:Sprite;
 		private var _videoBg:Shape;
@@ -144,7 +156,24 @@ package com.wlash.video {
 		
 		[Inspectable(defaultValue="", verbose="0", type="String", category="")]
 		/**@private */
+		public function set preview(value:String):void {
+			_preview	=	value;
+			if(value==null){
+				unloadPreview();
+			}else if(value==""){
+				//empty
+			}else{
+				loadPreview(value);
+			}
+		}
+		
+		/**Annotation*/
+		public function get preview():String {return _preview; }
+
+		[Inspectable(defaultValue="", verbose="0", type="String", category="")]
+		/**@private */
 		public function set source(value:String):void {
+			if(value==null || value=="")	return;
 			_source	=	value;
 			if (autoPlay) {
 				play(value);
@@ -291,6 +320,7 @@ package com.wlash.video {
 				}
 				_state	=	"playing";
 			}
+			preview_mc.visible = false;
 		}
 		
 		/**
@@ -349,6 +379,9 @@ package com.wlash.video {
 		public function destroy():void {
 			clear();
 			close();
+			_previewLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onPreviewComplete);
+			_previewLoader.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS, onPreviewProgress);
+			_previewLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, onPreviewIoError);
 			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemved);
 			
 			videoURL	=	null;
@@ -397,7 +430,7 @@ package com.wlash.video {
 		public function onMetaData(info:Object):void {
 			if (_metadata != null) return;
 			_metadata = info;
-			for( var i:String in info ) trace( "key : " + i + ", value : " + info[ i ] );
+			//for( var i:String in info ) trace( "key : " + i + ", value : " + info[ i ] );
 			if (isNaN(_duration)) _duration = info.duration;
 			//if (_videoWidth < 0) _videoWidth = info.width;
 			//if (_videoHeight < 0) _videoHeight = info.height;
@@ -436,7 +469,42 @@ package com.wlash.video {
 		
 		
 		//*************************[PROTECTED METHOD]*******************************//
-		
+		protected function loadPreview(value:String):void{
+			stop();
+			preview_mc.visible = true;
+			var suffix:String;
+			var arr:Array = value.split(".");
+			if(arr.length>1){
+				suffix = arr[arr.length-1].toLowerCase();
+			}
+			switch(suffix){
+				case "jpg":
+				case "png":
+				case "jpeg":
+				case "gif":
+					_previewLoader.load(new URLRequest(value));
+					break;
+				default:
+					try{
+						var cClass:Class = getDefinitionByName(value) as Class;
+						var mc:DisplayObject = new cClass();
+						preview_mc.addChild(mc);
+					}catch(err:Error){
+						trace("loadPreview getDefinitionByName Error: "+err+", ["+value+"]");
+					}
+			}
+			
+		}
+
+		protected function unloadPreview():void{
+			_previewLoader.unload();
+			var i:int = preview_mc.numChildren;
+			while(i>1){
+				i--;
+				preview_mc.removeChildAt(i);
+				
+			}
+		}
 		
 		//*************************[PRIVATE METHOD]*********************************//
 		/**
@@ -444,7 +512,30 @@ package com.wlash.video {
 		 */
 		private function _init():void {
 			initConnection();
+			_initPreview();
 			addEventListener(Event.REMOVED_FROM_STAGE, _onRemved);
+		}
+
+		private function _initPreview():void{
+			preview_mc	=	new Sprite();
+			this.addChild(preview_mc);
+			_previewLoader = new Loader();
+			preview_mc.addChild(_previewLoader);
+			_previewLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onPreviewComplete);
+			_previewLoader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, onPreviewProgress);
+			_previewLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, onPreviewIoError);
+		}
+
+		private function onPreviewComplete(e:Event):void{
+			dispatchEvent(e);
+		}
+
+		private function onPreviewProgress(e:ProgressEvent):void{
+			dispatchEvent(e);
+		}
+
+		private function onPreviewIoError(e:IOErrorEvent):void{
+			dispatchEvent(e);
 		}
 		
 		private function _onRemved(e:Event):void {
