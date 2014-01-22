@@ -1,6 +1,6 @@
 ﻿/*utf8*/
 //**********************************************************************************//
-//	name:	VideoPlayer 1.3
+//	name:	VideoPlayer 1.4
 //	author:	Wally.Ho
 //	email:	whohoo@21cn.com
 //	date:	Thu Mar 26 2009 10:07:30 GMT+0800
@@ -9,6 +9,7 @@
 //		v1.2,增加clear() method, destroy() method
 //		v1.3,增加全屏方法，已经bugs，当视频尺寸小于261x177时，视频会左上角对齐而不会
 //			居中屏幕正中
+//		v1.4,添加HitTestPoint事件来检测是否hover在当前视频上
 //**********************************************************************************//
 
 
@@ -82,12 +83,26 @@ package com.wlash.video {
 	[Event(name = "videoNotFound", type = "flash.events.Event")]
 	
 	/**
-	 * video did not found
+	 * video state change
 	 *
 	 * @eventType flash.events.Event
 	 */
 	[Event(name = "stateChange", type = "flash.events.Event")]	
+
+	/**
+	 * on mouse hover video player
+	 *
+	 * @eventType flash.events.Event
+	 */
+	[Event(name = "hoverVideoPlayer", type = "flash.events.Event")]	
 	
+	/**
+	 * on mouse out video player
+	 *
+	 * @eventType flash.events.Event
+	 */
+	[Event(name = "outVideoPlayer", type = "flash.events.Event")]	
+
 	/**
 	 * VideoPlayer.
 	 * <p>annotate here for this class.</p>
@@ -131,6 +146,7 @@ package com.wlash.video {
 		private var _metadata:Object;
 		private var _fullScreenBackgroundColor:uint	=	0x0;
 		private var _skinScaleMaximum:Number		=	4;
+		private var _isHoverVideo:Boolean = false;
 		
 		private const MIN_WIDTH:Number	=	261;
 		private const MIN_HEIGHT:Number	=	177;
@@ -258,10 +274,12 @@ package com.wlash.video {
 		public function get bytesTotal():uint { return stream.bytesTotal; }
 		/**video loaded bytes*/
 		public function get bytesLoaded():uint { return stream.bytesLoaded; }
-		/**the state*/
+		/**the state [playing, loading, paused,rewinding,stopped]*/
 		public function get state():String { return __state; }
 		/**is full screen*/
 		public function get isFullScreen():Boolean { return _isFullScreen;	}
+
+		public function get isHoverVideo():Boolean{return _isHoverVideo;}
 		//*************************[STATIC]*****************************************//
 		
 		
@@ -382,7 +400,8 @@ package com.wlash.video {
 			_previewLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onPreviewComplete);
 			_previewLoader.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS, onPreviewProgress);
 			_previewLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, onPreviewIoError);
-			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemved);
+			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemoved);
+			removeEventListener(Event.ENTER_FRAME, _checkHover);
 			
 			videoURL	=	null;
 			connection	=	null;
@@ -513,7 +532,23 @@ package com.wlash.video {
 		private function _init():void {
 			initConnection();
 			_initPreview();
-			addEventListener(Event.REMOVED_FROM_STAGE, _onRemved);
+			addEventListener(Event.REMOVED_FROM_STAGE, _onRemoved);
+			addEventListener(Event.ENTER_FRAME, _checkHover);
+			_isHoverVideo = hitTestPoint(root.mouseX, root.mouseY,false);
+		}
+
+		private function _checkHover(e:Event):void{
+			if(hitTestPoint(root.mouseX, root.mouseY,false)){
+				if(!_isHoverVideo){
+					_isHoverVideo = true;
+					dispatchEvent(new Event("hoverVideoPlayer"));
+				}
+			}else{
+				if(_isHoverVideo){
+					_isHoverVideo = false;
+					dispatchEvent(new Event("outVideoPlayer"));
+				}
+			}
 		}
 
 		private function _initPreview():void{
@@ -538,8 +573,8 @@ package com.wlash.video {
 			dispatchEvent(e);
 		}
 		
-		private function _onRemved(e:Event):void {
-			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemved);
+		private function _onRemoved(e:Event):void {
+			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemoved);
 			destroy();
 		}
 		

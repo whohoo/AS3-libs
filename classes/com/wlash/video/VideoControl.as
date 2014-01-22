@@ -1,11 +1,13 @@
 ﻿/*utf8*/
 //**********************************************************************************//
-//	name:	VideoControl 1.1
+//	name:	VideoControl 1.2
 //	author:	Wally.Ho
 //	email:	whohoo@21cn.com
 //	date:	Wed Jul 15 2009 15:06:35 GMT+0800
 //	description: This file was created by "videoplayer.fla" file.
 //		1.1修改了一些bug，并支持多层影片路径,不再需要TweenLite类
+//		1.2增加OverVideo控制, 时间显示, 背影条,
+//			可隐藏控制条
 //**********************************************************************************//
 
 
@@ -14,6 +16,7 @@ package com.wlash.video {
 
 	import flash.display.InteractiveObject;
 	import flash.display.MovieClip;
+	import flash.text.TextField;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.FullScreenEvent;
@@ -60,6 +63,18 @@ package com.wlash.video {
 		[Inspectable(defaultValue = "seekBar_mc", type = "String", verbose="1", name = "seekBar", category="btns")]
 		/**@private */
 		public var __seekBar:String;
+
+		[Inspectable(defaultValue = "bg_mc", type = "String", verbose="1", name = "background", category="btns")]
+		/**@private */
+		public var __backgroundMc:String;
+
+		[Inspectable(defaultValue = "overVideo_mc", type = "String", verbose="1", name = "OverVideo", category="btns")]
+		/**@private */
+		public var __overVideoMc:String;
+
+		[Inspectable(defaultValue = "timer_txt", type = "String", verbose="1", name = "Timer", category="btns")]
+		/**@private */
+		public var __timerTxt:String;
 		
 		private var _playBtn:InteractiveObject;
 		private var _pauseBtn:InteractiveObject;
@@ -68,6 +83,9 @@ package com.wlash.video {
 		private var _fullScreenBtn:InteractiveObject;
 		private var _seekBar:DisplayObjectContainer;
 		private var _seekBarContainer:SeekBarContainer;
+		private var _backgroundMc:DisplayObject;
+		private var _overVideoMc:MovieClip;
+		private var _timerTxt:TextField;
 		
 		private var _lastVolume:Number;
 		private var _volumeTo:Number;
@@ -117,9 +135,13 @@ package com.wlash.video {
 				pauseBtn	=	value.getChildByName(__pauseBtn) as InteractiveObject;
 				stopBtn		=	value.getChildByName(__stopBtn) as InteractiveObject;
 				muteBtn		=	value.getChildByName(__muteBtn) as InteractiveObject;
-				fullScreenBtn		=	value.getChildByName(__fullScreenBtn) as InteractiveObject;
+				fullScreenBtn	=	value.getChildByName(__fullScreenBtn) as InteractiveObject;
 				
 				seekBar		=	value.getChildByName(__seekBar) as DisplayObjectContainer;
+
+				backgroundMc =	value.getChildByName(__backgroundMc) as DisplayObject;
+				overVideoMc	=	value.getChildByName(__overVideoMc) as MovieClip;
+				timerTxt	=	value.getChildByName(__timerTxt) as TextField;
 
 				_controlBar	=	value;
 			}
@@ -223,10 +245,47 @@ package com.wlash.video {
 		/**Annotation*/
 		public function get seekBar():DisplayObjectContainer { return _seekBar; }
 		
+
+		/**@private */
+		public function set backgroundMc(value:DisplayObject):void {
+			if (_backgroundMc) {
+				
+			}
+			_backgroundMc	=	value;
+			if (!value) 	return;
+			
+		}
+		/**Annotation*/
+		public function get backgroundMc():DisplayObject { return _backgroundMc; }
+		
+		/**@private */
+		public function set overVideoMc(value:MovieClip):void {
+			if (_overVideoMc)  _overVideoMc.removeEventListener(MouseEvent.CLICK, onClickOverVideo);
+			
+			_overVideoMc	=	value;
+			if (!value) 	return;
+			_overVideoMc.addEventListener(MouseEvent.CLICK, onClickOverVideo);
+			if (value is MovieClip) {
+				value["gotoAndStop"](1);
+			}
+		}
+		/**Annotation*/
+		public function get overVideoMc():MovieClip { return _overVideoMc; }
+		
+		/**@private */
+		public function set timerTxt(value:TextField):void {
+			if (_timerTxt) _timerTxt.removeEventListener(MouseEvent.CLICK, onClickTimer);
+			_timerTxt	=	value;
+			if (!value) 	return;
+			_timerTxt.addEventListener(MouseEvent.CLICK, onClickTimer);
+		}
+		/**Annotation*/
+		public function get timerTxt():TextField { return _timerTxt; }
+
 		/**@private */
 		public function set videoPlayer(value:VideoPlayer):void {
 			_videoPlayer	=	null;
-			if (value) {
+			if (value && _seekBarContainer) {
 				//var vName:String	=	getQualifiedClassName(value);
 				//switch(vName) {
 					//case "fl.video::FLVPlayback":
@@ -235,11 +294,12 @@ package com.wlash.video {
 						_videoPlayer	=	value;
 						value.addEventListener("stateChange", onStateChange);
 						onStateChange();
-						if(_seekBarContainer){
-							_seekBarContainer.initiazlie();
-						}
+						
+						_seekBarContainer.initiazlie();
+						
 					//break;
 				//}
+				_listenVideoOverEvent();
 			}
 		}
 		
@@ -296,9 +356,39 @@ package com.wlash.video {
 			if(_stopBtn) _stopBtn.removeEventListener(MouseEvent.CLICK, onClickStop);
 			if(_muteBtn) _muteBtn.removeEventListener(MouseEvent.CLICK, onClickSpeaker);
 			if(_fullScreenBtn) _fullScreenBtn.removeEventListener(MouseEvent.CLICK, onClickFullScreen);
-			_videoPlayer.removeEventListener("stateChange", onStateChange);
-			
+			if (_timerTxt) _timerTxt.removeEventListener(MouseEvent.CLICK, onClickTimer);
+			if (_overVideoMc)  _overVideoMc.removeEventListener(MouseEvent.CLICK, onClickOverVideo);
+			if(_videoPlayer){
+				_videoPlayer.removeEventListener("stateChange", onStateChange);
+				_videoPlayer.removeEventListener("hoverVideoPlayer", _onVideoPlayerHoverChange);
+				_videoPlayer.removeEventListener("outVideoPlayer", _onVideoPlayerHoverChange);
+			}
+
 			if(_seekBar) _seekBarContainer.destory();
+		}
+
+		private function _listenVideoOverEvent():void{
+			_videoPlayer.addEventListener("hoverVideoPlayer", _onVideoPlayerHoverChange);
+			_videoPlayer.addEventListener("outVideoPlayer", _onVideoPlayerHoverChange);
+			_onVideoPlayerHoverChange(null);
+		}
+
+		private function _onVideoPlayerHoverChange(e:Event):void{
+			if(_videoPlayer.isHoverVideo){
+				_overVideoMc.visible = true;
+				if(_videoPlayer.state=="playing"){
+					_overVideoMc.gotoAndStop(2);
+				}else{
+					_overVideoMc.gotoAndStop(1);
+				}
+			}else{
+				if(_videoPlayer.state=="playing"){
+					_overVideoMc.visible = false;
+				}else{
+					_overVideoMc.visible = true;
+					_overVideoMc.gotoAndStop(1);
+				}
+			}
 		}
 		
 		private function onClickPlay(e:MouseEvent):void {
@@ -333,6 +423,21 @@ package com.wlash.video {
 				}
 			}
 		}
+
+		private function onClickOverVideo(e:MouseEvent):void{
+			if(_overVideoMc){
+				if(_overVideoMc.currentFrame==1){
+					onClickPlay(null);
+				}else{
+					onClickPause(null);
+				}
+			}
+		}
+
+		private function onClickTimer(e:MouseEvent):void{
+
+		}
+
 		private function onClickFullScreen(e:MouseEvent):void {
 			if (_videoPlayer) {
 				
@@ -397,18 +502,28 @@ package com.wlash.video {
 						_pauseBtn.visible	=	true;
 					if(_playBtn)
 						_playBtn.visible	=	false;
+					if(_overVideoMc && !_videoPlayer.isHoverVideo)
+						_overVideoMc.visible	=	false;
 				break;
 				case "stopped":
 					if(_pauseBtn)
 						_pauseBtn.visible	=	false;
 					if(_playBtn)
 						_playBtn.visible	=	true;
+					if(_overVideoMc){
+						_overVideoMc.visible	=	true;
+						_overVideoMc.gotoAndStop(1);
+					}
 				break;
 				case "paused":
 					if(_pauseBtn)
 						_pauseBtn.visible	=	false;
 					if(_playBtn)
 						_playBtn.visible	=	true;
+					if(_overVideoMc){
+						_overVideoMc.visible	=	true;
+						_overVideoMc.gotoAndStop(1);
+					}
 				case "rewinding":
 					if(_pauseBtn)
 						_pauseBtn.visible	=	false;
