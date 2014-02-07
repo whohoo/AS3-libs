@@ -26,6 +26,11 @@ package com.wlash.video {
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;
 	import com.wlash.frameset.Component;
+	import flash.utils.setTimeout;
+	import flash.utils.clearTimeout;
+	import flash.utils.Timer;
+	import flash.events.TimerEvent;
+	import flash.external.ExternalInterface;
 	
 	
 	/**
@@ -91,8 +96,28 @@ package com.wlash.video {
 		private var _volumeTo:Number;
 		private var _videoPlayer:VideoPlayer;
 		private var _active:Boolean;
+		private var _autoHide:Number;
+		private var _timer:Timer;
+		private var _isCountdownTimer:Boolean;//是否为倒计时
+		private var _delayHideOverVideoInterId:int;
 		//*************************[READ|WRITE]*************************************//
-		[Inspectable(defaultValue="", type="String", verbose="0", name="videoPlayer", category="target")]
+
+		[Inspectable(defaultValue = "-1", type = "Number", verbose="1", name = "autoHide", category="")]
+		/**@private */
+		public function set autoHide(value:Number):void {
+			if(value>=1){
+				_autoHide	=	1;
+			}else if(value>0){
+				_autoHide 	=	value;
+			}else{
+				_autoHide	=	0;
+			}
+		}
+
+		/**auto hide control bar when mouse out, number must between 0 in 1, 0 means not auto hide, 1 means auto hide immediately.<br/> 0.05 is perfect for auto hide.*/
+		public function get autoHide():Number { return _autoHide; }
+
+		[Inspectable(defaultValue="videoPlayer_mc", type="String", verbose="0", name="videoPlayer", category="target")]
 		/**@private */
 		public function set videoPlayerName(value:String):void {
 			if (value.length == 0)	return;
@@ -102,8 +127,8 @@ package com.wlash.video {
 			}else {
 				throw new Error("ERROR: can NOT find ["+value+"] in ["+parent+"]. pls redefine videoPlayer in parameters panel.");
 			}
-			
-		}
+		}	
+		
 		/**Annotation*/
 		public function get videoPlayerName():String { return _videoPlayer==null ? "" : _videoPlayer.name; }
 		
@@ -140,7 +165,7 @@ package com.wlash.video {
 				seekBar		=	value.getChildByName(__seekBar) as DisplayObjectContainer;
 
 				backgroundMc =	value.getChildByName(__backgroundMc) as DisplayObject;
-				overVideoMc	=	value.getChildByName(__overVideoMc) as MovieClip;
+				overVideoMc	=	value.parent.getChildByName(__overVideoMc) as MovieClip;//此对象在控制条之外
 				timerTxt	=	value.getChildByName(__timerTxt) as TextField;
 
 				_controlBar	=	value;
@@ -275,9 +300,17 @@ package com.wlash.video {
 		/**@private */
 		public function set timerTxt(value:TextField):void {
 			if (_timerTxt) _timerTxt.removeEventListener(MouseEvent.CLICK, onClickTimer);
+			if(_timer){
+				_timer.stop();
+			}
 			_timerTxt	=	value;
 			if (!value) 	return;
 			_timerTxt.addEventListener(MouseEvent.CLICK, onClickTimer);
+			if(!_timer){
+				_timer = new Timer(500);
+			}
+			_timer.addEventListener(TimerEvent.TIMER, _onTimer);
+
 		}
 		/**Annotation*/
 		public function get timerTxt():TextField { return _timerTxt; }
@@ -349,14 +382,22 @@ package com.wlash.video {
 		
 		private function _onRemoved(e:Event):void {
 			stage.removeEventListener(FullScreenEvent.FULL_SCREEN, _fullScreen);
+			stage.removeEventListener(MouseEvent.MOUSE_MOVE, _onMouseMoveInFullScr);
+			clearTimeout(_delayHideOverVideoInterId);
 			removeEventListener(Event.REMOVED_FROM_STAGE, _onRemoved);
 			removeEventListener(Event.ENTER_FRAME, _onVolumeFadeFn);
+			removeEventListener(Event.ENTER_FRAME, _onHidingBar);
 			if(_playBtn) _playBtn.removeEventListener(MouseEvent.CLICK, onClickPlay);	
 			if(_pauseBtn) _pauseBtn.removeEventListener(MouseEvent.CLICK, onClickPause);
 			if(_stopBtn) _stopBtn.removeEventListener(MouseEvent.CLICK, onClickStop);
 			if(_muteBtn) _muteBtn.removeEventListener(MouseEvent.CLICK, onClickSpeaker);
 			if(_fullScreenBtn) _fullScreenBtn.removeEventListener(MouseEvent.CLICK, onClickFullScreen);
 			if (_timerTxt) _timerTxt.removeEventListener(MouseEvent.CLICK, onClickTimer);
+			if(_timer){
+				_timer.stop();
+				_timer.addEventListener(TimerEvent.TIMER, _onTimer);
+			}
+
 			if (_overVideoMc)  _overVideoMc.removeEventListener(MouseEvent.CLICK, onClickOverVideo);
 			if(_videoPlayer){
 				_videoPlayer.removeEventListener("stateChange", onStateChange);
@@ -374,20 +415,74 @@ package com.wlash.video {
 		}
 
 		private function _onVideoPlayerHoverChange(e:Event):void{
-			if(_videoPlayer.isHoverVideo){
-				_overVideoMc.visible = true;
+			//_out("isHoverVideo: "+_videoPlayer.isHoverVideo+", isFullScreen: "+ _videoPlayer.isFullScreen);
+			if(_videoPlayer.isFullScreen && _videoPlayer.isHoverVideo){//全屏状态
 				if(_videoPlayer.state=="playing"){
 					_overVideoMc.gotoAndStop(2);
 				}else{
 					_overVideoMc.gotoAndStop(1);
 				}
+				_overVideoMc.visible = true;
+				stage.addEventListener(MouseEvent.MOUSE_MOVE, _onMouseMoveInFullScr);
 			}else{
-				if(_videoPlayer.state=="playing"){
-					_overVideoMc.visible = false;
-				}else{
+				stage.removeEventListener(MouseEvent.MOUSE_MOVE, _onMouseMoveInFullScr);
+				clearTimeout(_delayHideOverVideoInterId);
+				if(_videoPlayer.isHoverVideo){
 					_overVideoMc.visible = true;
-					_overVideoMc.gotoAndStop(1);
+					if(_videoPlayer.state=="playing"){
+						_overVideoMc.gotoAndStop(2);
+					}else{
+						_overVideoMc.gotoAndStop(1);
+					}
+					_showBar();
+				}else{
+					if(_videoPlayer.state=="playing"){
+						_overVideoMc.visible = false;
+					}else{
+						_overVideoMc.visible = true;
+						_overVideoMc.gotoAndStop(1);
+					}
+					_hideBar();
 				}
+			}
+			
+		}
+
+		private function _onMouseMoveInFullScr(e:MouseEvent):void{
+			clearTimeout(_delayHideOverVideoInterId);
+			if(_videoPlayer.state=="playing"){
+				_overVideoMc.gotoAndStop(2);
+			}else{
+				_overVideoMc.gotoAndStop(1);
+			}
+			_overVideoMc.visible = true;
+			_showBar();
+			_delayHideOverVideoInterId = setTimeout(function():void{
+					if(_videoPlayer.state=="playing") _overVideoMc.visible = false;
+					_hideBar();
+				}, 800);
+		}
+
+		private function _showBar():void{
+			removeEventListener(Event.ENTER_FRAME, _onHidingBar);
+			_controlBar.alpha = 1;
+			_controlBar.visible = true;
+		}
+
+		private function _hideBar():void{
+			removeEventListener(Event.ENTER_FRAME, _onHidingBar);
+			if(_autoHide>=1){
+				_controlBar.visible = false;
+			}else if(_autoHide>0){
+				addEventListener(Event.ENTER_FRAME, _onHidingBar);
+			}
+		}
+
+		private function _onHidingBar(e:Event):void{
+			_controlBar.alpha -= _autoHide;
+			if(_controlBar.alpha<=0){
+				_controlBar.visible = false;
+				removeEventListener(Event.ENTER_FRAME, _onHidingBar);
 			}
 		}
 		
@@ -435,7 +530,25 @@ package com.wlash.video {
 		}
 
 		private function onClickTimer(e:MouseEvent):void{
+			_isCountdownTimer = !_isCountdownTimer;
+			_onTimer(null);
+		}
 
+		private function _onTimer(e:TimerEvent):void{
+			var t:int;
+			if(!_isCountdownTimer){
+				t = this._videoPlayer.playheadTime
+			}else{
+				t = this._videoPlayer.totalTime - this._videoPlayer.playheadTime;
+			}
+			
+			_timerTxt.text = _formatTimer(t);
+		}
+
+		private function _formatTimer(value:int):String{
+			var min:int = value / 60;
+			var sec:int = value % 60;
+			return (min>9 ? min : "0"+min)+":"+(sec>9 ? sec : "0"+sec);
 		}
 
 		private function onClickFullScreen(e:MouseEvent):void {
@@ -490,6 +603,7 @@ package com.wlash.video {
 		}
 		
 		private function onStateChange(e:Event=null):void {
+			//_out(_videoPlayer["state"])
 			switch(_videoPlayer["state"]) {
 				case "loading":
 					if(_pauseBtn)
@@ -502,8 +616,15 @@ package com.wlash.video {
 						_pauseBtn.visible	=	true;
 					if(_playBtn)
 						_playBtn.visible	=	false;
-					if(_overVideoMc && !_videoPlayer.isHoverVideo)
-						_overVideoMc.visible	=	false;
+					if(_overVideoMc){
+						if(!_videoPlayer.isHoverVideo)
+							_overVideoMc.visible	=	false;
+						else {
+							_overVideoMc.visible	=	true;
+							_overVideoMc.gotoAndStop(2);
+						}
+					}
+					if(_timer) _timer.start();
 				break;
 				case "stopped":
 					if(_pauseBtn)
@@ -514,6 +635,7 @@ package com.wlash.video {
 						_overVideoMc.visible	=	true;
 						_overVideoMc.gotoAndStop(1);
 					}
+					if(_timer) _timer.stop();
 				break;
 				case "paused":
 					if(_pauseBtn)
@@ -524,6 +646,7 @@ package com.wlash.video {
 						_overVideoMc.visible	=	true;
 						_overVideoMc.gotoAndStop(1);
 					}
+					if(_timer) _timer.stop();
 				case "rewinding":
 					if(_pauseBtn)
 						_pauseBtn.visible	=	false;
@@ -531,6 +654,11 @@ package com.wlash.video {
 						_playBtn.visible	=	true;
 				break;
 			}
+		}
+
+		private function _out(value:Object):void{
+			ExternalInterface.call("console.log", value);
+			trace(value);
 		}
 		//*************************[STATIC METHOD]**********************************//
 		

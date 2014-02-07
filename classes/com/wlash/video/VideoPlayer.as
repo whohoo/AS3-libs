@@ -759,7 +759,7 @@ package com.wlash.video {
 				}
 				
 			}
-			_isFullScreen	=	e.fullScreen;
+			_isFullScreen	=	false;
 			
 		}
 		
