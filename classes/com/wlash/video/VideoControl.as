@@ -216,6 +216,7 @@ package com.wlash.video {
 			}
 			_pauseBtn	=	value;
 			if (!value) 	return;
+			_pauseBtn.visible	=	false;
 			_pauseBtn.addEventListener(MouseEvent.CLICK, onClickPause);	
 		}
 		/**Annotation*/
@@ -616,7 +617,8 @@ package com.wlash.video {
 		}
 		
 		private function onStateChange(e:Event=null):void {
-			//_out(_videoPlayer["state"])
+			//_out("state: "+_videoPlayer["state"]);
+
 			switch(_videoPlayer["state"]) {
 				case "loading":
 					if(_pauseBtn)
