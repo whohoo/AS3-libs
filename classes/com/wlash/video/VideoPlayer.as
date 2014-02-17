@@ -114,13 +114,13 @@ package com.wlash.video {
 
 		/**@private */
 		public var video_mc:Video;
-		[Inspectable(defaultValue = "true", verbose = "0", type = "Boolean", category = "")]
+		[Inspectable(defaultValue = "false", verbose = "0", type = "Boolean", category = "")]
 		/**auto play video or not*/
-		public var autoPlay:Boolean		=	true;
+		public var autoPlay:Boolean		=	false;
 		
-		[Inspectable(defaultValue = "true", verbose = "0", type = "Boolean", category = "")]
+		[Inspectable(defaultValue = "false", verbose = "0", type = "Boolean", category = "")]
 		/**auto rewind video or not*/
-		public var autoRewind:Boolean	=	true;
+		public var autoRewind:Boolean	=	false;
 
 		[Inspectable(defaultValue = "false", verbose = "0", type = "Boolean", category = "")]
 		/**loop play video when video play end*/
@@ -194,7 +194,7 @@ package com.wlash.video {
 			if (autoPlay) {
 				play(value);
 			}else {
-				load(value);
+				//load(value);
 			}
 		}
 		
@@ -253,6 +253,7 @@ package com.wlash.video {
 		
 		/**@private */
 		protected function set _state(value:String):void {
+			//trace("_state: "+value);
 			if (__state != value) {
 				__state	=	value;
 				dispatchEvent(new Event("stateChange"));
@@ -274,7 +275,7 @@ package com.wlash.video {
 		public function get bytesTotal():uint { return stream.bytesTotal; }
 		/**video loaded bytes*/
 		public function get bytesLoaded():uint { return stream.bytesLoaded; }
-		/**the state [playing, loading, paused,rewinding,stopped]*/
+		/**the state [playing, loading, paused, stopped, videoEnd]*/
 		public function get state():String { return __state; }
 		/**is full screen*/
 		public function get isFullScreen():Boolean { return _isFullScreen;	}
@@ -314,18 +315,23 @@ package com.wlash.video {
 		 * @param	totalTime
 		 */
 		public function play(url:String = null, totalTime:Number = NaN):void {
-			//trace( "play : " + url );
+			//trace( "play : " + url, _state );
 			if(url!=null){
 				_load(url, totalTime);
+				_source= url;
 				_state	=	"playing";
-			}else if(_state!=""){
+			}else if(_state==""){
+				play(_source);
+			}else{
 				switch(_state) {
 					case "loading":
 					case "paused":
 						stream.resume();
 					break;
-					case "rewinding":
-						stream.seek(0);
+					case "videoEnd":
+						if(!autoRewind){
+							stream.seek(0);
+						}
 						stream.resume();
 					break;
 					case "stopped":
@@ -354,9 +360,9 @@ package com.wlash.video {
 		 */
 		public function stop():void {
 			stream.pause();
-			if(autoRewind){
+			//if(autoRewind){
 				stream.seek(0);
-			}
+			//}
 			_state	=	"stopped";
 		}
 		
@@ -461,13 +467,14 @@ package com.wlash.video {
 		 */
 		public function onXMPData(obj:Object):void {
 			//for( var i:String in obj ) trace( "key : " + i + ", value : " + obj[ i ] );
-			
+			//TODO
 		}
 		/**
 		 * @private
 		 * @param	obj
 		 */
 		public function onPlayStatus(obj:Object):void {
+			//TODO
 			//trace( "onPlayStatus : " + onPlayStatus );
 			//for( var i:String in obj ) trace( "key : " + i + ", value : " + obj[ i ] );
 		}
@@ -477,6 +484,7 @@ package com.wlash.video {
 		 * @param	info
 		 */
 		public function onCuePoint(info:Object):void {
+			//TODO
 			//if ( !_hiddenForResize ||
 			     //(!isNaN(_hiddenRewindPlayheadTime) && playheadTime < _hiddenRewindPlayheadTime) ) {
 				//dispatchEvent(new MetadataEvent(MetadataEvent.CUE_POINT, false, false, info));
@@ -489,7 +497,8 @@ package com.wlash.video {
 		
 		//*************************[PROTECTED METHOD]*******************************//
 		protected function loadPreview(value:String):void{
-			stop();
+			stream.pause();
+			__state = "";
 			preview_mc.visible = true;
 			var suffix:String;
 			var arr:Array = value.split(".");
@@ -628,7 +637,7 @@ package com.wlash.video {
 							stream.seek(0);
 							stream.pause();
 						}
-						_state	=	"rewinding";
+						_state	=	"videoEnd";
 					}
 					dispatchEvent(new Event("videoComplete"));
 					break;

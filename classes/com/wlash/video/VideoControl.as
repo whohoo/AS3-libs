@@ -41,9 +41,7 @@ package com.wlash.video {
 	public class VideoControl extends Component {
 		private var _controlBar:DisplayObjectContainer;
 		
-		[Inspectable(defaultValue = ".3", type = "Number", verbose="1", name = "fadeVolume", category="")]
-		/**the second of fade in or fade out volume */
-		public var fadeVolume:Number	=	.3;
+		
 		
 		[Inspectable(defaultValue = "play_btn", type = "String", verbose="1", name = "playBtn", category="btns")]
 		/**@private */
@@ -69,15 +67,15 @@ package com.wlash.video {
 		/**@private */
 		public var __seekBar:String;
 
-		[Inspectable(defaultValue = "bg_mc", type = "String", verbose="1", name = "background", category="btns")]
+		//[Inspectable(defaultValue = "bg_mc", type = "String", verbose="1", name = "background", category="btns")]
 		/**@private */
-		public var __backgroundMc:String;
+		//public var __backgroundMc:String;
 
-		[Inspectable(defaultValue = "overVideo_mc", type = "String", verbose="1", name = "OverVideo", category="btns")]
+		[Inspectable(defaultValue = "overVideo_mc", type = "String", verbose="1", name = "overVideo", category="ov")]
 		/**@private */
 		public var __overVideoMc:String;
 
-		[Inspectable(defaultValue = "timer_txt", type = "String", verbose="1", name = "Timer", category="btns")]
+		[Inspectable(defaultValue = "timer_txt", type = "String", verbose="1", name = "timer", category="btns")]
 		/**@private */
 		public var __timerTxt:String;
 		
@@ -88,7 +86,7 @@ package com.wlash.video {
 		private var _fullScreenBtn:InteractiveObject;
 		private var _seekBar:DisplayObjectContainer;
 		private var _seekBarContainer:SeekBarContainer;
-		private var _backgroundMc:DisplayObject;
+		//private var _backgroundMc:DisplayObject;
 		private var _overVideoMc:MovieClip;
 		private var _timerTxt:TextField;
 		
@@ -97,12 +95,27 @@ package com.wlash.video {
 		private var _videoPlayer:VideoPlayer;
 		private var _active:Boolean;
 		private var _autoHide:Number;
+		private var _fadeVolume:Number;
 		private var _timer:Timer;
 		private var _isCountdownTimer:Boolean;//是否为倒计时
 		private var _delayHideOverVideoInterId:int;
 		//*************************[READ|WRITE]*************************************//
+		[Inspectable(defaultValue = ".3", type = "Number", verbose="1", name = "fadeVolume", category="")]
+		/**@private */
+		public function set fadeVolume(value:Number):void {
+			if(value>=1){
+				_fadeVolume	=	1;
+			}else if(value>0){
+				_fadeVolume 	=	value;
+			}else{
+				_fadeVolume	=	0.00001;
+			}
+		}
 
-		[Inspectable(defaultValue = "-1", type = "Number", verbose="1", name = "autoHide", category="")]
+		/**the time of fade in or fade out volume. */
+		public function get fadeVolume():Number { return _fadeVolume; }
+
+		[Inspectable(defaultValue = "0", type = "Number", verbose="1", name = "autoHide", category="")]
 		/**@private */
 		public function set autoHide(value:Number):void {
 			if(value>=1){
@@ -164,7 +177,7 @@ package com.wlash.video {
 				
 				seekBar		=	value.getChildByName(__seekBar) as DisplayObjectContainer;
 
-				backgroundMc =	value.getChildByName(__backgroundMc) as DisplayObject;
+				//backgroundMc =	value.getChildByName(__backgroundMc) as DisplayObject;
 				overVideoMc	=	value.parent.getChildByName(__overVideoMc) as MovieClip;//此对象在控制条之外
 				timerTxt	=	value.getChildByName(__timerTxt) as TextField;
 
@@ -272,16 +285,16 @@ package com.wlash.video {
 		
 
 		/**@private */
-		public function set backgroundMc(value:DisplayObject):void {
+		/*public function set backgroundMc(value:DisplayObject):void {
 			if (_backgroundMc) {
 				
 			}
 			_backgroundMc	=	value;
 			if (!value) 	return;
 			
-		}
+		}*/
 		/**Annotation*/
-		public function get backgroundMc():DisplayObject { return _backgroundMc; }
+		//public function get backgroundMc():DisplayObject { return _backgroundMc; }
 		
 		/**@private */
 		public function set overVideoMc(value:MovieClip):void {
@@ -647,11 +660,16 @@ package com.wlash.video {
 						_overVideoMc.gotoAndStop(1);
 					}
 					if(_timer) _timer.stop();
-				case "rewinding":
+				case "videoEnd":
 					if(_pauseBtn)
 						_pauseBtn.visible	=	false;
 					if(_playBtn)
 						_playBtn.visible	=	true;
+					if(_overVideoMc){
+						_overVideoMc.visible	=	true;
+						_overVideoMc.gotoAndStop(1);
+					}
+					if(_timer) _timer.stop();
 				break;
 			}
 		}
